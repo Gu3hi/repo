@@ -1,0 +1,16 @@
+[
+  {
+    "version": "1.2.23",
+    "date": "2026-10-11",
+    "zh": "同版本修订：两个安装包已替换为弹窗入场时机修正版。桌面“移除 App／删除 App”等确认框在入场前准备玻璃，避免动画结束后才切换背景。改善相册标签与应用组件在布局变化、视图复用及关闭效果后的还原，减少标准按钮玻璃的重复查找与更新。发布包不包含 Tab 触摸诊断模块。已安装此前 1.2.23 的用户需重新下载并重新安装对应包。仍为预发布版，安装后真机验收尚未完成，Rootless 未实机测试。",
+    "en": "Same-version revision: both packages were replaced with the corrected alert presentation build. Glass is prepared before Home Screen app removal confirmation dialogs enter, avoiding a background switch after the animation. Improves restoration of Photos labels and app components after layout changes, view reuse and disabling effects; reduces repeated searches and updates for standard button glass. Release packages exclude Tab touch diagnostics. Users of the earlier 1.2.23 build should download and reinstall the matching package. Still a prerelease: post-install device validation is pending, and Rootless has not been tested on a physical device.",
+    "source": "https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23"
+  },
+  {
+    "version": "1.2.11",
+    "date": "2026-10-06",
+    "zh": "公开预发布记录介绍了通知与锁屏、Quart17 播放器、控制中心模块、弹窗与菜单、Dock、文件夹及搜索区域的玻璃效果；应用组件支持按 App 开关，包含 Tab 栏、标准按钮、搜索框与导航栏渐进模糊。另列出陀螺仪高光、实验性锁屏上滑边缘折射、作者预设、偏好复制与导入、设备绑定激活及激活后离线使用。提供 Rootless 与 RootHide 两种包，支持 iOS 16–17。该发布说明以功能清单为主，未逐项区分本版新增与既有功能。",
+    "en": "The public prerelease documents glass for notifications, the Lock Screen, the Quart17 player, Control Center modules, popups, menus, the Dock, folders and search surfaces. Per-app component toggles cover tab bars, standard buttons, search bars and progressive navigation bar blur. It also lists gyroscope highlights, experimental Lock Screen swipe-up edge refraction, author presets, preference copy/import, and device-bound activation with offline use after activation. Rootless and RootHide packages support iOS 16–17. These release notes are primarily a feature list and do not distinguish each new feature from existing behavior.",
+    "source": "https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.11"
+  }
+]

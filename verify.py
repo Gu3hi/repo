@@ -9,6 +9,7 @@ site = Path(__file__).resolve().parent / 'docs'
 names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
 names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/quart17-lock-1.jpg', 'assets/quart17-lock-2.jpg', 'assets/style.css', 'assets/site.js', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
 names += ['assets/aura.png']
+names += ['depictions/aura/index.html', 'depictions/aura/sileo.json']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -43,7 +44,8 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
     if info['Package'] == 'com.gushi.aura':
         assert info['Version'] == '1.2.23'
         assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
-        assert info['Depiction'] == 'https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23'
+        assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'
+        assert info['SileoDepiction'] == 'https://gu3hi.github.io/repo/depictions/aura/sileo.json'
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
 assert gzip.decompress(data['Packages.gz']) == data['Packages']
@@ -66,7 +68,7 @@ class Links(HTMLParser):
         super().__init__(); self.links=[]
     def handle_starttag(self, tag, attrs):
         self.links.extend(v for k,v in attrs if k in ('href','src') and v)
-for name in ('index.html','depictions/quart17/index.html'):
+for name in ('index.html','depictions/quart17/index.html','depictions/aura/index.html'):
     parser=Links(); parser.feed(data[name].decode())
     assert 'sileo://source/https://gu3hi.github.io/repo/' in parser.links
     for link in parser.links:
@@ -88,4 +90,17 @@ for row in history:
     assert row['version'] in data['depictions/quart17/index.html'].decode()
     assert '## '+row['version']+' ·' in depiction['tabs'][2]['views'][0]['markdown']
 print(f'PASS: icons, local links, Sileo deep links and native depiction; {len(history)} bilingual history entries')
+aura=json.loads(data['depictions/aura/sileo.json'])
+assert aura['class']=='DepictionTabView'
+assert [t['tabname'] for t in aura['tabs']]==['中文','English','更新 / History']
+aura_history=json.loads((site.parent/'content/aura-history.json').read_text(encoding='utf-8'))
+assert len({r['version'] for r in aura_history})==len(aura_history)
+for t in aura['tabs']:
+    assert t['class']=='DepictionStackView' and t['views'][0]['class']=='DepictionMarkdownView'
+    assert t['views'][0]['markdown']
+for r in aura_history:
+    assert r['zh'] and r['en'] and r['source'].startswith('https://github.com/Gu3hi/Aura-Releases/releases/tag/')
+    assert r['zh'] in data['depictions/aura/index.html'].decode()
+    assert r['en'] in aura['tabs'][2]['views'][0]['markdown']
+print(f'PASS: Aura bilingual introduction, native depiction and {len(aura_history)} public release records')
 print(f'PASS: {len(indexed)} packages; Sileo required fields, package metadata, compressed indexes and checksums verified' + ('; live HTTPS files match' if len(sys.argv)>1 else ''))

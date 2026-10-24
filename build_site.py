@@ -15,11 +15,11 @@ features=[('锁屏音乐播放器','Lock Screen player','播放控制、封面�
 features.insert(0,('iOS 27 小时间','iOS 27-style compact clock','在 iOS 17 上实现 iOS 27 的锁屏小时间样式。','Bring the iOS 27-style compact Lock Screen clock to iOS 17.'))
 
 def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
-def shell(title,body,relative=''):
+def shell(title,body,relative='',page='depictions/quart17/'):
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05080b"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6f4"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
-<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+'depictions/quart17/'}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
+<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+page}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
 <title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261024-large"><script src="{relative}assets/site.js" defer></script></head>
 <body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
@@ -55,7 +55,7 @@ home=f'''<main>
 <article class="package reveal"><img class="appicon" src="assets/aura.png" width="96" height="96" alt="Aura 图标" loading="lazy" decoding="async"><div>
 <div class="ptag">PRERELEASE · 1.2.23</div><h2>Aura</h2>{duo('为控制中心、Dock、文件夹与应用组件带来玻璃效果，可与 Quart17 配合使用。','Glass effects for Control Center, the Dock, folders and app components. Works alongside Quart17.')}
 <div class="tags"><span>Rootless</span><span>RootHide</span><span>预发布 / Prerelease</span></div>
-<a class="textlink" href="https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23">介绍与更新记录 / Details &amp; release notes <i class="ta">↗</i></a>
+<a class="textlink" href="depictions/aura/">功能介绍与更新记录 / Features &amp; changelog <i class="ta">→</i></a>
 <p class="hint">{e('1.2.23 入场时机修订包；安装后真机验收尚未完成。')}<br><span lang="en">Corrected alert presentation build. Post-install device validation is pending.</span></p>
 </div></article>
 <aside class="note reveal" style="--d:.14s"><h3>架构提示 <i lang="en">Pick your jailbreak</i></h3>{duo('仅发布匹配越狱环境的安装包；不要仅凭设备处理器型号选择架构。','Choose the package for your jailbreak environment, not just your device’s processor.')}</aside>
@@ -95,3 +95,37 @@ log='Historical glass features later moved to Aura. / 历史玻璃功能后续�
 depiction={'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',zh_intro),tab('English',en_intro),tab('更新 / History',log)]}
 (detail/'sileo.json').write_text(json.dumps(depiction,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(f'Built bilingual pages and Sileo depiction with {len(history)} history entries')
+
+aura_history=json.loads((ROOT/'content/aura-history.json').read_text(encoding='utf-8'))
+assert len({r['version'] for r in aura_history})==len(aura_history)
+aura_zh='Aura 为 iOS 16–17 越狱设备的系统界面与应用组件带来可调节的玻璃效果，可与 Quart17 配合使用。'
+aura_en='Aura brings customizable glass effects to system surfaces and app components on jailbroken iOS 16–17 devices, and works alongside Quart17.'
+aura_features=[
+    ('通知与锁屏','Notifications & Lock Screen','通知卡片、横幅与锁屏通知玻璃，可调圆角、底色和边缘高光；支持 Quart17 播放器玻璃。','Glass for notification cards, banners, Lock Screen notifications and the Quart17 player, with adjustable corners, tint and edge highlights.'),
+    ('控制中心与桌面','Control Center & Home Screen','控制中心模块、Dock、文件夹、桌面搜索胶囊、App 资源库搜索框与音量条玻璃。','Glass for Control Center modules, the Dock, folders, Home Screen search, App Library search and the volume HUD.'),
+    ('弹窗与菜单','Popups & menus','系统弹窗、快捷菜单与弹出按钮玻璃，支持通知与弹窗强制深色。','Glass for system popups, context menus and pop-up buttons, with forced dark appearance options for notifications and popups.'),
+    ('按 App 配置组件','Per-app components','独立开关 Tab 栏、标准按钮、搜索框玻璃与导航栏渐进模糊，也可去除分割线。','Per-app controls for tab bar, standard button and search bar glass, progressive navigation bar blur and separator removal.'),
+    ('高光与动态效果','Highlights & motion','陀螺仪高光随手机倾斜改变光源方向；锁屏上滑边缘圆角与折射属于实验功能。','Gyroscope-driven highlights respond to device tilt. Lock Screen swipe-up edge rounding and refraction are experimental.'),
+    ('预设与偏好备份','Presets & preference backup','支持应用作者预设、复制与导入偏好。使用设备绑定激活码，激活后可离线使用。','Apply the author preset and copy or import preferences. Uses device-bound activation and works offline after activation.')
+]
+aura_install_zh='安装与越狱环境匹配的一个包：Rootless 为 iphoneos-arm64，RootHide 为 iphoneos-arm64e。安装后前往「设置 → Aura」配置。Aura 使用设备绑定激活；安装包下载不代表已激活。'
+aura_install_en='Install one package matching your jailbreak: iphoneos-arm64 for Rootless, or iphoneos-arm64e for RootHide. Configure Settings → Aura after installation. Aura uses device-bound activation; downloading the package does not activate it.'
+aura_status_zh='当前上架 1.2.23 同版本修订包，仍为预发布版。安装后真机验收尚未完成，Rootless 未实机测试。'
+aura_status_en='The repository hosts the revised 1.2.23 packages. This remains a prerelease; post-install device validation is pending, and Rootless has not been tested on a physical device.'
+aura_cards=''.join(f'<article><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(aura_features))
+aura_entries=''.join(f'<details {"open" if i==0 else ""}><summary><b>{e(r["version"])}</b><time>{e(r["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="entry">{duo(r["zh"],r["en"])}<p class="source"><a href="{e(r["source"])}">原始发布说明 / Release notes ↗</a></p></div></details>' for i,r in enumerate(aura_history))
+aura_downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.aura_1.2.23_{arch}.deb"><span class="bl">{label} · 1.2.23<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
+aura_body=f'''<main><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
+<div class="titleline"><img class="appicon" src="../../assets/aura.png" width="104" height="104" alt="Aura 图标"><div><p class="eyebrow">GLASS, YOUR WAY</p><h1>Aura</h1><div class="tags"><span>1.2.23</span><span>iOS 16–17</span><span>预发布 / Prerelease</span></div></div></div>
+<div class="lede">{duo(aura_zh,aura_en)}</div>{buttons(*aura_downloads)}
+<nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#installation">安装 / Installation</a><a href="#changelog">更新记录 / Changelog</a></nav></section>
+<section id="features"><div class="seclabel"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{aura_cards}</div></section>
+<section id="installation" class="note install"><h3>安装与激活 <i lang="en">Installation &amp; activation</i></h3>{duo(aura_install_zh,aura_install_en)}<div class="hint">{duo(aura_status_zh,aura_status_en)}</div><a class="textlink" href="https://github.com/Gu3hi/Aura-Releases/releases">发布与支持 / Releases &amp; support ↗</a></section>
+<section id="changelog"><div class="seclabel"><b>02</b><span>CHANGELOG · 历史更新</span></div>{duo('以下整理了目前可核实的两条 GitHub 公开发布记录，包含 1.2.23 的同版本修订说明。更早或中间版本缺少独立发布说明，未推测其改动。','The two verifiable public GitHub releases are listed below, including the same-version revision of 1.2.23. Earlier and intermediate versions without standalone release notes are not reconstructed.')}<div class="count"><b>{len(aura_history)}</b><span>公开发布 / Public releases</span><button class="toggleall" type="button" aria-expanded="false">展开全部 · Expand all</button></div>{aura_entries}</section></main>'''
+aura_dir=SITE/'depictions/aura';aura_dir.mkdir(parents=True,exist_ok=True)
+(aura_dir/'index.html').write_text(shell('Aura · 介绍与历史更新 / Features & Changelog',aura_body,'../../','depictions/aura/'),encoding='utf-8',newline='\n')
+aura_zh_md='# Aura · 1.2.23\n\n'+aura_zh+'\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in aura_features)+'\n\n### 安装与激活\n'+aura_install_zh+'\n\n'+aura_status_zh
+aura_en_md='# Aura · 1.2.23\n\n'+aura_en+'\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in aura_features)+'\n\n### Installation & activation\n'+aura_install_en+'\n\n'+aura_status_en
+aura_log='Only verifiable public releases are listed. / 仅收录可核实的公开发布记录。\n\n'+'\n\n'.join(f'## {r["version"]} · {r["date"]}\n\n{r["zh"]}\n\n{r["en"]}\n\n[发布说明 / Release notes]({r["source"]})' for r in aura_history)
+(aura_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',aura_zh_md),tab('English',aura_en_md),tab('更新 / History',aura_log)]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+print(f'Built Aura bilingual pages and Sileo depiction with {len(aura_history)} public release records')

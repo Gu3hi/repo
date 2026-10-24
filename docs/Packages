@@ -9,7 +9,8 @@ Architecture: iphoneos-arm64
 Version: 1.2.23
 Installed-Size: 1708
 Icon: https://gu3hi.github.io/repo/assets/aura.png
-Depiction: https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
 Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64.deb
 Size: 358606
 MD5sum: ab857e420ea99417ac7c37bb95cb6896
@@ -27,7 +28,8 @@ Architecture: iphoneos-arm64e
 Version: 1.2.23
 Installed-Size: 1708
 Icon: https://gu3hi.github.io/repo/assets/aura.png
-Depiction: https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
 Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64e.deb
 Size: 357972
 MD5sum: 040da7aaafc0a6414478749849b2617c
