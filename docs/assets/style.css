@@ -60,8 +60,9 @@ h1 span{display:block;font-size:.36em;font-weight:350;letter-spacing:-.015em;lin
 .button.ghost:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
 
 .address{margin-top:26px}
-.addr{display:inline-flex;align-items:baseline;gap:14px;font-family:var(--mono);font-size:13px;letter-spacing:.01em;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 16px;cursor:pointer;overflow-wrap:anywhere;transition:border-color .3s,transform .3s var(--ease)}
-.addr i{font-style:normal;font-size:11px;letter-spacing:.04em;color:var(--accent);white-space:nowrap}
+.address{margin-top:24px}
+.addr{display:flex;flex-direction:column;align-items:flex-start;gap:5px;max-width:100%;font-family:var(--mono);font-size:13.5px;letter-spacing:.01em;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 18px;cursor:pointer;overflow-wrap:anywhere;transition:border-color .3s,transform .3s var(--ease)}
+.addr i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
 .addr:hover{border-color:var(--accent);transform:translateY(-1px)}
 .hint{font-size:12.5px;line-height:1.8;color:var(--muted);margin-top:16px;max-width:56ch}
 .hint a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
