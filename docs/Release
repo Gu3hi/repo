@@ -1,0 +1,20 @@
+Origin: Gushi Repo
+Label: Gushi Repo
+Suite: stable
+Version: 1.0
+Codename: gushi
+Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e
+Description: Gushi jailbreak repository
+Date: Sat, 24 Oct 2026 06:39:19 GMT
+MD5Sum:
+ d41d8cd98f00b204e9800998ecf8427e 0 Packages
+ fa9ac5a217b5547bc7dd4e6e894fe135 20 Packages.gz
+ 4059d198768f9f8dc9372dc1c54bc3c3 14 Packages.bz2
+SHA256:
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855 0 Packages
+ 9ceffb7310338057cfe71a4ae1e2c98d2c485d81cdef906532a801f457a38d64 20 Packages.gz
+ d3dda84eb03b9738d118eb2be78e246106900493c0ae07819ad60815134a8058 14 Packages.bz2
+SHA512:
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e 0 Packages
+ 2e5247dde5799863460d50de4380c6fc7c7d5bd46ad677030a6da236e482bfc9a616b312d9c63ec2c42d9f2942c7bd0c0f142572df973c654c4bc11ece688d37 20 Packages.gz
+ 6de201dfed1d45412509c65deb34690dc2d09c6aafccfe491fd2f440f92842b9c755b61dc7bcdd4cc0c9f18cf46c2b3a1241e99c4c2a33fff5555e7b2f0b6348 14 Packages.bz2

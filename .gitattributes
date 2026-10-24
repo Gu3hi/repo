@@ -1,0 +1,5 @@
+* text=auto
+*.gz binary
+*.bz2 binary
+Packages -text
+Release text eol=lf
