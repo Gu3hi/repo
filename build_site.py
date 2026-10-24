@@ -36,7 +36,7 @@ home=f'''<main>
 <section class="hero">
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">Make your phone<br>look better.</h1>
+<h1 class="reveal" style="--d:.06s">Make your<br>phone look<br>better.</h1>
 <div class="actions reveal" style="--d:.12s">
 <a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a></div>
 <button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}" aria-label="复制源地址 · Copy repository URL">{BASE}<i aria-hidden="true">点击复制 · Tap to copy</i></button>

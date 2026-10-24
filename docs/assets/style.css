@@ -171,8 +171,8 @@ details[open] .acc{grid-template-rows:1fr}
 .source a:hover{border-bottom-color:var(--accent)}
 
 /* ── footer ─────────────────────────────── */
-.foot{margin-top:clamp(70px,10vw,130px);border-top:1px solid var(--line);padding-top:clamp(40px,6vw,70px)}
-.bigword{font-size:clamp(64px,15vw,208px);font-weight:850;letter-spacing:-.05em;line-height:.92;text-align:center;color:transparent;-webkit-text-stroke:1px var(--line2);-webkit-text-fill-color:transparent;user-select:none;pointer-events:none;white-space:nowrap}
+.foot{margin-top:clamp(70px,10vw,130px);border-top:1px solid var(--line);padding-top:clamp(40px,6vw,70px);overflow:hidden}
+.bigword{font-size:clamp(40px,15vw,208px);font-weight:850;letter-spacing:-.05em;line-height:.92;text-align:center;color:transparent;-webkit-text-stroke:1px var(--line2);-webkit-text-fill-color:transparent;user-select:none;pointer-events:none;white-space:nowrap}
 .footline{max-width:1140px;margin:auto;padding:26px clamp(20px,4vw,44px) 30px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px;font-family:var(--mono);font-size:11.5px;letter-spacing:.06em;color:var(--muted)}
 .footline a{color:var(--muted);transition:color .3s}
 .footline a:hover{color:var(--accent)}
