@@ -1,3 +1,39 @@
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 1.2.23
+Installed-Size: 1708
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23
+Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64.deb
+Size: 358606
+MD5sum: ab857e420ea99417ac7c37bb95cb6896
+SHA256: 82df93524f5be61c36941e5c4532f2afa8c1fc25d2386e4b941101acdb5974f6
+SHA512: ca6bf53a3c0eb3650d49863b02d1d61fd0574cf6b34fe7f3acee38ae3a83576a50a9b03d12ea7bbac78597040922b7494495ab3bd43e43bf05c13b5b30d239e7
+
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 1.2.23
+Installed-Size: 1708
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23
+Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64e.deb
+Size: 357972
+MD5sum: 040da7aaafc0a6414478749849b2617c
+SHA256: be7cb24eb19ca73488cd38d82518bca61065fbe5c19d6f292f97e88dd8a385c4
+SHA512: 6fdb248cd33bc956db0bc46bed67f9f07f41ded22d1be83cccaf2a550a1a2abb13723e10a0ddb16034331dc2ddae6f90085c86a681e144ee5b57c6d516283fc5
+
 Package: com.gushi.quart17
 Name: Quart17
 Description: Quart-inspired notifications for jailbroken iOS 17

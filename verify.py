@@ -8,6 +8,7 @@ from update_repo import control_from_deb, fields
 site = Path(__file__).resolve().parent / 'docs'
 names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
 names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/quart17-lock-1.jpg', 'assets/quart17-lock-2.jpg', 'assets/style.css', 'assets/site.js', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
+names += ['assets/aura.png']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -39,6 +40,10 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
     if info['Package'] == 'com.gushi.quart17':
         for key, target in [('Icon','assets/quart17.png'), ('Depiction','depictions/quart17/'), ('SileoDepiction','depictions/quart17/sileo.json')]:
             assert info[key] == 'https://gu3hi.github.io/repo/' + target
+    if info['Package'] == 'com.gushi.aura':
+        assert info['Version'] == '1.2.23'
+        assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
+        assert info['Depiction'] == 'https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23'
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
 assert gzip.decompress(data['Packages.gz']) == data['Packages']

@@ -52,6 +52,12 @@ home=f'''<main>
 <div class="tags"><span>Rootless</span><span>RootHide</span><span>中文 / English</span></div>
 <a class="textlink" href="depictions/quart17/">功能介绍与完整更新记录 / Features &amp; changelog <i class="ta">→</i></a>
 </div></article>
+<article class="package reveal"><img class="appicon" src="assets/aura.png" width="96" height="96" alt="Aura 图标" loading="lazy" decoding="async"><div>
+<div class="ptag">PRERELEASE · 1.2.23</div><h2>Aura</h2>{duo('为控制中心、Dock、文件夹与应用组件带来玻璃效果，可与 Quart17 配合使用。','Glass effects for Control Center, the Dock, folders and app components. Works alongside Quart17.')}
+<div class="tags"><span>Rootless</span><span>RootHide</span><span>预发布 / Prerelease</span></div>
+<a class="textlink" href="https://github.com/Gu3hi/Aura-Releases/releases/tag/v1.2.23">介绍与更新记录 / Details &amp; release notes <i class="ta">↗</i></a>
+<p class="hint">{e('1.2.23 入场时机修订包；安装后真机验收尚未完成。')}<br><span lang="en">Corrected alert presentation build. Post-install device validation is pending.</span></p>
+</div></article>
 <aside class="note reveal" style="--d:.14s"><h3>架构提示 <i lang="en">Pick your jailbreak</i></h3>{duo('仅发布匹配越狱环境的安装包；不要仅凭设备处理器型号选择架构。','Choose the package for your jailbreak environment, not just your device’s processor.')}</aside>
 </section>
 </main>'''
