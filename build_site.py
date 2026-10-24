@@ -31,12 +31,12 @@ def device(relative):
 <div class="player"><div class="art"><img src="{relative}assets/quart17.png" alt=""></div><div class="pmeta"><strong>Quart17</strong><span lang="en">Now Playing · 正在播放</span><div class="pb"><i></i></div></div><div class="pctl"><span>⏮</span><span class="pplay">⏯</span><span>⏭</span></div></div>
 <div class="notif"><img src="{relative}assets/quart17.png" alt=""><div><strong>Quart17</strong><span>通知排版已更新 · <i lang="en">Layout updated</i></span></div><em lang="en">now</em></div>
 </div></div></div></div>'''
-marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','让系统更像你 · MAKE IOS YOURS','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
+marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
 home=f'''<main>
 <section class="hero">
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">让系统更像你。<span lang="en">Make iOS yours.</span></h1>
+<h1 class="reveal" style="--d:.06s">让你的手机界面看起来更好。<span lang="en">Make your phone look better.</span></h1>
 <div class="lede reveal" style="--d:.12s">{duo('播放器、通知、界面细节——精选插件陆续上架。','Players, notifications and interface tweaks — more to come.')}</div>
 <div class="actions reveal" style="--d:.18s">{''}
 <a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{copybtn}</div>
