@@ -18,12 +18,11 @@ def shell(title,body,relative=''):
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light"><meta name="theme-color" content="#05080b"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css"><script src="{relative}assets/site.js" defer></script></head>
-<body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a><a class="navcta" href="{ADD}">Sileo<i lang="en">Add</i></a></nav></div></header>
+<body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
 <footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><a href="https://x.com/put_story" target="_blank" rel="noopener">X @put_story ↗</a><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
 def buttons(*extra):
     return f'<div class="actions"><a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{"".join(extra)}</div>'
-copybtn=f'<button class="button ghost copy" type="button" data-copy="{BASE}">复制源地址<i lang="en">Copy URL</i></button>'
 def device(relative):
     return f'''<div class="heroart reveal" style="--d:.22s" aria-hidden="true"><div class="glow"></div><div class="float"><div class="device"><div class="screen">
 <div class="island"></div>
@@ -37,9 +36,9 @@ home=f'''<main>
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
 <h1 class="reveal" style="--d:.06s">Make your phone<br>look better.</h1>
-<div class="actions reveal" style="--d:.12s">{''}
-<a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{copybtn}</div>
-<div class="address reveal" style="--d:.18s"><code>{BASE}</code></div>
+<div class="actions reveal" style="--d:.12s">
+<a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a></div>
+<button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}">{BASE}<i>点击复制 · Tap to copy</i></button>
 <p class="hint reveal" style="--d:.24s">请在安装了 Sileo 的 iPhone 上打开。若未唤起 App，可在软件源页面手动添加上方地址。<br><span lang="en">Open on an iPhone with Sileo installed, or add the URL manually in Sources.</span></p>
 </div>
 {device('')}

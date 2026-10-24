@@ -59,8 +59,8 @@ function legacyCopy(text){
   btn.addEventListener('click',function(){
     var text=btn.getAttribute('data-copy')||'';
     if(navigator.clipboard&&navigator.clipboard.writeText){
-      navigator.clipboard.writeText(text).then(function(){showToast('源地址已复制 · URL copied')},function(){legacyCopy(text);showToast('源地址已复制 · URL copied')});
-    }else{legacyCopy(text);showToast('源地址已复制 · URL copied')}
+      navigator.clipboard.writeText(text).then(function(){showToast('已复制 · Copied')},function(){legacyCopy(text);showToast('已复制 · Copied')});
+    }else{legacyCopy(text);showToast('已复制 · Copied')}
   });
 });
 })();
