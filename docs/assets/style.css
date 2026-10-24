@@ -82,8 +82,6 @@ h1 em{font-style:normal;color:var(--accent)}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .pair{display:flex;justify-content:center;align-items:flex-start;transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out}
 .pair img{width:min(182px,40vw);height:auto;border-radius:26px;box-shadow:0 40px 80px -32px rgba(0,0,0,.78),0 0 0 1px var(--line)}
-.pair img:first-child{transform:rotate(-2.4deg) translateY(18px);z-index:2}
-.pair img:last-child{margin-left:-22px;transform:rotate(2.4deg);z-index:1}
 
 /* ── marquee ────────────────────────────── */
 .marquee{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;margin:0 0 clamp(56px,8vw,110px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -132,7 +130,7 @@ section{scroll-margin-top:90px}
 .grid h3 i{display:block;font-style:normal;font-weight:400;font-size:12px;color:var(--muted);margin-top:3px}
 .grid p{font-size:14px}
 .grid .en{font-size:12.5px}
-.shots{display:grid;grid-template-columns:repeat(2,minmax(0,268px));gap:16px}
+.shots{display:grid;grid-template-columns:minmax(0,268px);justify-content:center;gap:16px}
 .shots figure{margin:0;background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:border-color .35s,transform .45s var(--ease)}
 .shots figure:hover{border-color:var(--line2);transform:translateY(-3px)}
 .shots img{width:100%;height:auto;display:block}
@@ -197,7 +195,7 @@ details[open] .acc{grid-template-rows:1fr}
 .titleline .appicon{width:80px;height:80px;border-radius:22px}
 .actions{flex-direction:column;align-items:stretch}
 .button{justify-content:space-between}
-.shots{grid-template-columns:1fr 1fr}
+.shots{grid-template-columns:minmax(0,268px)}
 .count{gap:10px}
 .bar{padding:14px 20px}
 /* portrait: shorten the first screen and enlarge touch/small text */
@@ -215,7 +213,6 @@ details[open] .acc{grid-template-rows:1fr}
 .section-nav{gap:6px}
 .section-nav a{padding:10px;font-size:11px}
 .pair img{width:min(124px,34vw)}
-.pair img:last-child{margin-left:-14px}
 .float{animation-duration:8s}
 .marquee{padding:14px 0;margin-bottom:clamp(44px,9vw,72px)}
 .hint{font-size:13.5px}

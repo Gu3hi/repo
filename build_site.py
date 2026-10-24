@@ -18,7 +18,7 @@ def shell(title,body,relative=''):
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05080b"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6f4"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+'depictions/quart17/'}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
-<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261024-blue"><script src="{relative}assets/site.js" defer></script></head>
+<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261024-single"><script src="{relative}assets/site.js" defer></script></head>
 <body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
 <footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><a href="https://x.com/put_story" target="_blank" rel="noopener">X @put_story ↗</a><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
@@ -27,7 +27,6 @@ def buttons(*extra):
 def device(relative):
     return f'''<div class="heroart reveal" style="--d:.22s"><div class="glow"></div><div class="float"><div class="pair tilt">
 <img src="{relative}assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" decoding="async">
-<img src="{relative}assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async">
 </div></div></div>'''
 marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
 home=f'''<main>
@@ -70,7 +69,7 @@ body=f'''<main>
 <nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#screenshots">实机效果 / Gallery</a><a href="#changelog">更新记录 / Changelog</a></nav>
 </section>
 <section id="features"><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
-<section id="screenshots"><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure><figure><img src="../../assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async"><figcaption>配色与排版 · <i lang="en">Colour &amp; layout</i></figcaption></figure></div></section>
+<section id="screenshots"><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure></div></section>
 <section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('面向 iOS 16–17 越狱环境；2.7.103 包含 iOS 16 播放器识别兼容调整。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','For jailbroken iOS 16–17 devices. Version 2.7.103 includes an iOS 16 player-detection compatibility adjustment. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
 <section id="changelog"><div class="seclabel reveal"><b>03</b><span>CHANGELOG · 历史更新</span></div>
 <p class="hint reveal" style="--d:.06s">按 GitHub 发布说明、版本提交及本地构建记录整理；日期优先采用发布时间。未记录的改动不作推测。<br><span lang="en">Based on release notes, version commits and local build records; release dates are preferred when available. Undocumented changes are not inferred.</span></p>
