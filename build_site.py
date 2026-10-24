@@ -36,7 +36,7 @@ home=f'''<main>
 <section class="hero">
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">让你的手机界面看起来更好。<span lang="en">Make your phone look better.</span></h1>
+<h1 class="reveal" style="--d:.06s">Make your phone<br>look better.</h1>
 <div class="lede reveal" style="--d:.12s">{duo('播放器、通知、界面细节——精选插件陆续上架。','Players, notifications and interface tweaks — more to come.')}</div>
 <div class="actions reveal" style="--d:.18s">{''}
 <a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{copybtn}</div>
