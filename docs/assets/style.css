@@ -12,7 +12,7 @@
 @media(prefers-color-scheme:light){:root{--bg:#f3f6f4;--bg2:#e9efeb;--card:#ffffff;--card2:#f6f9f7;--text:#0e1c19;--muted:#5b706d;--line:rgba(10,40,34,.12);--line2:rgba(10,40,34,.2);--accent:#0a7f6d;--accent2:#4356b8;--ink:#eafff9}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);
+body{margin:0;background:var(--bg);color:var(--text);overflow-x:clip;
 font:16px/1.75 var(--disp);letter-spacing:.002em;
 -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
 background-image:radial-gradient(58% 42% at 82% -6%,rgba(127,240,212,.075),transparent 62%),radial-gradient(46% 34% at 4% 12%,rgba(157,180,255,.055),transparent 60%);background-attachment:fixed}
