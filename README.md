@@ -4,6 +4,13 @@
 
 当前上架 Quart17 2.7.103：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
 
+源头像：`docs/CydiaIcon.png`（GitHub 账号头像）；Quart17 图标：`docs/assets/quart17.png`（项目现有图标）。
+网站提供 `sileo://source/https://gu3hi.github.io/repo/` 添加按钮及手动添加地址。
+Quart17 的 HTML 介绍和原生 Sileo 详情均由 `build_site.py` 生成；索引中的 Icon、Depiction 和 SileoDepiction 指向对应资源。
+
+中英文历史数据保存在 `content/quart17-history.json`，覆盖已找到的 28 条版本记录；每条注明发布/提交来源或本地记录，未知改动明确标记。旧版本的玻璃功能不作为当前版本能力宣传。
+编辑历史或页面生成逻辑后依次运行 `python build_site.py`、`python update_repo.py`、`python verify.py` 再提交。安装包本体不因详情更新而改变。
+
 GitHub Pages 从 `main` 分支的 `docs/` 发布。该目录包含平面 APT 源的
 `Release`、`Packages`、`Packages.gz`、`Packages.bz2` 和介绍页面。
 

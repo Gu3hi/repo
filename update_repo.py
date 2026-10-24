@@ -36,7 +36,12 @@ def main():
         assert identity not in identities, f'Duplicate package: {identity}'
         identities.add(identity)
         assert not any(k in info for k in ('Filename', 'Size', 'MD5sum', 'SHA256', 'SHA512'))
-        entry = control + f'\nFilename: {path.relative_to(ROOT).as_posix()}\nSize: {len(data)}\n'
+        entry = control
+        if identity[0] == 'com.gushi.quart17':
+            entry += '\nIcon: https://gu3hi.github.io/repo/assets/quart17.png'
+            entry += '\nDepiction: https://gu3hi.github.io/repo/depictions/quart17/'
+            entry += '\nSileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json'
+        entry += f'\nFilename: {path.relative_to(ROOT).as_posix()}\nSize: {len(data)}\n'
         for key, algorithm in [('MD5sum', 'md5'), ('SHA256', 'sha256'), ('SHA512', 'sha512')]:
             entry += f'{key}: {hashlib.new(algorithm, data).hexdigest()}\n'
         entries.append(entry)
@@ -45,6 +50,7 @@ def main():
     release = ['Origin: Gushi Repo', 'Label: Gushi Repo', 'Suite: stable', 'Version: 1.0',
                'Codename: gushi', 'Architectures: iphoneos-arm iphoneos-arm64 iphoneos-arm64e',
                'Components: main', 'Description: Gushi jailbreak repository',
+               'Icon: https://gu3hi.github.io/repo/CydiaIcon.png',
                'Date: ' + format_datetime(datetime.now(timezone.utc), usegmt=True)]
     for label, algorithm in [('MD5Sum', 'md5'), ('SHA256', 'sha256'), ('SHA512', 'sha512')]:
         release.append(label + ':')

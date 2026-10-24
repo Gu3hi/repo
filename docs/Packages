@@ -8,6 +8,9 @@ Depends: mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm64
 Version: 2.7.103
 Installed-Size: 2416
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
 Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64.deb
 Size: 967338
 MD5sum: 795ee9eaf572f612a07f80436e394986
@@ -24,6 +27,9 @@ Depends: mobilesubstrate, preferenceloader
 Architecture: iphoneos-arm64e
 Version: 2.7.103
 Installed-Size: 2416
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
 Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64e.deb
 Size: 966674
 MD5sum: b7de92bd986def130ab288fa6c6d9f5d

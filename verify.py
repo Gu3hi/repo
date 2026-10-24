@@ -1,10 +1,13 @@
 from pathlib import Path
-import bz2, gzip, hashlib, sys
+import bz2, gzip, hashlib, sys, json
+from html.parser import HTMLParser
+from urllib.parse import urlsplit, unquote
 from urllib.request import urlopen
 from update_repo import control_from_deb, fields
 
 site = Path(__file__).resolve().parent / 'docs'
 names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
+names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/style.css', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -33,6 +36,9 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
     actual = fields(control_from_deb(package))
     for key in ('Package', 'Version', 'Architecture'):
         assert actual[key].strip() == info[key]
+    if info['Package'] == 'com.gushi.quart17':
+        for key, target in [('Icon','assets/quart17.png'), ('Depiction','depictions/quart17/'), ('SileoDepiction','depictions/quart17/sileo.json')]:
+            assert info[key] == 'https://gu3hi.github.io/repo/' + target
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
 assert gzip.decompress(data['Packages.gz']) == data['Packages']
@@ -48,4 +54,33 @@ for line in data['Release'].decode().splitlines():
         assert hashlib.new(algorithm, data[name]).hexdigest() == digest, name
         checked += 1
 assert checked == 9
+assert data['CydiaIcon.png'].startswith(b'\x89PNG\r\n\x1a\n')
+assert data['assets/quart17.png'].startswith(b'\x89PNG\r\n\x1a\n')
+class Links(HTMLParser):
+    def __init__(self):
+        super().__init__(); self.links=[]
+    def handle_starttag(self, tag, attrs):
+        self.links.extend(v for k,v in attrs if k in ('href','src') and v)
+for name in ('index.html','depictions/quart17/index.html'):
+    parser=Links(); parser.feed(data[name].decode())
+    assert 'sileo://source/https://gu3hi.github.io/repo/' in parser.links
+    for link in parser.links:
+        parts=urlsplit(link)
+        if parts.scheme or not parts.path:
+            continue
+        path=((site/name).parent/unquote(parts.path)).resolve()
+        assert path.is_relative_to(site.resolve()) and path.exists(), (name,link)
+depiction=json.loads(data['depictions/quart17/sileo.json'])
+assert depiction['class']=='DepictionTabView'
+assert [t['tabname'] for t in depiction['tabs']]==['中文','English','更新 / History']
+for tab in depiction['tabs']:
+    assert tab['class']=='DepictionStackView'
+    assert all(v['class']=='DepictionMarkdownView' and v['markdown'] for v in tab['views'])
+history=json.loads((site.parent/'content/quart17-history.json').read_text(encoding='utf-8'))
+assert len({row['version'] for row in history})==len(history)
+for row in history:
+    assert row['zh'] and row['en']
+    assert row['version'] in data['depictions/quart17/index.html'].decode()
+    assert '## '+row['version']+' ·' in depiction['tabs'][2]['views'][0]['markdown']
+print(f'PASS: icons, local links, Sileo deep links and native depiction; {len(history)} bilingual history entries')
 print(f'PASS: {len(indexed)} packages; Sileo required fields, package metadata, compressed indexes and checksums verified' + ('; live HTTPS files match' if len(sys.argv)>1 else ''))

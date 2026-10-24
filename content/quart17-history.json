@@ -1,0 +1,226 @@
+[
+  {
+    "version": "2.7.103",
+    "date": "2026-10-17",
+    "zh": "iOS 16 播放器识别兼容调整：有明确媒体视图时直接识别；仅在 iOS 17 及以上的纯场景宿主路径检查 Now Playing 会话。依据本地 2.7.103 源码差异整理，未找到独立 GitHub 发布说明。",
+    "en": "Adjust player detection for iOS 16: accept explicit media views directly, and check the Now Playing session only for scene-host-only content on iOS 17 and later. Summarized from the local 2.7.103 source diff; no separate GitHub release notes were found.",
+    "source": "",
+    "kind": "local"
+  },
+  {
+    "version": "2.7.102",
+    "date": "2026-10-17",
+    "zh": "创建播放器前检查 Now Playing 会话，无媒体会话时保留系统样式，进一步处理落单实时活动误判。",
+    "en": "Check for a Now Playing session before creating the player; retain the native view when no media session exists.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.102",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.101",
+    "date": "2026-10-17",
+    "zh": "播放器容器检查的中间修复版本。后续 2.7.102 发布说明指出，该检查未覆盖无音乐场景。",
+    "en": "Intermediate player-container detection fix. The 2.7.102 release notes state that this check did not cover the no-music case.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.102",
+    "kind": "release-reference"
+  },
+  {
+    "version": "2.7.99",
+    "date": "2026-10-17",
+    "zh": "修正锁屏音乐播放器识别，并限制顶部卡片创建播放器，减少实时活动误判。",
+    "en": "Restore lock-screen player detection and restrict player creation to the topmost platter to reduce Live Activity false positives.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.99",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.98",
+    "date": "2026-10-17",
+    "zh": "保留了双架构安装包，但未找到独立更新说明；不推测此版本的具体改动。日期取本地安装包记录。",
+    "en": "Both package architectures are retained, but no standalone changelog was found. Specific changes are unverified; the date comes from the local package record.",
+    "source": "",
+    "kind": "local"
+  },
+  {
+    "version": "2.7.97",
+    "zh": "收紧播放器识别，要求明确媒体视图标志；识别失效时移除旧播放器并恢复原卡片。",
+    "en": "Require explicit media-view indicators; remove stale player overlays and restore the original card when detection fails.",
+    "date": "2026-10-07",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.97",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.96",
+    "date": "2026-10-06",
+    "zh": "发布拆分版，保留播放器、通知排版、缩放和清理手势；玻璃效果迁移至 Aura，刷新设置页。",
+    "en": "Ship the split edition with player, notification layout, scaling and clearing gestures; move glass effects to Aura and refresh preferences.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.96",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.77",
+    "date": "2026-10-02",
+    "zh": "重做拆分版设置页；修复通知堆叠遍历风险，增加设置数组边界检查和版本号显示。",
+    "en": "Redesign split-edition preferences, guard notification-stack traversal and settings array bounds, and show the version number.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.77",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.76",
+    "date": "2026-10-01",
+    "zh": "替换为拆分版源码；大封面位置设置在 respring 后恢复，玻璃渲染交由 Aura。",
+    "en": "Switch to split-edition sources, restore saved artwork positioning after respring, and delegate glass rendering to Aura.",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.76",
+    "kind": "release"
+  },
+  {
+    "version": "2.7.43",
+    "date": "2026-09-29",
+    "zh": "当时引入双模块拆分、弹窗与控制中心独立玻璃，并修复锁屏按钮。玻璃功能后续已迁移至 Aura。",
+    "en": "Introduce the historical dual-module split, separate popup and Control Center glass, and fix lock-screen buttons. Glass later moved to Aura.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/4334cc47047ef5edfe47a53cd61bb29a416479f4",
+    "kind": "commit"
+  },
+  {
+    "version": "2.5",
+    "date": "2026-09-27",
+    "zh": "加入大封面位移、正方形裁剪和 Rootless 通用二进制，修正通知计数及模型处理。",
+    "en": "Add artwork positioning, square cropping and a rootless universal binary; fix notification counts and model handling.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/e3727ec3a256139ef3554338c3dff2f69d4c9dcd",
+    "kind": "commit"
+  },
+  {
+    "version": "2.4",
+    "date": "2026-09-26",
+    "zh": "改善通知文字可读性，重组设置，并优化通知计数角标。",
+    "en": "Improve notification readability, reorganize settings and refine the count badge.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/69513a98797d8ddd957f974332fbdad5b0da3140",
+    "kind": "commit"
+  },
+  {
+    "version": "2.2.6",
+    "date": "2026-09-26",
+    "zh": "加入基于通知模型的计数角标，并调整折叠与清理按钮样式。",
+    "en": "Add model-based notification count badges and restyle fold and clear buttons.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/df03970809690ef0ba7d7880885c921dc570e04c",
+    "kind": "commit"
+  },
+  {
+    "version": "2.2.3",
+    "date": "2026-09-25",
+    "zh": "修复展开专辑封面时播放器回退为系统样式的问题。",
+    "en": "Fix the player reverting to native appearance while album artwork is expanded.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/a36cb31b580d5211e9e29bbe1fba93bc06ce955c",
+    "kind": "commit"
+  },
+  {
+    "version": "2.2.2",
+    "date": "2026-09-24",
+    "zh": "改善展开播放器时的可读性。",
+    "en": "Improve readability in the expanded player.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/3b284f8da5508e4f3ed3621bf9ed0a2d60764dbd",
+    "kind": "commit"
+  },
+  {
+    "version": "2.2.0",
+    "date": "2026-09-24",
+    "zh": "加入展开专辑封面的控制选项。",
+    "en": "Add controls for expanded album artwork.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/af991980ee2bfe7610cf6c557d66daf11224bb0e",
+    "kind": "commit"
+  },
+  {
+    "version": "2.1.18",
+    "date": "2026-09-23",
+    "zh": "当时加入玻璃效果实时预览；该玻璃功能现由 Aura 提供。",
+    "en": "Add live glass preview in the historical edition; glass rendering is now provided by Aura.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/fc1dda95b3a989b1aebb502b6c8a0e3e51539596",
+    "kind": "commit"
+  },
+  {
+    "version": "2.1.0",
+    "date": "2026-09-23",
+    "zh": "当时加入通知玻璃并优化手势；玻璃功能后续迁移至 Aura。",
+    "en": "Introduce notification glass and refine gestures in the historical edition. Glass later moved to Aura.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/782b665dd6642f01fabce6a10aef3e7865e39140",
+    "kind": "commit"
+  },
+  {
+    "version": "2.0.0",
+    "date": "2026-09-23",
+    "zh": "加入通知缩放，整理并细化设置选项。",
+    "en": "Introduce notification scaling and refine preferences.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/475fbeac1ce8718805313051adf6df4ed164a5ff",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.27",
+    "date": "2026-09-22",
+    "zh": "优化播放进度交互和控制按钮。",
+    "en": "Polish playback seeking and control buttons.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/efead23827e827c56fe59e28aa3fc8f82ad1a3cd",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.21",
+    "date": "2026-09-21",
+    "zh": "提升深色播放器对比度，支持在封面上横向拖动调节进度。",
+    "en": "Improve dark-player contrast and support horizontal seeking on artwork.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/5b0e31e476e10015f85cb277f1e9388e17f96c95",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.20",
+    "date": "2026-09-21",
+    "zh": "修复可替换按钮路径，加入同步圆角滑块。",
+    "en": "Fix replaceable button paths and add a synchronized corner-radius slider.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/c0ca696436b84726dcb389dcec03f5cfca6aa63e",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.19",
+    "date": "2026-09-21",
+    "zh": "支持拖动封面进度，简化通知设置。",
+    "en": "Make artwork progress seekable and simplify notification settings.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/c3986c8449d76e2f368d1d82de097591d55035e6",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.18",
+    "date": "2026-09-21",
+    "zh": "将进度样式选择改为内联分段控件。",
+    "en": "Present progress styles as an inline segmented control.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/d25aac74eea23949288ba1e016e5adb0127d22f2",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.17",
+    "date": "2026-09-21",
+    "zh": "加入互斥进度样式和可替换播放器控件。",
+    "en": "Add mutually exclusive progress styles and replaceable player controls.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/5baff03114361d36c2d25928465dbc16e3497f14",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.14",
+    "date": "2026-09-21",
+    "zh": "加入封面环形进度，更新播放控制图标。",
+    "en": "Add a circular artwork progress ring and update playback symbols.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/20828035511f9167e210bd51d93c7adb6fe4ec30",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.13",
+    "date": "2026-09-21",
+    "zh": "限制播放器替换范围为锁屏，并提供 Rootless 安装包。",
+    "en": "Limit player replacement to the Lock Screen and add a rootless package.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/71c8e8487446ae15279d5548571daeca4fe0cde6",
+    "kind": "commit"
+  },
+  {
+    "version": "1.0.12",
+    "date": "2026-09-21",
+    "zh": "发布面向 iOS 17 RootHide 的初始记录版本。",
+    "en": "First recorded release for iOS 17 RootHide.",
+    "source": "https://github.com/Gu3hi/Quart17/commit/8cd5c05c70aa11ae53e63380c830a0b1c7f1f9db",
+    "kind": "commit"
+  }
+]
