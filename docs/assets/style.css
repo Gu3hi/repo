@@ -4,18 +4,18 @@
 :root{color-scheme:dark light;
 --bg:#05080b;--bg2:#0a1116;--card:#0d141a;--card2:#111a21;
 --text:#f2f7f5;--muted:#8fa3a6;--line:rgba(235,255,250,.09);--line2:rgba(235,255,250,.16);
---accent:#7ff0d4;--accent2:#9db4ff;--ink:#04211c;
+--accent:#8aabff;--accent2:#b8caff;--ink:#071634;
 --disp:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI Variable Display","Segoe UI",sans-serif;
 --mono:ui-monospace,"SF Mono","Cascadia Code",Menlo,Consolas,monospace;
 --r-lg:28px;--r-md:20px;--r-sm:12px;
 --ease:cubic-bezier(.22,1,.36,1)}
-@media(prefers-color-scheme:light){:root{--bg:#f3f6f4;--bg2:#e9efeb;--card:#ffffff;--card2:#f6f9f7;--text:#0e1c19;--muted:#5b706d;--line:rgba(10,40,34,.12);--line2:rgba(10,40,34,.2);--accent:#0a7f6d;--accent2:#4356b8;--ink:#eafff9}}
+@media(prefers-color-scheme:light){:root{--bg:#f4f6fa;--bg2:#e9edf5;--card:#ffffff;--card2:#f7f9fc;--text:#172033;--muted:#596980;--line:rgba(20,40,80,.12);--line2:rgba(20,40,80,.2);--accent:#2859d8;--accent2:#4356b8;--ink:#fff}}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);overflow-x:clip;
 font:16px/1.75 var(--disp);letter-spacing:.002em;
 -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
-background-image:radial-gradient(58% 42% at 82% -6%,rgba(127,240,212,.075),transparent 62%),radial-gradient(46% 34% at 4% 12%,rgba(157,180,255,.055),transparent 60%);background-attachment:fixed}
+background-image:radial-gradient(58% 42% at 82% -6%,rgba(90,130,255,.09),transparent 62%),radial-gradient(46% 34% at 4% 12%,rgba(157,180,255,.055),transparent 60%);background-attachment:fixed}
 ::selection{background:var(--accent);color:var(--ink)}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:6px}
@@ -40,6 +40,15 @@ nav{display:flex;align-items:center;gap:8px}
 .eyebrow{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
 h1{font-size:clamp(42px,7.2vw,96px);font-weight:800;letter-spacing:-.045em;line-height:1.04;margin:22px 0 0}
 h1 span{display:block;font-size:.36em;font-weight:350;letter-spacing:-.015em;line-height:1.3;color:var(--muted);margin-top:18px}
+h1 em{font-style:normal;color:var(--accent)}
+.hero-subtitle{margin-top:22px;color:var(--muted);font-size:18px;letter-spacing:.06em}
+.herotext{min-width:0}
+.hero .actions{gap:10px}
+.hero .button{padding-inline:18px}
+.section-nav{flex-wrap:wrap;gap:8px;margin-top:30px}
+.section-nav a{padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:12px;font-size:12px;color:var(--muted)}
+.section-nav a:hover{color:var(--accent);border-color:var(--accent)}
+#screenshots{margin-top:48px}
 .lede{margin-top:26px;max-width:52ch}
 .lede p:first-child{font-size:17px}
 .en{color:var(--muted);font-size:14.5px;margin-top:6px}
@@ -59,7 +68,6 @@ h1 span{display:block;font-size:.36em;font-weight:350;letter-spacing:-.015em;lin
 .button.ghost{background:transparent;color:var(--text)}
 .button.ghost:hover{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
 
-.address{margin-top:26px}
 .address{margin-top:24px}
 .addr{display:flex;flex-direction:column;align-items:flex-start;gap:5px;max-width:100%;margin-top:20px;font-family:var(--mono);font-size:13.5px;letter-spacing:.01em;color:var(--text);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:13px 18px;cursor:pointer;overflow-wrap:anywhere;transition:border-color .3s,transform .3s var(--ease)}
 .addr i{font-style:normal;font-size:11px;letter-spacing:.06em;color:var(--accent);white-space:nowrap}
@@ -194,8 +202,18 @@ details[open] .acc{grid-template-rows:1fr}
 .bar{padding:14px 20px}
 /* portrait: shorten the first screen and enlarge touch/small text */
 .hero{padding:44px 0 40px;gap:44px}
-.hero h1{font-size:clamp(30px,11vw,46px)}
+.hero h1{font-size:clamp(40px,11.5vw,64px);line-height:1.08;letter-spacing:-.04em;max-width:11ch}
 .hero h1 br{display:none}
+.hero-subtitle{font-size:16px;margin-top:18px}
+.hero .actions{flex-direction:row;display:grid;grid-template-columns:1fr 1fr;margin-top:26px}
+.hero .button{padding:12px 14px;font-size:13px;gap:8px}
+.hero .hint{font-size:12px;line-height:1.75}
+.hero .addr{margin-top:16px}
+.titleline>div{min-width:0}
+.titleline .eyebrow{font-size:9px;letter-spacing:.12em}
+.titleline .appicon{width:64px;height:64px;border-radius:16px}
+.section-nav{gap:6px}
+.section-nav a{padding:10px;font-size:11px}
 .pair img{width:min(124px,34vw)}
 .pair img:last-child{margin-left:-14px}
 .float{animation-duration:8s}

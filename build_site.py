@@ -18,7 +18,7 @@ def shell(title,body,relative=''):
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05080b"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6f4"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+'depictions/quart17/'}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
-<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css"><script src="{relative}assets/site.js" defer></script></head>
+<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261024-blue"><script src="{relative}assets/site.js" defer></script></head>
 <body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
 <footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><a href="https://x.com/put_story" target="_blank" rel="noopener">X @put_story ↗</a><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
@@ -34,16 +34,17 @@ home=f'''<main>
 <section class="hero">
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">Make your<br>phone look<br>better.</h1>
+<h1 class="reveal" style="--d:.06s">Make your <br>phone look <br><em>better.</em></h1>
+<p class="hero-subtitle reveal" style="--d:.09s">让你的锁屏，更像你。</p>
 <div class="actions reveal" style="--d:.12s">
-<a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a></div>
+<a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a><a class="button ghost" href="depictions/quart17/">探索 Quart17 <span class="arr">↗</span></a></div>
 <button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}" aria-label="复制源地址 · Copy repository URL">{BASE}<i aria-hidden="true">点击复制 · Tap to copy</i></button>
-<p class="hint reveal" style="--d:.24s">请在安装了 Sileo 的 iPhone 上打开。若未唤起 App，可在软件源页面手动添加上方地址。<br><span lang="en">Open on an iPhone with Sileo installed, or add the URL manually in Sources.</span></p>
+<p class="hint reveal" style="--d:.24s">在 iPhone 上打开 Sileo 添加，或复制地址手动添加。<br><span lang="en">Open in Sileo on iPhone, or copy the source URL.</span></p>
 </div>
 {device('')}
 </section>
 <div class="marquee" aria-hidden="true"><div class="mtrack"><div class="mg">{marquee}</div><div class="mg">{marquee}</div></div></div>
-<section class="featured">
+<section class="featured" id="packages">
 <div class="seclabel reveal"><b>01</b><span>FEATURED PACKAGE · 精选插件</span></div>
 <article class="package reveal" style="--d:.08s"><img class="appicon" src="assets/quart17.png" width="96" height="96" alt="Quart17 图标" loading="lazy" decoding="async"><div>
 <div class="ptag">AVAILABLE · 2.7.103</div><h2>Quart17</h2>{duo(zh,en)}
@@ -66,9 +67,10 @@ body=f'''<main>
 <div class="titleline reveal"><img class="appicon" src="../../assets/quart17.png" width="104" height="104" alt="Quart17 图标"><div><p class="eyebrow">LOCK SCREEN, REIMAGINED</p><h1>Quart17</h1><div class="tags"><span>2.7.103</span><span>Put_Story</span><span>iOS 16–17</span></div></div></div>
 <div class="lede reveal" style="--d:.08s">{duo(zh,en)}</div>
 <div class="reveal" style="--d:.14s">{buttons(*downloads)}</div>
+<nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#screenshots">实机效果 / Gallery</a><a href="#changelog">更新记录 / Changelog</a></nav>
 </section>
-<section><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
-<section><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure><figure><img src="../../assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async"><figcaption>配色与排版 · <i lang="en">Colour &amp; layout</i></figcaption></figure></div></section>
+<section id="features"><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
+<section id="screenshots"><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure><figure><img src="../../assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async"><figcaption>配色与排版 · <i lang="en">Colour &amp; layout</i></figcaption></figure></div></section>
 <section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('面向 iOS 16–17 越狱环境；2.7.103 包含 iOS 16 播放器识别兼容调整。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','For jailbroken iOS 16–17 devices. Version 2.7.103 includes an iOS 16 player-detection compatibility adjustment. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
 <section id="changelog"><div class="seclabel reveal"><b>03</b><span>CHANGELOG · 历史更新</span></div>
 <p class="hint reveal" style="--d:.06s">按 GitHub 发布说明、版本提交及本地构建记录整理；日期优先采用发布时间。未记录的改动不作推测。<br><span lang="en">Based on release notes, version commits and local build records; release dates are preferred when available. Undocumented changes are not inferred.</span></p>
@@ -83,6 +85,6 @@ def tab(name,text):return {'class':'DepictionStackView','tabname':name,'views':[
 zh_intro=f'# Quart17 · 2.7.103\n\n{zh}\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in features)+'\n\n### 安装\niOS 16–17 越狱环境。请按环境选择 Rootless / RootHide。安装后前往「设置 → Quart17」。玻璃效果由独立的 Aura 提供。'
 en_intro=f'# Quart17 · 2.7.103\n\n{en}\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in features)+'\n\n### Installation\nFor jailbroken iOS 16–17. Choose Rootless or RootHide for your environment, then configure Settings → Quart17. Glass rendering is provided separately by Aura.'
 log='Historical glass features later moved to Aura. / 历史玻璃功能后续已迁移至 Aura。\n\n'+'\n\n'.join(f'## {r["version"]} · {r["date"]}\n\n{r["zh"]}\n\n{r["en"]}\n\n'+(f'[原始记录 / Source]({r["source"]})' if r['source'] else '本地版本记录 / Local version record') for r in history)
-depiction={'class':'DepictionTabView','minVersion':'0.3','tintColor':'#7FF0D4','tabs':[tab('中文',zh_intro),tab('English',en_intro),tab('更新 / History',log)]}
+depiction={'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',zh_intro),tab('English',en_intro),tab('更新 / History',log)]}
 (detail/'sileo.json').write_text(json.dumps(depiction,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(f'Built bilingual pages and Sileo depiction with {len(history)} history entries')
