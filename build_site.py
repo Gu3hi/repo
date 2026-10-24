@@ -16,11 +16,11 @@ def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
 def shell(title,body,relative=''):
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="theme-color" content="#05080b"><meta name="description" content="Gushi Repo · Quart17 · Lock Screen player and notifications">
+<meta name="color-scheme" content="dark light"><meta name="theme-color" content="#05080b"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css"><script src="{relative}assets/site.js" defer></script></head>
 <body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a><a class="navcta" href="{ADD}">Sileo<i lang="en">Add</i></a></nav></div></header>
 {body}
-<footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><span class="footnote" lang="en">Lock Screen, reimagined.</span><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
+<footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><span class="footnote" lang="en">Crafted tweaks for iOS</span><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
 def buttons(*extra):
     return f'<div class="actions"><a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{"".join(extra)}</div>'
 copybtn=f'<button class="button ghost copy" type="button" data-copy="{BASE}">复制源地址<i lang="en">Copy URL</i></button>'
@@ -31,13 +31,13 @@ def device(relative):
 <div class="player"><div class="art"><img src="{relative}assets/quart17.png" alt=""></div><div class="pmeta"><strong>Quart17</strong><span lang="en">Now Playing · 正在播放</span><div class="pb"><i></i></div></div><div class="pctl"><span>⏮</span><span class="pplay">⏯</span><span>⏭</span></div></div>
 <div class="notif"><img src="{relative}assets/quart17.png" alt=""><div><strong>Quart17</strong><span>通知排版已更新 · <i lang="en">Layout updated</i></span></div><em lang="en">now</em></div>
 </div></div></div></div>'''
-marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['MAKE YOUR LOCK SCREEN YOURS','让锁屏更像你','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
+marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','让系统更像你 · MAKE IOS YOURS','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
 home=f'''<main>
 <section class="hero">
 <div class="herotext">
 <p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">让锁屏更像你。<span lang="en">Make your Lock Screen yours.</span></h1>
-<div class="lede reveal" style="--d:.12s">{duo('播放器、通知和细节，从这里开始。','A home for player, notification and interface tweaks.')}</div>
+<h1 class="reveal" style="--d:.06s">让系统更像你。<span lang="en">Make iOS yours.</span></h1>
+<div class="lede reveal" style="--d:.12s">{duo('播放器、通知、界面细节——精选插件陆续上架。','Players, notifications and interface tweaks — more to come.')}</div>
 <div class="actions reveal" style="--d:.18s">{''}
 <a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{copybtn}</div>
 <div class="address reveal" style="--d:.24s"><code>{BASE}</code></div>
