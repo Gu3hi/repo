@@ -7,7 +7,7 @@ from update_repo import control_from_deb, fields
 
 site = Path(__file__).resolve().parent / 'docs'
 names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
-names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/style.css', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
+names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/style.css', 'assets/site.js', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
