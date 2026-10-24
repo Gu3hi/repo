@@ -16,7 +16,8 @@ def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
 def shell(title,body,relative=''):
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="theme-color" content="#05080b"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
+<meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05080b"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6f4"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
+<meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+'depictions/quart17/'}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
 <title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css"><script src="{relative}assets/site.js" defer></script></head>
 <body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
@@ -27,7 +28,7 @@ def device(relative):
     return f'''<div class="heroart reveal" style="--d:.22s" aria-hidden="true"><div class="glow"></div><div class="float"><div class="device"><div class="screen">
 <div class="island"></div>
 <div class="dt"><span class="dtime">9:41</span><span class="ddate" lang="en">Saturday, October 24</span></div>
-<div class="player"><div class="art"><img src="{relative}assets/quart17.png" alt=""></div><div class="pmeta"><strong>Quart17</strong><span lang="en">Now Playing · 正在播放</span><div class="pb"><i></i></div></div><div class="pctl"><span>⏮</span><span class="pplay">⏯</span><span>⏭</span></div></div>
+<div class="player"><div class="art"><img src="{relative}assets/quart17.png" alt=""></div><div class="pmeta"><strong>Quart17</strong><span lang="en">Now Playing · 正在播放</span><div class="pb"><i></i></div></div><div class="pctl"><span>⏮︎</span><span class="pplay">⏯︎</span><span>⏭︎</span></div></div>
 <div class="notif"><img src="{relative}assets/quart17.png" alt=""><div><strong>Quart17</strong><span>通知排版已更新 · <i lang="en">Layout updated</i></span></div><em lang="en">now</em></div>
 </div></div></div></div>'''
 marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
@@ -38,7 +39,7 @@ home=f'''<main>
 <h1 class="reveal" style="--d:.06s">Make your phone<br>look better.</h1>
 <div class="actions reveal" style="--d:.12s">
 <a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a></div>
-<button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}">{BASE}<i>点击复制 · Tap to copy</i></button>
+<button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}" aria-label="复制源地址 · Copy repository URL">{BASE}<i aria-hidden="true">点击复制 · Tap to copy</i></button>
 <p class="hint reveal" style="--d:.24s">请在安装了 Sileo 的 iPhone 上打开。若未唤起 App，可在软件源页面手动添加上方地址。<br><span lang="en">Open on an iPhone with Sileo installed, or add the URL manually in Sources.</span></p>
 </div>
 {device('')}
@@ -46,7 +47,7 @@ home=f'''<main>
 <div class="marquee" aria-hidden="true"><div class="mtrack"><div class="mg">{marquee}</div><div class="mg">{marquee}</div></div></div>
 <section class="featured">
 <div class="seclabel reveal"><b>01</b><span>FEATURED PACKAGE · 精选插件</span></div>
-<article class="package reveal" style="--d:.08s"><img class="appicon" src="assets/quart17.png" width="96" height="96" alt="Quart17 图标"><div>
+<article class="package reveal" style="--d:.08s"><img class="appicon" src="assets/quart17.png" width="96" height="96" alt="Quart17 图标" loading="lazy" decoding="async"><div>
 <div class="ptag">AVAILABLE · 2.7.103</div><h2>Quart17</h2>{duo(zh,en)}
 <div class="tags"><span>Rootless</span><span>RootHide</span><span>中文 / English</span></div>
 <a class="textlink" href="depictions/quart17/">功能介绍与完整更新记录 / Features &amp; changelog <i class="ta">→</i></a>
@@ -72,7 +73,7 @@ body=f'''<main>
 <section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('面向 iOS 16–17 越狱环境；2.7.103 包含 iOS 16 播放器识别兼容调整。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','For jailbroken iOS 16–17 devices. Version 2.7.103 includes an iOS 16 player-detection compatibility adjustment. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
 <section id="changelog"><div class="seclabel reveal"><b>02</b><span>CHANGELOG · 历史更新</span></div>
 <p class="hint reveal" style="--d:.06s">按 GitHub 发布说明、版本提交及本地构建记录整理；日期优先采用发布时间。未记录的改动不作推测。<br><span lang="en">Based on release notes, version commits and local build records; release dates are preferred when available. Undocumented changes are not inferred.</span></p>
-<div class="count reveal" style="--d:.1s"><b>{len(history)}</b><span>条记录 / <i lang="en">entries</i></span></div>
+<div class="count reveal" style="--d:.1s"><b>{len(history)}</b><span>条记录 / <i lang="en">entries</i></span><button class="toggleall" type="button" aria-expanded="false">展开全部 · Expand all</button></div>
 {''.join(entries)}</section>
 </main>'''
 detail=SITE/'depictions/quart17';detail.mkdir(parents=True,exist_ok=True)

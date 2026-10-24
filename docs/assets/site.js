@@ -63,4 +63,14 @@ function legacyCopy(text){
     }else{legacyCopy(text);showToast('已复制 · Copied')}
   });
 });
+/* expand / collapse all changelog entries */
+var tgl=document.querySelector('.toggleall');
+if(tgl){
+  tgl.addEventListener('click',function(){
+    var expand=tgl.getAttribute('aria-expanded')!=='true';
+    tgl.setAttribute('aria-expanded',String(expand));
+    tgl.textContent=expand?'收起全部 · Collapse all':'展开全部 · Expand all';
+    document.querySelectorAll('#changelog details').forEach(function(d){d.open=expand});
+  });
+}
 })();
