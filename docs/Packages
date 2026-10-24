@@ -1,0 +1,32 @@
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 2.7.103
+Installed-Size: 2416
+Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64.deb
+Size: 967338
+MD5sum: 795ee9eaf572f612a07f80436e394986
+SHA256: d03a1ffb5596a4bcdde429c4fdc18b001ae7c1ca4b2428bee654fa48d431f6f8
+SHA512: 9994927460be023b0fdb8da733136520dfa8426002442355362bd09a1f4959114af481f9cde2820841d8d0864bab3ee6a50571cb2a52c6d3dc4d5398ca09d481
+
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 2.7.103
+Installed-Size: 2416
+Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64e.deb
+Size: 966674
+MD5sum: b7de92bd986def130ab288fa6c6d9f5d
+SHA256: 8f71eb5ddc7fb8ea1b3fc326fa128e7dfc66b3f725c9cda1d24ccd3783aeb6e9
+SHA512: a9db9dfc8b82ed5ce194f34bcdd9e2de3753b76b99610e8054aac30aab8555d6bf74fff06a8a0418d924a16c16dc677dd0c378f4f9f4b3bd29db6e2adb52c9df
+
