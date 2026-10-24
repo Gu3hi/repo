@@ -81,7 +81,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .float{animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
 .pair{display:flex;justify-content:center;align-items:flex-start;transform:perspective(1000px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .3s ease-out}
-.pair img{width:min(182px,40vw);height:auto;border-radius:26px;box-shadow:0 40px 80px -32px rgba(0,0,0,.78),0 0 0 1px var(--line)}
+.pair img{width:min(300px,70vw);height:auto;border-radius:26px;box-shadow:0 40px 80px -32px rgba(0,0,0,.78),0 0 0 1px var(--line)}
 
 /* ── marquee ────────────────────────────── */
 .marquee{overflow:hidden;border-block:1px solid var(--line);padding:17px 0;margin:0 0 clamp(56px,8vw,110px);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
@@ -184,7 +184,7 @@ details[open] .acc{grid-template-rows:1fr}
 /* ── responsive ─────────────────────────── */
 @media(max-width:860px){
 .hero{grid-template-columns:1fr;gap:52px}
-.pair img{width:min(158px,38vw)}
+.pair img{width:min(280px,70vw)}
 .footnote{margin-left:0;width:100%}
 }
 @media(max-width:600px){
@@ -212,7 +212,7 @@ details[open] .acc{grid-template-rows:1fr}
 .titleline .appicon{width:64px;height:64px;border-radius:16px}
 .section-nav{gap:6px}
 .section-nav a{padding:10px;font-size:11px}
-.pair img{width:min(124px,34vw)}
+.pair img{width:min(260px,68vw)}
 .float{animation-duration:8s}
 .marquee{padding:14px 0;margin-bottom:clamp(44px,9vw,72px)}
 .hint{font-size:13.5px}
