@@ -21,7 +21,7 @@ if('IntersectionObserver' in window&&!mReduce.matches){
 }
 
 /* pointer tilt on the lock-screen device (hover-capable, motion-safe only) */
-var dev=document.querySelector('.device');
+var dev=document.querySelector('.tilt');
 if(dev&&matchMedia('(hover:hover)').matches&&!mReduce.matches){
   var raf=null;
   dev.addEventListener('pointermove',function(ev){

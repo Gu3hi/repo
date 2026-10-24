@@ -25,12 +25,10 @@ def shell(title,body,relative=''):
 def buttons(*extra):
     return f'<div class="actions"><a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{"".join(extra)}</div>'
 def device(relative):
-    return f'''<div class="heroart reveal" style="--d:.22s" aria-hidden="true"><div class="glow"></div><div class="float"><div class="device"><div class="screen">
-<div class="island"></div>
-<div class="dt"><span class="dtime">9:41</span><span class="ddate" lang="en">Saturday, October 24</span></div>
-<div class="player"><div class="art"><img src="{relative}assets/quart17.png" alt=""></div><div class="pmeta"><strong>Quart17</strong><span lang="en">Now Playing · 正在播放</span><div class="pb"><i></i></div></div><div class="pctl"><span>⏮︎</span><span class="pplay">⏯︎</span><span>⏭︎</span></div></div>
-<div class="notif"><img src="{relative}assets/quart17.png" alt=""><div><strong>Quart17</strong><span>通知排版已更新 · <i lang="en">Layout updated</i></span></div><em lang="en">now</em></div>
-</div></div></div></div>'''
+    return f'''<div class="heroart reveal" style="--d:.22s"><div class="glow"></div><div class="float"><div class="pair tilt">
+<img src="{relative}assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" decoding="async">
+<img src="{relative}assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async">
+</div></div></div>'''
 marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
 home=f'''<main>
 <section class="hero">
@@ -70,8 +68,9 @@ body=f'''<main>
 <div class="reveal" style="--d:.14s">{buttons(*downloads)}</div>
 </section>
 <section><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
+<section><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure><figure><img src="../../assets/quart17-lock-2.jpg" width="680" height="1311" alt="Quart17 锁屏播放器另一种配色效果" loading="lazy" decoding="async"><figcaption>配色与排版 · <i lang="en">Colour &amp; layout</i></figcaption></figure></div></section>
 <section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('面向 iOS 16–17 越狱环境；2.7.103 包含 iOS 16 播放器识别兼容调整。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','For jailbroken iOS 16–17 devices. Version 2.7.103 includes an iOS 16 player-detection compatibility adjustment. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
-<section id="changelog"><div class="seclabel reveal"><b>02</b><span>CHANGELOG · 历史更新</span></div>
+<section id="changelog"><div class="seclabel reveal"><b>03</b><span>CHANGELOG · 历史更新</span></div>
 <p class="hint reveal" style="--d:.06s">按 GitHub 发布说明、版本提交及本地构建记录整理；日期优先采用发布时间。未记录的改动不作推测。<br><span lang="en">Based on release notes, version commits and local build records; release dates are preferred when available. Undocumented changes are not inferred.</span></p>
 <div class="count reveal" style="--d:.1s"><b>{len(history)}</b><span>条记录 / <i lang="en">entries</i></span><button class="toggleall" type="button" aria-expanded="false">展开全部 · Expand all</button></div>
 {''.join(entries)}</section>
