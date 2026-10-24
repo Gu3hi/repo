@@ -9,9 +9,11 @@ BASE='https://gu3hi.github.io/repo/'
 ADD='sileo://source/'+BASE
 history=json.loads((ROOT/'content/quart17-history.json').read_text(encoding='utf-8'))
 assert history and len({r['version'] for r in history})==len(history)
-zh='Quart17 为越狱设备提供可定制的锁屏音乐播放器、专辑封面、通知排版与缩放，以及下拉清理手势。'
-en='Quart17 brings a customizable Lock Screen music player, album artwork, notification layouts and scaling, and pull-to-clear gestures to jailbroken devices.'
+zh='Quart17 在 iOS 17 上实现 iOS 27 的小时间样式，并为越狱设备提供可定制的锁屏音乐播放器、专辑封面、通知排版与缩放，以及下拉清理手势。'
+en='Quart17 brings the iOS 27-style compact Lock Screen clock to iOS 17, alongside a customizable music player, album artwork, notification layouts and scaling, and pull-to-clear gestures for jailbroken devices.'
 features=[('锁屏音乐播放器','Lock Screen player','播放控制、封面位置与缩放，支持封面进度交互。','Playback controls, artwork positioning and scaling, with artwork-based seeking.'),('通知排版与缩放','Notification layout','调整通知卡片尺寸，让锁屏列表更清晰。','Adjust notification card sizes for a cleaner Lock Screen list.'),('下拉清理手势','Pull to clear','通过手势清理通知，并在设置中调整选项。','Clear notifications with a gesture and customize behavior in Settings.'),('配合 Aura','Works with Aura','当前拆分版的玻璃效果由 Aura 提供；Quart17 保留播放器与通知功能。','Aura provides glass rendering in the current split edition; Quart17 handles player and notification features.')]
+features.insert(0,('iOS 27 小时间','iOS 27-style compact clock','在 iOS 17 上实现 iOS 27 的锁屏小时间样式。','Bring the iOS 27-style compact Lock Screen clock to iOS 17.'))
+
 def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
 def shell(title,body,relative=''):
     return f'''<!doctype html>

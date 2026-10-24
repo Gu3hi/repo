@@ -9,7 +9,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# Quart17 · 2.7.103\n\nQuart17 为越狱设备提供可定制的锁屏音乐播放器、专辑封面、通知排版与缩放，以及下拉清理手势。\n\n### 锁屏音乐播放器\n播放控制、封面位置与缩放，支持封面进度交互。\n\n### 通知排版与缩放\n调整通知卡片尺寸，让锁屏列表更清晰。\n\n### 下拉清理手势\n通过手势清理通知，并在设置中调整选项。\n\n### 配合 Aura\n当前拆分版的玻璃效果由 Aura 提供；Quart17 保留播放器与通知功能。\n\n### 安装\niOS 16–17 越狱环境。请按环境选择 Rootless / RootHide。安装后前往「设置 → Quart17」。玻璃效果由独立的 Aura 提供。",
+          "markdown": "# Quart17 · 2.7.103\n\nQuart17 在 iOS 17 上实现 iOS 27 的小时间样式，并为越狱设备提供可定制的锁屏音乐播放器、专辑封面、通知排版与缩放，以及下拉清理手势。\n\n### iOS 27 小时间\n在 iOS 17 上实现 iOS 27 的锁屏小时间样式。\n\n### 锁屏音乐播放器\n播放控制、封面位置与缩放，支持封面进度交互。\n\n### 通知排版与缩放\n调整通知卡片尺寸，让锁屏列表更清晰。\n\n### 下拉清理手势\n通过手势清理通知，并在设置中调整选项。\n\n### 配合 Aura\n当前拆分版的玻璃效果由 Aura 提供；Quart17 保留播放器与通知功能。\n\n### 安装\niOS 16–17 越狱环境。请按环境选择 Rootless / RootHide。安装后前往「设置 → Quart17」。玻璃效果由独立的 Aura 提供。",
           "useRawFormat": false
         }
       ]
@@ -20,7 +20,7 @@
       "views": [
         {
           "class": "DepictionMarkdownView",
-          "markdown": "# Quart17 · 2.7.103\n\nQuart17 brings a customizable Lock Screen music player, album artwork, notification layouts and scaling, and pull-to-clear gestures to jailbroken devices.\n\n### Lock Screen player\nPlayback controls, artwork positioning and scaling, with artwork-based seeking.\n\n### Notification layout\nAdjust notification card sizes for a cleaner Lock Screen list.\n\n### Pull to clear\nClear notifications with a gesture and customize behavior in Settings.\n\n### Works with Aura\nAura provides glass rendering in the current split edition; Quart17 handles player and notification features.\n\n### Installation\nFor jailbroken iOS 16–17. Choose Rootless or RootHide for your environment, then configure Settings → Quart17. Glass rendering is provided separately by Aura.",
+          "markdown": "# Quart17 · 2.7.103\n\nQuart17 brings the iOS 27-style compact Lock Screen clock to iOS 17, alongside a customizable music player, album artwork, notification layouts and scaling, and pull-to-clear gestures for jailbroken devices.\n\n### iOS 27-style compact clock\nBring the iOS 27-style compact Lock Screen clock to iOS 17.\n\n### Lock Screen player\nPlayback controls, artwork positioning and scaling, with artwork-based seeking.\n\n### Notification layout\nAdjust notification card sizes for a cleaner Lock Screen list.\n\n### Pull to clear\nClear notifications with a gesture and customize behavior in Settings.\n\n### Works with Aura\nAura provides glass rendering in the current split edition; Quart17 handles player and notification features.\n\n### Installation\nFor jailbroken iOS 16–17. Choose Rootless or RootHide for your environment, then configure Settings → Quart17. Glass rendering is provided separately by Aura.",
           "useRawFormat": false
         }
       ]
