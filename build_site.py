@@ -17,7 +17,7 @@ features.insert(0,('iOS 27 小时间','iOS 27-style compact clock','在 iOS 17 �
 def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
 def shell(title,body,relative='',page='depictions/quart17/'):
     is_home=not relative
-    home_style='<link rel="stylesheet" href="assets/home.css?v=20261026">' if is_home else ''
+    home_style='<link rel="stylesheet" href="assets/home.css?v=20261026-vela0419">' if is_home else ''
     home_nav='<a class="navlink" href="#packages">插件</a><a class="navlink" href="#install">安装指南</a>' if is_home else ''
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
