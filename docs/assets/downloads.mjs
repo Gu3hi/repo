@@ -44,6 +44,9 @@ if (typeof document !== 'undefined') {
           counter.textContent = '暂不可用 / Unavailable';
           counter.setAttribute('aria-label', '下载次数暂不可用 / Download count unavailable');
         });
+        document.querySelectorAll('[data-download-updated]').forEach(element => {
+          element.textContent = '下载统计暂不可用 / Download statistics unavailable';
+        });
       });
   }
 }
