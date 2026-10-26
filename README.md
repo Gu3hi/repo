@@ -8,7 +8,7 @@
 网站提供 `sileo://source/https://gu3hi.github.io/repo/` 添加按钮及手动添加地址。
 Quart17 的 HTML 介绍和原生 Sileo 详情均由 `build_site.py` 生成；索引中的 Icon、Depiction 和 SileoDepiction 指向对应资源。
 
-中英文历史数据保存在 `content/quart17-history.json`，覆盖已找到的 28 条版本记录；每条注明发布/提交来源或本地记录，未知改动明确标记。旧版本的玻璃功能不作为当前版本能力宣传。
+中英文历史数据保存在 `content/quart17-history.json`，覆盖已找到的 29 条版本记录；每条注明发布/提交来源或本地记录，未知改动明确标记。旧版本的玻璃功能不作为当前版本能力宣传。
 编辑历史或页面生成逻辑后依次运行 `python build_site.py`、`python update_repo.py`、`python verify.py` 再提交。安装包本体不因详情更新而改变。
 
 GitHub Pages 从 `main` 分支的 `docs/` 发布。该目录包含平面 APT 源的
@@ -35,3 +35,9 @@ deb https://gu3hi.github.io/repo/ ./
 2026-10-26：发布 Quart17 2.7.112 RootHide/rootless 双包，并更新中英文介绍与历史。本版最低系统为 iOS 17；RootHide 经用户真机测试确认，rootless 已构建验包但尚未真机测试。
 
 部署配置参考：[GitHub Pages API](https://docs.github.com/en/rest/pages/pages#create-a-github-pages-site)。
+
+## 网站首页
+
+首页由 `build_site.py` 生成，独立样式位于 `docs/assets/home.css`。实机视图切换使用仓库中现有的两张截图；不改变安装包与原生 Sileo 描述。Geist 字体随站点本地提供，许可证见 `docs/assets/Geist-OFL.txt`。
+
+本地预览：python -m http.server 8766 --bind 127.0.0.1 --directory docs，打开 http://127.0.0.1:8766/。修改后运行 python build_site.py 和 python verify.py。

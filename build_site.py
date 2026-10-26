@@ -16,50 +16,70 @@ features.insert(0,('iOS 27 小时间','iOS 27-style compact clock','在 iOS 17 �
 
 def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
 def shell(title,body,relative='',page='depictions/quart17/'):
+    is_home=not relative
+    home_style='<link rel="stylesheet" href="assets/home.css?v=20261026">' if is_home else ''
+    home_nav='<a class="navlink" href="#packages">插件</a><a class="navlink" href="#install">安装指南</a>' if is_home else ''
     return f'''<!doctype html>
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#05080b"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3f6f4"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
+<meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f3"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+page}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
-<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261024-large"><script src="{relative}assets/site.js" defer></script></head>
-<body><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}"><img src="{relative}CydiaIcon.png" width="34" height="34" alt="Gushi 头像"><span>Gushi<b>Repo</b></span></a><nav><a class="navlink" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
+<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261026-source">{home_style}<script src="{relative}assets/site.js?v=20261026" defer></script></head>
+<body class="{'home-page' if is_home else 'detail-page'}"><a class="skip-link" href="#main">跳至内容 · Skip to content</a><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}" aria-label="Gushi Repo 首页"><img src="{relative}CydiaIcon.png" width="34" height="34" alt=""><span>Gushi<b>Repo</b></span></a><nav aria-label="主导航">{home_nav}<a class="navlink social" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
 <footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><a href="https://x.com/put_story" target="_blank" rel="noopener">X @put_story ↗</a><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
 def buttons(*extra):
     return f'<div class="actions"><a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a>{"".join(extra)}</div>'
-def device(relative):
-    return f'''<div class="heroart reveal" style="--d:.22s"><div class="glow"></div><div class="float"><div class="pair tilt">
-<img src="{relative}assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" decoding="async">
-</div></div></div>'''
-marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.112','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
-home=f'''<main>
-<section class="hero">
-<div class="herotext">
-<p class="eyebrow reveal">GUSHI · JAILBREAK REPOSITORY</p>
-<h1 class="reveal" style="--d:.06s">Make your <br>phone look <br><em>better.</em></h1>
-<p class="hero-subtitle reveal" style="--d:.09s">让你的锁屏，更像你。</p>
-<div class="actions reveal" style="--d:.12s">
-<a class="button primary" href="{ADD}"><span class="bl">在 Sileo 中添加<i lang="en">Add to Sileo</i></span><span class="arr">→</span></a><a class="button ghost" href="depictions/quart17/">探索 Quart17 <span class="arr">↗</span></a></div>
-<button class="addr copy reveal" style="--d:.18s" type="button" data-copy="{BASE}" aria-label="复制源地址 · Copy repository URL">{BASE}<i aria-hidden="true">点击复制 · Tap to copy</i></button>
-<p class="hint reveal" style="--d:.24s">在 iPhone 上打开 Sileo 添加，或复制地址手动添加。<br><span lang="en">Open in Sileo on iPhone, or copy the source URL.</span></p>
+home=f'''<main id="main">
+<section class="source-hero" aria-labelledby="hero-title">
+<div class="hero-copy">
+<p class="kicker reveal"><span class="status-dot" aria-hidden="true"></span> 独立开发，为你的 iPhone <span lang="en">Made by Put_Story</span></p>
+<h1 id="hero-title" class="reveal" style="--d:.08s">熟悉的 iPhone。<br>更喜欢的样子。</h1>
+<p class="hero-english reveal" lang="en" style="--d:.16s">Your iPhone. A little more you.</p>
+<p class="hero-description reveal" style="--d:.24s">从锁屏的音乐，到界面的玻璃质感。<br>为越狱后的日常，添一点自己的风格。</p>
+<div class="hero-actions reveal" style="--d:.32s"><a class="source-button" href="{ADD}">添加到 Sileo <span aria-hidden="true">↗</span></a><span class="action-caption" lang="en">Add the source.<br>Make it yours.</span></div>
+<button class="source-copy copy reveal" style="--d:.4s" type="button" data-copy="{BASE}" aria-label="复制源地址 · Copy repository URL"><span>gu3hi.github.io/repo/</span><span class="copy-label">复制地址 <span aria-hidden="true">⧉</span></span></button>
+<div class="hero-support reveal" style="--d:.48s"><span>Rootless / RootHide</span><span>中文 / English</span></div>
 </div>
-{device('')}
+<figure class="device-stage reveal" style="--d:.24s">
+<div class="device-meta"><span>Quart17</span><span>ON DEVICE / 实机效果</span></div>
+<div class="device-view" id="device-preview"><img class="wallpaper-shot" aria-hidden="true" src="assets/quart17-lock-2.jpg" width="680" height="1311" alt="同一设备的壁纸视图" decoding="async"><img class="player-shot" src="assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏音乐播放器实机效果" decoding="async" fetchpriority="high"></div>
+<figcaption><div class="view-switch" role="group" aria-label="切换实机视图 · Device preview"><button type="button" data-preview="player" aria-controls="device-preview" aria-pressed="true">音乐播放器</button><button type="button" data-preview="wallpaper" aria-controls="device-preview" aria-pressed="false">壁纸视图</button></div><span class="preview-note">点击，换个视角 <span aria-hidden="true">↗</span></span></figcaption>
+</figure>
 </section>
-<div class="marquee" aria-hidden="true"><div class="mtrack"><div class="mg">{marquee}</div><div class="mg">{marquee}</div></div></div>
-<section class="featured" id="packages">
-<div class="seclabel reveal"><b>01</b><span>FEATURED PACKAGE · 精选插件</span></div>
-<article class="package reveal" style="--d:.08s"><img class="appicon" src="assets/quart17.png" width="96" height="96" alt="Quart17 图标" loading="lazy" decoding="async"><div>
-<div class="ptag">AVAILABLE · 2.7.112</div><h2>Quart17</h2>{duo(zh,en)}
-<div class="tags"><span>Rootless</span><span>RootHide</span><span>中文 / English</span></div>
-<a class="textlink" href="depictions/quart17/">功能介绍与完整更新记录 / Features &amp; changelog <i class="ta">→</i></a>
-</div></article>
-<article class="package reveal"><img class="appicon" src="assets/aura.png" width="96" height="96" alt="Aura 图标" loading="lazy" decoding="async"><div>
-<div class="ptag">PRERELEASE · 1.2.23</div><h2>Aura</h2>{duo('为控制中心、Dock、文件夹与应用组件带来玻璃效果，可与 Quart17 配合使用。','Glass effects for Control Center, the Dock, folders and app components. Works alongside Quart17.')}
-<div class="tags"><span>Rootless</span><span>RootHide</span><span>预发布 / Prerelease</span></div>
-<a class="textlink" href="depictions/aura/">功能介绍与更新记录 / Features &amp; changelog <i class="ta">→</i></a>
-<p class="hint">{e('1.2.23 入场时机修订包；安装后真机验收尚未完成。')}<br><span lang="en">Corrected alert presentation build. Post-install device validation is pending.</span></p>
-</div></article>
-<aside class="note reveal" style="--d:.14s"><h3>架构提示 <i lang="en">Pick your jailbreak</i></h3>{duo('仅发布匹配越狱环境的安装包；不要仅凭设备处理器型号选择架构。','Choose the package for your jailbreak environment, not just your device’s processor.')}</aside>
+<section class="collection" id="packages" aria-labelledby="collection-title">
+<div class="section-heading reveal"><div><p class="section-index">01 / THE COLLECTION</p><h2 id="collection-title">各有所长，一起刚好。</h2></div><p lang="en">Small details.<br>A different everyday.</p></div>
+<div class="product-grid">
+<article class="product-card quart-card reveal">
+<div class="product-top"><img src="assets/quart17.png" width="64" height="64" alt="Quart17 图标" loading="lazy"><span class="version-label">2.7.112 <span>当前版本 / Current</span></span></div>
+<h3>Quart17</h3><p class="product-lead">让锁屏，跟着你的节奏。</p><p class="product-english" lang="en">A Lock Screen that feels like you.</p>
+<p class="product-description">小时间、音乐播放器、专辑封面与通知排版。<br>从一眼看见，到随手操控，都由你来调整。</p><p class="product-description en" lang="en">Compact clock, music controls, album artwork and notification layouts. Customize the details you see and use.</p>
+<ul class="feature-list"><li>锁屏播放器 <span lang="en">Music player</span></li><li>通知布局与缩放 <span lang="en">Notification layout</span></li><li>下拉清理手势 <span lang="en">Pull to clear</span></li></ul>
+<div class="product-bottom"><span>Rootless · RootHide</span><a href="depictions/quart17/" class="product-link" aria-label="探索 Quart17 功能与更新记录">探索 Quart17 <span aria-hidden="true">↗</span></a></div>
+</article>
+<article class="product-card aura-card reveal" style="--d:.09s">
+<div class="product-top"><img src="assets/aura.png" width="64" height="64" alt="Aura 图标" loading="lazy"><span class="version-label">1.2.23 <span>预发布 / Prerelease</span></span></div>
+<h3>Aura</h3><p class="product-lead">给日常界面，一点通透。</p><p class="product-english" lang="en">A softer view of the familiar.</p>
+<p class="product-description">控制中心、Dock、文件夹与应用组件的玻璃效果。可独立配置，也可与 Quart17 配合使用。</p><p class="product-description en" lang="en">Glass effects for Control Center, the Dock, folders and app components. Configurable on its own, or alongside Quart17.</p>
+<aside class="release-note"><span class="status-dot" aria-hidden="true"></span><div><strong>预发布说明</strong><p>1.2.23 入场时机修订包，安装后真机验收尚未完成。</p><p lang="en">Corrected alert presentation build. Post-install device validation is pending.</p></div></aside>
+<div class="product-bottom"><span>Rootless · RootHide</span><a href="depictions/aura/" class="product-link" aria-label="探索 Aura 功能与更新记录">探索 Aura <span aria-hidden="true">↗</span></a></div>
+</article>
+</div>
 </section>
+<section class="manifesto" aria-label="设计理念"><p class="section-index">MADE FOR THE EVERYDAY</p><h2><span class="word-reveal">不必</span><span class="word-reveal" style="--word-delay:.08s">换一部</span><span class="word-reveal" style="--word-delay:.16s">手机。</span><br><span class="word-reveal" style="--word-delay:.24s">换一种，</span><span class="word-reveal" style="--word-delay:.32s">每天见面的</span><span class="word-reveal" style="--word-delay:.4s">方式。</span></h2><p lang="en">Keep the iPhone you know.<br>Make the everyday feel your own.</p></section>
+<section class="installation" id="install" aria-labelledby="install-title">
+<div class="section-heading reveal"><div><p class="section-index">02 / GET STARTED</p><h2 id="install-title">三步，开始定制。</h2></div><a class="source-button" href="{ADD}">添加到 Sileo <span aria-hidden="true">↗</span></a></div>
+<div class="install-steps"><article class="reveal"><span class="step-number">01</span><h3>添加软件源</h3><p>在 iPhone 上点击添加；或复制下方地址，在 Sileo 的软件源中手动添加。</p><p class="en" lang="en">Open in Sileo on iPhone, or add the source URL manually.</p></article><article class="reveal" style="--d:.08s"><span class="step-number">02</span><h3>选对越狱环境</h3><p>Rootless 与 RootHide 安装包不可混用。按越狱环境选择，不按处理器型号选择。</p><p class="en" lang="en">Match your jailbreak environment. Rootless and RootHide packages are not interchangeable.</p></article><article class="reveal" style="--d:.16s"><span class="step-number">03</span><h3>调整成喜欢的样子</h3><p>安装后，进入「设置」中的插件页面配置。兼容性与版本说明请查看插件详情。</p><p class="en" lang="en">Configure the tweak in Settings. Check its detail page for compatibility and release notes.</p></article></div>
+<div class="source-address reveal"><div><span>软件源地址 / Repository URL</span><p>{BASE}</p></div><button class="copy" type="button" data-copy="{BASE}">复制地址 / Copy <span aria-hidden="true">⧉</span></button></div>
+</section>
+<section class="source-faq" aria-labelledby="faq-title"><div class="section-heading reveal"><div><p class="section-index">03 / GOOD TO KNOW</p><h2 id="faq-title">安装前，了解这些。</h2></div></div>
+<div class="faq-grid">
+<details><summary>支持哪些 iOS 版本？ <span aria-hidden="true">＋</span></summary>{duo('当前 Quart17 2.7.112 要求 iOS 17；Aura 面向 iOS 16–17 越狱环境。请查看各自详情页的兼容性与测试状态。','Quart17 2.7.112 requires iOS 17. Aura targets jailbroken iOS 16–17. Check each detail page for compatibility and testing status.')}</details>
+<details><summary>Rootless 和 RootHide 怎么选？ <span aria-hidden="true">＋</span></summary>{duo('Rootless 对应 iphoneos-arm64，RootHide 对应 iphoneos-arm64e。请按实际越狱环境选择，不要仅看处理器型号。','Use iphoneos-arm64 for Rootless and iphoneos-arm64e for RootHide. Choose by your jailbreak environment, not the processor.')}</details>
+<details><summary>Quart17 自带玻璃效果吗？ <span aria-hidden="true">＋</span></summary>{duo('当前拆分版由 Aura 提供玻璃效果，Quart17 保留播放器与通知等功能。需要玻璃效果时请另行安装 Aura。','In the current split edition, Aura provides glass rendering. Install it separately alongside Quart17 for glass effects.')}</details>
+<details><summary>Aura 当前是正式版吗？ <span aria-hidden="true">＋</span></summary>{duo('当前上架的 1.2.23 是预发布包，安装后真机验收尚未完成。请先阅读 Aura 详情页中的状态说明。','The listed 1.2.23 build is a prerelease. Post-install device validation is pending. Read the status notes before installing.')}</details>
+<details><summary>在哪里查看完整更新记录？ <span aria-hidden="true">＋</span></summary><p>在 <a href="depictions/quart17/#changelog">Quart17 更新记录</a>与 <a href="depictions/aura/#changelog">Aura 更新记录</a>中查看中英文说明。</p><p class="en" lang="en">Both detail pages include a bilingual changelog.</p></details>
+<details><summary>点击添加没有打开 Sileo？ <span aria-hidden="true">＋</span></summary>{duo('请在已安装 Sileo 的 iPhone 上打开本页。也可以复制软件源地址，在 Sileo 中手动添加。','Open this page on an iPhone with Sileo installed, or copy the repository URL and add it manually.')}</details>
+</div></section>
 </main>'''
 cards=''.join(f'<article class="reveal" style="--d:{i*.06:.2f}s"><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(features))
 entries=[]
@@ -68,7 +88,7 @@ for i,row in enumerate(history):
     source=f'<a href="{e(row["source"],quote=True)}">原始记录 / Source ↗</a>' if row['source'] else '<span>本地版本记录 / Local version record</span>'
     entries.append(f'<details {"open" if i==0 else ""}><summary><b>{e(row["version"])}</b><time>{e(row["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="acc"><div class="entry">{duo(row["zh"],row["en"])}<div class="source">{source}</div></div></div></details>')
 downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.quart17_2.7.112_{arch}.deb"><span class="bl">{label} · 2.7.112<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
-body=f'''<main>
+body=f'''<main id="main">
 <section class="dhero">
 <a class="back" href="../../">← Gushi Repo</a>
 <div class="titleline reveal"><img class="appicon" src="../../assets/quart17.png" width="104" height="104" alt="Quart17 图标"><div><p class="eyebrow">LOCK SCREEN, REIMAGINED</p><h1>Quart17</h1><div class="tags"><span>2.7.112</span><span>Put_Story</span><span>iOS 17</span></div></div></div>
@@ -85,7 +105,7 @@ body=f'''<main>
 {''.join(entries)}</section>
 </main>'''
 detail=SITE/'depictions/quart17';detail.mkdir(parents=True,exist_ok=True)
-(SITE/'index.html').write_text(shell('Gushi Repo · Quart17',home),encoding='utf-8',newline='\n')
+(SITE/'index.html').write_text(shell('Gushi Repo · 为你的 iPhone 添一点风格',home),encoding='utf-8',newline='\n')
 (detail/'index.html').write_text(shell('Quart17 · 介绍与历史更新 / Features & Changelog',body,'../../'),encoding='utf-8',newline='\n')
 def markdown(text):return {'class':'DepictionMarkdownView','markdown':text,'useRawFormat':False}
 def tab(name,text):return {'class':'DepictionStackView','tabname':name,'views':[markdown(text)]}
@@ -115,7 +135,7 @@ aura_status_en='The repository hosts the revised 1.2.23 packages. This remains a
 aura_cards=''.join(f'<article><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(aura_features))
 aura_entries=''.join(f'<details {"open" if i==0 else ""}><summary><b>{e(r["version"])}</b><time>{e(r["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="entry">{duo(r["zh"],r["en"])}<p class="source"><a href="{e(r["source"])}">原始发布说明 / Release notes ↗</a></p></div></details>' for i,r in enumerate(aura_history))
 aura_downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.aura_1.2.23_{arch}.deb"><span class="bl">{label} · 1.2.23<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
-aura_body=f'''<main><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
+aura_body=f'''<main id="main"><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
 <div class="titleline"><img class="appicon" src="../../assets/aura.png" width="104" height="104" alt="Aura 图标"><div><p class="eyebrow">GLASS, YOUR WAY</p><h1>Aura</h1><div class="tags"><span>1.2.23</span><span>iOS 16–17</span><span>预发布 / Prerelease</span></div></div></div>
 <div class="lede">{duo(aura_zh,aura_en)}</div>{buttons(*aura_downloads)}
 <nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#installation">安装 / Installation</a><a href="#changelog">更新记录 / Changelog</a></nav></section>

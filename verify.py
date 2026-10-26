@@ -10,6 +10,7 @@ names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
 names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/quart17-lock-1.jpg', 'assets/quart17-lock-2.jpg', 'assets/style.css', 'assets/site.js', 'depictions/quart17/index.html', 'depictions/quart17/sileo.json']
 names += ['assets/aura.png']
 names += ['depictions/aura/index.html', 'depictions/aura/sileo.json']
+names += ['assets/home.css', 'assets/Geist.woff2', 'assets/Geist-OFL.txt']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -63,6 +64,12 @@ for line in data['Release'].decode().splitlines():
 assert checked == 9
 assert data['CydiaIcon.png'].startswith(b'\x89PNG\r\n\x1a\n')
 assert data['assets/quart17.png'].startswith(b'\x89PNG\r\n\x1a\n')
+assert data['assets/Geist.woff2'].startswith(b'wOF2')
+home = data['index.html'].decode()
+assert 'assets/home.css' in home and 'class="home-page"' in home
+assert home.count('data-preview=') == 2 and home.count('aria-pressed="true"') == 1
+assert all(f'id="{anchor}"' in home for anchor in ('main', 'packages', 'install', 'device-preview'))
+assert '预发布 / Prerelease' in home and 'Post-install device validation is pending.' in home
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(); self.links=[]
