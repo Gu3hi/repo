@@ -1,0 +1,37 @@
+{
+  "updated_at": "2026-10-26T07:48:52.507081+00:00",
+  "assets": [
+    {
+      "name": "com.gushi.aura_1.2.23_iphoneos-arm64.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.aura_1.2.23_iphoneos-arm64e.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64e.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64e.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.vela_0.4.19_iphoneos-arm64.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.vela_0.4.19_iphoneos-arm64e.deb",
+      "download_count": 0
+    }
+  ]
+}

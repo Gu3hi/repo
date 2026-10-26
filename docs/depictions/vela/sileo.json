@@ -8,6 +8,17 @@
       "tabname": "中文",
       "views": [
         {
+          "class": "DepictionVideoView",
+          "URL": "https://gu3hi.github.io/repo/assets/vela-promo.mp4",
+          "width": 352,
+          "height": 220,
+          "alignment": 1,
+          "cornerRadius": 16,
+          "autoplay": false,
+          "showPlaybackControls": true,
+          "loop": false
+        },
+        {
           "class": "DepictionMarkdownView",
           "markdown": "# Vela · 0.4.19\n\nVela 将连接开关、亮度与音量、音乐和快捷控制集中在浮动面板中，支持独立配色、图标主题与玻璃外观。\n\n### 连接与电源\n在连接模块内右滑切换到电源控制；长按支持的模块打开二级页面。\n\n### 亮度、音量与音乐\n调整亮度与音量，查看音乐信息与控制播放；可使用当前封面作为音乐模块背景。\n\n### 快捷指令第二页\n在面板空白或边缘横滑切换页面。从手机已有快捷指令中选择，系统负责执行；快捷页两列最多显示四行，更多内容上下滚动。\n\n### 2×1 快捷按钮（测试中）\n宽按钮只显示图标，可独立启用与排序；与快捷指令共用第二页，支持范围以设置中的可选项目为准。\n\n### 配色、主题与玻璃\n配色预设、明暗外观、自定义背景、系统图标与静态／动态图标主题均可配置。玻璃效果默认关闭，可独立启用；这些功能无需激活码。\n\n### 首次展开与功能导览\n默认从左右两侧底部上滑呼出，中间保留 Home 手势。可选择首次显示 1、2、3 个或全部控制区块，二次上拉展开；首次空配置提供可跳过、可重放的三步手势引导。\n\n### 功能范围\n这是浮动控制中心插件，不替代锁屏通知播放器，也不提供跨 App 全局玻璃。快捷指令执行能力取决于 iOS 和指令自身；需要交互的指令可能显示系统提示或打开快捷指令 App。Vela Studio 是独立配套 App，不包含在本插件安装包中。\n\n### 安装\n最低部署版本为 iOS 16。按实际越狱环境选择一个包：RootHide 为 iphoneos-arm64e，Rootless 为 iphoneos-arm64，不可混装。安装后前往「设置 → Vela」配置；已有用户保存的呼出设置继续生效。\n\n两种环境的安装包均包含 arm64 与 arm64e 二进制切片，并独立构建、验包。0.4.19 的面板与功能导览通过 2228 项模拟器 UIKit 检查；本次安装包尚未完成手机安装验收，Rootless 尚未真机测试。模拟器和编译结果不代表所有 iOS 版本均已实机兼容。",
           "useRawFormat": false
@@ -18,6 +29,17 @@
       "class": "DepictionStackView",
       "tabname": "English",
       "views": [
+        {
+          "class": "DepictionVideoView",
+          "URL": "https://gu3hi.github.io/repo/assets/vela-promo.mp4",
+          "width": 352,
+          "height": 220,
+          "alignment": 1,
+          "cornerRadius": 16,
+          "autoplay": false,
+          "showPlaybackControls": true,
+          "loop": false
+        },
         {
           "class": "DepictionMarkdownView",
           "markdown": "# Vela · 0.4.19\n\nVela brings connectivity, brightness, volume, music and quick controls together in a floating panel, with custom colors, icon themes and glass appearance.\n\n### Connectivity and power\nSwipe right inside Connectivity to reveal power controls. Hold supported modules to open their detailed controls.\n\n### Brightness, volume and music\nAdjust brightness and volume, view music information and control playback. Optionally use current artwork as the music module background.\n\n### Shortcuts on a second page\nSwipe across blank panel space or its edge to switch pages. Choose existing shortcuts on your iPhone and let the system run them. The quick page shows two columns and up to four visible rows, with vertical scrolling for overflow.\n\n### 2×1 quick buttons (Beta)\nIcon-only wide buttons can be enabled and reordered on the second page alongside shortcuts. Available actions are those offered in Settings.\n\n### Colors, themes and glass\nConfigure color presets, light and dark appearance, custom backgrounds, system icons and static or animated icon themes. Glass is optional and disabled by default. These features do not require an activation code.\n\n### Initial expansion and feature tour\nOpen from either bottom corner by default, leaving the middle for the Home gesture. Show one, two, three or all control sections initially, then pull up again to expand. Fresh configurations receive a skippable three-gesture tour that can be replayed in Settings.\n\n### Scope\nThis is a floating Control Center tweak. It does not replace the Lock Screen notification player or provide glass throughout other apps. Shortcut execution depends on iOS and each shortcut; interactive shortcuts may show system prompts or open the Shortcuts app. Vela Studio is a separate companion app and is not included in these packages.\n\n### Installation\nThe minimum deployment target is iOS 16. Install one package matching your jailbreak: iphoneos-arm64e for RootHide, or iphoneos-arm64 for Rootless. Configure Settings → Vela after installation. Existing saved activation gestures are preserved.\n\nBoth package variants contain arm64 and arm64e binary slices and are built and inspected independently. The 0.4.19 panel and tour passed 2,228 simulator UIKit checks. These release packages have not completed on-device installation acceptance; Rootless has not been tested on a physical device. Simulator and build checks do not establish compatibility on every iOS release.",

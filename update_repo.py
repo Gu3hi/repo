@@ -5,6 +5,10 @@ from datetime import datetime, timezone
 from email.utils import format_datetime
 
 ROOT = Path(__file__).resolve().parent / 'docs'
+DOWNLOAD_BASE = 'https://github.com/Gu3hi/repo/releases/download/packages/'
+
+def download_url(name):
+    return DOWNLOAD_BASE + name
 
 def control_from_deb(data):
     assert data[:8] == b'!<arch>\n', 'Invalid DEB archive'
@@ -49,7 +53,7 @@ def main():
             entry += '\nIcon: https://gu3hi.github.io/repo/assets/vela.png'
             entry += '\nDepiction: https://gu3hi.github.io/repo/depictions/vela/'
             entry += '\nSileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json'
-        entry += f'\nFilename: {path.relative_to(ROOT).as_posix()}\nSize: {len(data)}\n'
+        entry += f'\nFilename: {download_url(path.name)}\nSize: {len(data)}\n'
         for key, algorithm in [('MD5sum', 'md5'), ('SHA256', 'sha256'), ('SHA512', 'sha512')]:
             entry += f'{key}: {hashlib.new(algorithm, data).hexdigest()}\n'
         entries.append(entry)

@@ -11,7 +11,7 @@ Installed-Size: 1708
 Icon: https://gu3hi.github.io/repo/assets/aura.png
 Depiction: https://gu3hi.github.io/repo/depictions/aura/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
-Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.23_iphoneos-arm64.deb
 Size: 358606
 MD5sum: ab857e420ea99417ac7c37bb95cb6896
 SHA256: 82df93524f5be61c36941e5c4532f2afa8c1fc25d2386e4b941101acdb5974f6
@@ -30,7 +30,7 @@ Installed-Size: 1708
 Icon: https://gu3hi.github.io/repo/assets/aura.png
 Depiction: https://gu3hi.github.io/repo/depictions/aura/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
-Filename: debs/com.gushi.aura_1.2.23_iphoneos-arm64e.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.23_iphoneos-arm64e.deb
 Size: 357972
 MD5sum: 040da7aaafc0a6414478749849b2617c
 SHA256: be7cb24eb19ca73488cd38d82518bca61065fbe5c19d6f292f97e88dd8a385c4
@@ -49,7 +49,7 @@ Installed-Size: 2416
 Icon: https://gu3hi.github.io/repo/assets/quart17.png
 Depiction: https://gu3hi.github.io/repo/depictions/quart17/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
-Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.7.103_iphoneos-arm64.deb
 Size: 967338
 MD5sum: 795ee9eaf572f612a07f80436e394986
 SHA256: d03a1ffb5596a4bcdde429c4fdc18b001ae7c1ca4b2428bee654fa48d431f6f8
@@ -68,7 +68,7 @@ Installed-Size: 2416
 Icon: https://gu3hi.github.io/repo/assets/quart17.png
 Depiction: https://gu3hi.github.io/repo/depictions/quart17/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
-Filename: debs/com.gushi.quart17_2.7.103_iphoneos-arm64e.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.7.103_iphoneos-arm64e.deb
 Size: 966674
 MD5sum: b7de92bd986def130ab288fa6c6d9f5d
 SHA256: 8f71eb5ddc7fb8ea1b3fc326fa128e7dfc66b3f725c9cda1d24ccd3783aeb6e9
@@ -87,7 +87,7 @@ Installed-Size: 2416
 Icon: https://gu3hi.github.io/repo/assets/quart17.png
 Depiction: https://gu3hi.github.io/repo/depictions/quart17/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
-Filename: debs/com.gushi.quart17_2.7.112_iphoneos-arm64.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.7.112_iphoneos-arm64.deb
 Size: 969664
 MD5sum: 4abcbbd08faa99ab0099bcd32ed024b5
 SHA256: a9c7f371df40c57ba26304bc4fe9cf728a551251574ecfb57ec1970a7bd63819
@@ -106,7 +106,7 @@ Installed-Size: 2416
 Icon: https://gu3hi.github.io/repo/assets/quart17.png
 Depiction: https://gu3hi.github.io/repo/depictions/quart17/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
-Filename: debs/com.gushi.quart17_2.7.112_iphoneos-arm64e.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.7.112_iphoneos-arm64e.deb
 Size: 968852
 MD5sum: a44d076ec1555ac61c199e74211062ce
 SHA256: 5b4e881fe59173cd439bd440c748fdfec3017e0cb9fa8d4d1a03c2064a969cae
@@ -127,7 +127,7 @@ Installed-Size: 3616
 Icon: https://gu3hi.github.io/repo/assets/vela.png
 Depiction: https://gu3hi.github.io/repo/depictions/vela/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
-Filename: debs/com.gushi.vela_0.4.19_iphoneos-arm64.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.19_iphoneos-arm64.deb
 Size: 1165988
 MD5sum: 49331669bee93924c9581daa1960a3ea
 SHA256: 8e02386204929d93f03af2f91c651a1a8ac013c1fd28e106beee3e74a91a8752
@@ -148,7 +148,7 @@ Installed-Size: 3616
 Icon: https://gu3hi.github.io/repo/assets/vela.png
 Depiction: https://gu3hi.github.io/repo/depictions/vela/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
-Filename: debs/com.gushi.vela_0.4.19_iphoneos-arm64e.deb
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.19_iphoneos-arm64e.deb
 Size: 1165522
 MD5sum: f7bc3b74d42d0755ea362f48ab4080fa
 SHA256: 6f9c740ebc3ba54008d0deaec14449c8bdf46ccd3e1305ce3d88ffb40da45b45

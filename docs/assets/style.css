@@ -77,6 +77,22 @@ h1 em{font-style:normal;color:var(--accent)}
 .hint a{color:var(--accent);text-decoration:underline;text-underline-offset:3px}
 
 /* ── device mockup (signature) ──────────── */
+.download-summary{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-top:16px;color:var(--muted);font-size:14px;line-height:20px}
+.download-summary strong{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
+.download-stats{margin-top:24px;max-width:680px;font-size:14px;line-height:20px;color:var(--muted)}
+.download-stats summary{display:flex;align-items:baseline;gap:8px 16px;flex-wrap:wrap;cursor:pointer;min-height:48px;padding:12px 0}
+.download-stats summary .download-summary{margin:0}
+.download-stats summary>span:last-child{font-size:12px;line-height:16px}
+.download-stats dl{margin:8px 0 16px;display:grid;gap:8px}
+.download-stats dl>div{display:flex;justify-content:space-between;gap:16px}
+.download-stats dd{margin:0;color:var(--text);font-variant-numeric:tabular-nums}
+.download-stats p+p{margin-top:8px}
+.promo-video{margin:24px 0 0}
+.promo-video video{display:block;width:100%;height:auto;aspect-ratio:8/5;background:#181818;border-radius:16px}
+.promo-video figcaption{display:flex;justify-content:space-between;gap:8px 16px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:12px;line-height:16px}
+.promo-video a{padding:8px 0;color:var(--accent)}
+.promo-video figcaption>span{padding:8px 0}
+
 .heroart{position:relative;display:flex;justify-content:center}
 .glow{position:absolute;inset:-28%;background:radial-gradient(46% 40% at 50% 46%,color-mix(in srgb,var(--accent) 17%,transparent),transparent 70%);filter:blur(8px);pointer-events:none}
 .float{animation:floaty 7s ease-in-out infinite}

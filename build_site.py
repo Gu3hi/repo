@@ -2,6 +2,7 @@
 from pathlib import Path
 from html import escape as e
 import json
+from update_repo import control_from_deb, fields, download_url
 
 ROOT=Path(__file__).resolve().parent
 SITE=ROOT/'docs'
@@ -15,6 +16,24 @@ features=[('锁屏音乐播放器','Lock Screen player','播放控制、封面�
 features.insert(0,('iOS 27 小时间','iOS 27-style compact clock','在 iOS 17 上实现 iOS 27 的锁屏小时间样式。','Bring the iOS 27-style compact Lock Screen clock to iOS 17.'))
 
 def duo(a,b):return f'<p>{e(a)}</p><p class="en" lang="en">{e(b)}</p>'
+
+packages=[]
+for path in sorted((SITE/'debs').glob('*.deb')):
+    info={key:value.strip() for key,value in fields(control_from_deb(path.read_bytes())).items()}
+    packages.append(dict(name=path.name,package=info['Package'],version=info['Version'],architecture=info['Architecture']))
+
+def download_count(names):
+    return f'<span data-download-files="{e(" ".join(names),quote=True)}" aria-label="正在读取下载次数 / Loading download count">—</span>'
+
+def download_summary(package):
+    return f'<p class="download-summary">下载次数 / Downloads <strong>{download_count([p["name"] for p in packages if p["package"]==package])}</strong></p>'
+
+def download_stats(package):
+    rows=''.join(f'<div><dt>{e(p["version"])} · {"RootHide" if p["architecture"]=="iphoneos-arm64e" else "Rootless"}</dt><dd>{download_count([p["name"]])}</dd></div>' for p in packages if p['package']==package)
+    return f'''<details class="download-stats"><summary><span class="download-summary">下载次数 / Downloads <strong>{download_count([p["name"] for p in packages if p["package"]==package])}</strong></span><span>按版本查看 / By version ＋</span></summary><dl>{rows}</dl><p>自 2026 年 10 月 26 日启用，包含网页和刷新源后通过 Sileo 的 Release 下载；重复下载与校验下载也会累计，不代表安装成功或独立用户。</p><p lang="en">Counting Release downloads since October 26, 2026, including this website and Sileo after refreshing the source. Repeat and verification downloads count too. These are not successful installs or unique users.</p><p class="download-updated" data-download-updated>正在读取更新时间 / Loading update time</p><noscript><p>启用 JavaScript 可读取统计。Enable JavaScript to load counts.</p></noscript></details>'''
+
+def promo_video(relative=''):
+    return f'''<figure class="promo-video"><video controls playsinline preload="none" poster="{relative}assets/vela-promo-poster.jpg" width="1920" height="1200" aria-label="Vela 宣传片：普通与玻璃外观真机演示 / Vela native and glass appearance demo"><source src="{relative}assets/vela-promo.mp4" type="video/mp4">你的浏览器不支持视频播放。Your browser does not support video playback.</video><figcaption><span>Vela · 真机演示 / On device</span><a href="{relative}assets/vela-promo.mp4">单独播放 / Open video ↗</a></figcaption></figure>'''
 def shell(title,body,relative='',page='depictions/quart17/'):
     is_home=not relative
     home_style='<link rel="stylesheet" href="assets/home.css?v=20261026-vela0419">' if is_home else ''
@@ -23,7 +42,7 @@ def shell(title,body,relative='',page='depictions/quart17/'):
 <html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="dark light"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000000"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#f5f5f3"><meta name="description" content="Gushi Repo · Jailbreak tweaks for iOS · 中文 / English">
 <meta property="og:type" content="website"><meta property="og:title" content="{e(title)}"><meta property="og:description" content="Gushi Repo · Jailbreak tweaks for iOS"><meta property="og:url" content="{BASE if not relative else BASE+page}"><meta property="og:image" content="{BASE}CydiaIcon.png"><meta name="twitter:card" content="summary">
-<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261026-source">{home_style}<script src="{relative}assets/site.js?v=20261026" defer></script></head>
+<title>{e(title)}</title><link rel="icon" href="{relative}CydiaIcon.png"><link rel="stylesheet" href="{relative}assets/style.css?v=20261026-downloads">{home_style}<script src="{relative}assets/site.js?v=20261026" defer></script><script type="module" src="{relative}assets/downloads.mjs?v=20261026"></script></head>
 <body class="{'home-page' if is_home else 'detail-page'}"><a class="skip-link" href="#main">跳至内容 · Skip to content</a><header class="top" id="top"><div class="bar"><a class="brand" href="{relative or './'}" aria-label="Gushi Repo 首页"><img src="{relative}CydiaIcon.png" width="34" height="34" alt=""><span>Gushi<b>Repo</b></span></a><nav aria-label="主导航">{home_nav}<a class="navlink social" href="https://x.com/put_story" target="_blank" rel="noopener">X ↗</a><a class="navlink" href="https://github.com/Gu3hi/repo" target="_blank" rel="noopener">GitHub ↗</a></nav></div></header>
 {body}
 <footer class="foot"><div class="bigword" aria-hidden="true">GUSHI REPO</div><div class="footline"><span>Gushi Repo · Put_Story</span><a href="https://x.com/put_story" target="_blank" rel="noopener">X @put_story ↗</a><a href="https://github.com/Gu3hi/Quart17" target="_blank" rel="noopener">Quart17 on GitHub ↗</a></div></footer></body></html>'''
@@ -52,14 +71,17 @@ home=f'''<main id="main">
 <article class="product-card vela-card reveal">
 <div class="product-top"><img src="assets/vela.png" width="64" height="64" alt="Vela 图标" loading="lazy"><span class="version-label">0.4.19 <span>当前版本 / Current</span></span></div>
 <h3>Vela</h3><p class="product-lead">常用控制，一次上滑。</p><p class="product-english" lang="en">Your everyday controls, one swipe away.</p>
+{download_summary('com.gushi.vela')}
 <p class="product-description">连接、音乐、亮度与音量，集中在浮动面板中。横滑进入快捷指令页，自由配置配色、主题和玻璃外观。</p><p class="product-description en" lang="en">Connectivity, music, brightness and volume in one floating panel. Swipe to shortcuts and configure colors, themes and optional glass.</p>
 <ul class="feature-list"><li>快捷指令两列四行 <span lang="en">Two columns, four visible rows</span></li><li>可重放的手势导览 <span lang="en">Replayable gesture tour</span></li><li>配色与主题无需激活 <span lang="en">Colors and themes, no activation</span></li></ul>
+{promo_video()}
 <div class="product-bottom"><span>iOS 16+ · Rootless · RootHide</span><a href="depictions/vela/" class="product-link" aria-label="查看 Vela 功能范围与安装说明">探索 Vela <span aria-hidden="true">↗</span></a></div>
 </article>
 
 <article class="product-card quart-card reveal">
 <div class="product-top"><img src="assets/quart17.png" width="64" height="64" alt="Quart17 图标" loading="lazy"><span class="version-label">2.7.112 <span>当前版本 / Current</span></span></div>
 <h3>Quart17</h3><p class="product-lead">让锁屏，跟着你的节奏。</p><p class="product-english" lang="en">A Lock Screen that feels like you.</p>
+{download_summary('com.gushi.quart17')}
 <p class="product-description">小时间、音乐播放器、专辑封面与通知排版。<br>从一眼看见，到随手操控，都由你来调整。</p><p class="product-description en" lang="en">Compact clock, music controls, album artwork and notification layouts. Customize the details you see and use.</p>
 <ul class="feature-list"><li>锁屏播放器 <span lang="en">Music player</span></li><li>通知布局与缩放 <span lang="en">Notification layout</span></li><li>下拉清理手势 <span lang="en">Pull to clear</span></li></ul>
 <div class="product-bottom"><span>Rootless · RootHide</span><a href="depictions/quart17/" class="product-link" aria-label="探索 Quart17 功能与更新记录">探索 Quart17 <span aria-hidden="true">↗</span></a></div>
@@ -67,6 +89,7 @@ home=f'''<main id="main">
 <article class="product-card aura-card reveal" style="--d:.09s">
 <div class="product-top"><img src="assets/aura.png" width="64" height="64" alt="Aura 图标" loading="lazy"><span class="version-label">1.2.23 <span>预发布 / Prerelease</span></span></div>
 <h3>Aura</h3><p class="product-lead">给日常界面，一点通透。</p><p class="product-english" lang="en">A softer view of the familiar.</p>
+{download_summary('com.gushi.aura')}
 <p class="product-description">控制中心、Dock、文件夹与应用组件的玻璃效果。可独立配置，也可与 Quart17 配合使用。</p><p class="product-description en" lang="en">Glass effects for Control Center, the Dock, folders and app components. Configurable on its own, or alongside Quart17.</p>
 <aside class="release-note"><span class="status-dot" aria-hidden="true"></span><div><strong>预发布说明</strong><p>1.2.23 入场时机修订包，安装后真机验收尚未完成。</p><p lang="en">Corrected alert presentation build. Post-install device validation is pending.</p></div></aside>
 <div class="product-bottom"><span>Rootless · RootHide</span><a href="depictions/aura/" class="product-link" aria-label="探索 Aura 功能与更新记录">探索 Aura <span aria-hidden="true">↗</span></a></div>
@@ -95,13 +118,13 @@ for i,row in enumerate(history):
     assert row['kind'] in ('commit','release','release-reference','local')
     source=f'<a href="{e(row["source"],quote=True)}">原始记录 / Source ↗</a>' if row['source'] else '<span>本地版本记录 / Local version record</span>'
     entries.append(f'<details {"open" if i==0 else ""}><summary><b>{e(row["version"])}</b><time>{e(row["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="acc"><div class="entry">{duo(row["zh"],row["en"])}<div class="source">{source}</div></div></div></details>')
-downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.quart17_2.7.112_{arch}.deb"><span class="bl">{label} · 2.7.112<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
+downloads=''.join(f'<a class="button ghost" href="{download_url(f'com.gushi.quart17_2.7.112_{arch}.deb')}"><span class="bl">{label} · 2.7.112<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
 body=f'''<main id="main">
 <section class="dhero">
 <a class="back" href="../../">← Gushi Repo</a>
 <div class="titleline reveal"><img class="appicon" src="../../assets/quart17.png" width="104" height="104" alt="Quart17 图标"><div><p class="eyebrow">LOCK SCREEN, REIMAGINED</p><h1>Quart17</h1><div class="tags"><span>2.7.112</span><span>Put_Story</span><span>iOS 17</span></div></div></div>
 <div class="lede reveal" style="--d:.08s">{duo(zh,en)}</div>
-<div class="reveal" style="--d:.14s">{buttons(*downloads)}</div>
+<div class="reveal" style="--d:.14s">{buttons(*downloads)}</div>{download_stats("com.gushi.quart17")}
 <nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#screenshots">实机效果 / Gallery</a><a href="#changelog">更新记录 / Changelog</a></nav>
 </section>
 <section id="features"><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
@@ -142,10 +165,10 @@ aura_status_zh='当前上架 1.2.23 同版本修订包，仍为预发布版。�
 aura_status_en='The repository hosts the revised 1.2.23 packages. This remains a prerelease; post-install device validation is pending, and Rootless has not been tested on a physical device.'
 aura_cards=''.join(f'<article><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(aura_features))
 aura_entries=''.join(f'<details {"open" if i==0 else ""}><summary><b>{e(r["version"])}</b><time>{e(r["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="entry">{duo(r["zh"],r["en"])}<p class="source"><a href="{e(r["source"])}">原始发布说明 / Release notes ↗</a></p></div></details>' for i,r in enumerate(aura_history))
-aura_downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.aura_1.2.23_{arch}.deb"><span class="bl">{label} · 1.2.23<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
+aura_downloads=''.join(f'<a class="button ghost" href="{download_url(f'com.gushi.aura_1.2.23_{arch}.deb')}"><span class="bl">{label} · 1.2.23<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
 aura_body=f'''<main id="main"><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
 <div class="titleline"><img class="appicon" src="../../assets/aura.png" width="104" height="104" alt="Aura 图标"><div><p class="eyebrow">GLASS, YOUR WAY</p><h1>Aura</h1><div class="tags"><span>1.2.23</span><span>iOS 16–17</span><span>预发布 / Prerelease</span></div></div></div>
-<div class="lede">{duo(aura_zh,aura_en)}</div>{buttons(*aura_downloads)}
+<div class="lede">{duo(aura_zh,aura_en)}</div>{buttons(*aura_downloads)}{download_stats("com.gushi.aura")}
 <nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#installation">安装 / Installation</a><a href="#changelog">更新记录 / Changelog</a></nav></section>
 <section id="features"><div class="seclabel"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{aura_cards}</div></section>
 <section id="installation" class="note install"><h3>安装与激活 <i lang="en">Installation &amp; activation</i></h3>{duo(aura_install_zh,aura_install_en)}<div class="hint">{duo(aura_status_zh,aura_status_en)}</div><a class="textlink" href="https://github.com/Gu3hi/Aura-Releases/releases">发布与支持 / Releases &amp; support ↗</a></section>
@@ -162,11 +185,12 @@ print(f'Built Aura bilingual pages and Sileo depiction with {len(aura_history)} 
 vela=json.loads((ROOT/'content/vela.json').read_text(encoding='utf-8'))
 vela_dir=SITE/'depictions/vela';vela_dir.mkdir(parents=True,exist_ok=True)
 vela_cards=''.join(f'<article><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(vela['features']))
-vela_downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.vela_{vela["version"]}_{arch}.deb"><span class="bl">{label} · {vela["version"]}<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64e','RootHide'),('iphoneos-arm64','Rootless')])
+vela_downloads=''.join(f'<a class="button ghost" href="{download_url(f'com.gushi.vela_{vela["version"]}_{arch}.deb')}"><span class="bl">{label} · {vela["version"]}<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64e','RootHide'),('iphoneos-arm64','Rootless')])
 vela_body=f'''<main id="main"><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
 <div class="titleline"><img class="appicon" src="../../assets/vela.png" width="104" height="104" alt="Vela 图标"><div><p class="eyebrow">EVERYDAY CONTROLS</p><h1>Vela</h1><div class="tags"><span>{e(vela['version'])}</span><span>iOS 16+</span><span>无需激活 / No activation</span></div></div></div>
-<div class="lede">{duo(vela['zh'],vela['en'])}</div>{buttons(*vela_downloads)}
-<nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#scope">功能范围 / Scope</a><a href="#installation">安装 / Installation</a><a href="#changelog">本次更新 / Release</a></nav></section>
+<div class="lede">{duo(vela['zh'],vela['en'])}</div>{buttons(*vela_downloads)}{download_stats("com.gushi.vela")}
+<nav class="section-nav" aria-label="详情导航"><a href="#film">宣传片 / Film</a><a href="#features">功能 / Features</a><a href="#scope">功能范围 / Scope</a><a href="#installation">安装 / Installation</a><a href="#changelog">本次更新 / Release</a></nav></section>
+<section id="film" aria-label="Vela 宣传片 / Vela film">{promo_video('../../')}</section>
 <section id="features"><div class="seclabel"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{vela_cards}</div></section>
 <section id="scope" class="note install"><h3>功能范围 <i lang="en">Scope</i></h3>{duo(vela['scope_zh'],vela['scope_en'])}</section>
 <section id="installation" class="note install"><h3>安装与验证状态 <i lang="en">Installation and testing</i></h3>{duo(vela['install_zh'],vela['install_en'])}<div class="hint">{duo(vela['status_zh'],vela['status_en'])}</div></section>
@@ -175,5 +199,8 @@ vela_body=f'''<main id="main"><section class="dhero"><a class="back" href="../..
 vela_zh='# Vela · '+vela['version']+'\n\n'+vela['zh']+'\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in vela['features'])+'\n\n### 功能范围\n'+vela['scope_zh']+'\n\n### 安装\n'+vela['install_zh']+'\n\n'+vela['status_zh']
 vela_en='# Vela · '+vela['version']+'\n\n'+vela['en']+'\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in vela['features'])+'\n\n### Scope\n'+vela['scope_en']+'\n\n### Installation\n'+vela['install_en']+'\n\n'+vela['status_en']
 vela_log=f"## {vela['version']} · {vela['date']}\n\n{vela['release_zh']}\n\n{vela['release_en']}"
-(vela_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',vela_zh),tab('English',vela_en),tab('更新 / History',vela_log)]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+vela_tabs=[tab('中文',vela_zh),tab('English',vela_en),tab('更新 / History',vela_log)]
+for intro in vela_tabs[:2]:
+    intro['views'].insert(0,{'class':'DepictionVideoView','URL':BASE+'assets/vela-promo.mp4','width':352,'height':220,'alignment':1,'cornerRadius':16,'autoplay':False,'showPlaybackControls':True,'loop':False})
+(vela_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':vela_tabs},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 print('Built Vela 0.4.19 bilingual scope, installation, current release and Sileo depiction')

@@ -1,9 +1,10 @@
 from pathlib import Path
 import bz2, gzip, hashlib, sys, json
 from html.parser import HTMLParser
+from datetime import datetime
 from urllib.parse import urlsplit, unquote
 from urllib.request import urlopen
-from update_repo import control_from_deb, fields
+from update_repo import control_from_deb, fields, download_url
 
 site = Path(__file__).resolve().parent / 'docs'
 names = ['Packages', 'Packages.gz', 'Packages.bz2', 'Release', 'index.html']
@@ -12,6 +13,8 @@ names += ['assets/aura.png']
 names += ['depictions/aura/index.html', 'depictions/aura/sileo.json']
 names += ['assets/home.css', 'assets/Geist.woff2', 'assets/Geist-OFL.txt']
 names += ['assets/vela.png','depictions/vela/index.html','depictions/vela/sileo.json']
+names += ['assets/downloads.mjs']
+names += ['assets/vela-promo.mp4','assets/vela-promo-poster.jpg']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -27,13 +30,14 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
     if not paragraph:
         continue
     info = {key: value.strip() for key, value in fields(paragraph).items()}
-    path = (site / info['Filename']).resolve()
+    path = (site / 'debs' / unquote(urlsplit(info['Filename']).path.rsplit('/', 1)[-1])).resolve()
     assert path.is_relative_to(site.resolve()) and path.suffix == '.deb'
-    assert info['Filename'] not in indexed
-    indexed.add(info['Filename'])
+    assert info['Filename'] == download_url(path.name), 'APT downloads must use the counted Release asset'
+    assert path.relative_to(site).as_posix() not in indexed
+    indexed.add(path.relative_to(site).as_posix())
     package = path.read_bytes()
     if len(sys.argv) > 1:
-        package = urlopen(base + info['Filename'], timeout=30).read()
+        package = urlopen(info['Filename'], timeout=60).read()
         assert package == path.read_bytes()
     assert len(package) == int(info['Size'])
     for key, algorithm in [('MD5sum', 'md5'), ('SHA256', 'sha256'), ('SHA512', 'sha512')]:
@@ -57,6 +61,11 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         assert info['SileoDepiction']=='https://gu3hi.github.io/repo/depictions/vela/sileo.json'
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
+snapshot=json.loads(urlopen(base+'assets/downloads.json',timeout=20).read() if len(sys.argv)>1 else (site/'assets/downloads.json').read_bytes())
+assert datetime.fromisoformat(snapshot['updated_at']).tzinfo is not None
+assert {a['name'] for a in snapshot['assets']}=={Path(p).name for p in indexed}
+assert len(snapshot['assets'])==len(indexed)
+assert all(type(a['download_count']) is int and a['download_count']>=0 for a in snapshot['assets'])
 assert gzip.decompress(data['Packages.gz']) == data['Packages']
 assert bz2.decompress(data['Packages.bz2']) == data['Packages']
 algorithm = None
@@ -80,12 +89,20 @@ assert all(f'id="{anchor}"' in home for anchor in ('main', 'packages', 'install'
 assert '预发布 / Prerelease' in home and 'Post-install device validation is pending.' in home
 class Links(HTMLParser):
     def __init__(self):
-        super().__init__(); self.links=[]
+        super().__init__(); self.links=[]; self.counters=[]
     def handle_starttag(self, tag, attrs):
         self.links.extend(v for k,v in attrs if k in ('href','src') and v)
+        self.counters.extend(v.split() for k,v in attrs if k=='data-download-files')
 for name in ('index.html','depictions/quart17/index.html','depictions/aura/index.html','depictions/vela/index.html'):
     parser=Links(); parser.feed(data[name].decode())
     assert 'sileo://source/https://gu3hi.github.io/repo/' in parser.links
+    assert any('assets/downloads.mjs?' in link for link in parser.links)
+    expected={p.name for p in (site/'debs').glob('*.deb') if name=='index.html' or p.name.startswith('com.gushi.'+name.split('/')[1]+'_')}
+    assert parser.counters and set().union(*(set(group) for group in parser.counters))==expected
+    assert all(len(group)==len(set(group)) for group in parser.counters)
+    if name!='index.html':
+        downloads=[unquote(urlsplit(link).path.rsplit('/',1)[-1]) for link in parser.links if '/releases/download/packages/' in link]
+        assert len(downloads)==2 and set(downloads)<=expected
     for link in parser.links:
         parts=urlsplit(link)
         if parts.scheme or not parts.path:
@@ -127,14 +144,23 @@ assert [t['tabname'] for t in vela['tabs']]==['中文','English','更新 / Histo
 content=json.loads((site.parent/'content/vela.json').read_text(encoding='utf-8'))
 assert content['version']=='0.4.19' and content['features']
 for i,lang in enumerate(('zh','en')):
-    md=vela['tabs'][i]['views'][0]['markdown']
+    video=vela['tabs'][i]['views'][0]
+    assert video['class']=='DepictionVideoView' and video['URL']=='https://gu3hi.github.io/repo/assets/vela-promo.mp4'
+    assert video['showPlaybackControls'] is True and video['autoplay'] is False
+    md=vela['tabs'][i]['views'][1]['markdown']
     for key in (lang,'scope_'+lang,'install_'+lang,'status_'+lang):
         assert content[key] in md and content[key] in data['depictions/vela/index.html'].decode()
-assert '### 功能范围' in vela['tabs'][0]['views'][0]['markdown']
-assert 'Vela Studio' in vela['tabs'][0]['views'][0]['markdown']
+assert '### 功能范围' in vela['tabs'][0]['views'][1]['markdown']
+assert 'Vela Studio' in vela['tabs'][0]['views'][1]['markdown']
 assert vela['tabs'][2]['views'][0]['markdown'].count('## ')==1
 assert content['release_zh'] in vela['tabs'][2]['views'][0]['markdown']
 assert content['release_en'] in vela['tabs'][2]['views'][0]['markdown']
 assert 'depictions/vela/' in home and 'assets/vela.png' in home
 assert not any(x in data['depictions/vela/index.html'].decode() for x in ['15 元','Put_Story（添加','VL1'])
 print('PASS: Vela 0.4.19 only; dual packages, bilingual features/scope, current release and Sileo depiction')
+assert hashlib.sha256(data['assets/vela-promo.mp4']).hexdigest()=='338b662caaf6ed48e8cbb4b43dc4722d82541812e44477bc98bc7813a978315e'
+for page in ('index.html','depictions/vela/index.html'):
+    html=data[page].decode()
+    assert html.count('<video ')==1 and 'controls playsinline preload="none"' in html
+    assert 'assets/vela-promo.mp4' in html and 'assets/vela-promo-poster.jpg' in html
+print('PASS: final native-footage promo on homepage, Vela detail and both Sileo language tabs')
