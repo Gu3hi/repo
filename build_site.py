@@ -30,7 +30,7 @@ def device(relative):
     return f'''<div class="heroart reveal" style="--d:.22s"><div class="glow"></div><div class="float"><div class="pair tilt">
 <img src="{relative}assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" decoding="async">
 </div></div></div>'''
-marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.103','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
+marquee=''.join(f'<span>{s}</span><b>·</b>' for s in ['GUSHI REPO','JAILBREAK TWEAKS','MAKE YOUR PHONE LOOK BETTER','让你的手机界面看起来更好','QUART17 2.7.112','ROOTLESS / ROOTHIDE','中文 · ENGLISH'])
 home=f'''<main>
 <section class="hero">
 <div class="herotext">
@@ -48,7 +48,7 @@ home=f'''<main>
 <section class="featured" id="packages">
 <div class="seclabel reveal"><b>01</b><span>FEATURED PACKAGE · 精选插件</span></div>
 <article class="package reveal" style="--d:.08s"><img class="appicon" src="assets/quart17.png" width="96" height="96" alt="Quart17 图标" loading="lazy" decoding="async"><div>
-<div class="ptag">AVAILABLE · 2.7.103</div><h2>Quart17</h2>{duo(zh,en)}
+<div class="ptag">AVAILABLE · 2.7.112</div><h2>Quart17</h2>{duo(zh,en)}
 <div class="tags"><span>Rootless</span><span>RootHide</span><span>中文 / English</span></div>
 <a class="textlink" href="depictions/quart17/">功能介绍与完整更新记录 / Features &amp; changelog <i class="ta">→</i></a>
 </div></article>
@@ -67,18 +67,18 @@ for i,row in enumerate(history):
     assert row['kind'] in ('commit','release','release-reference','local')
     source=f'<a href="{e(row["source"],quote=True)}">原始记录 / Source ↗</a>' if row['source'] else '<span>本地版本记录 / Local version record</span>'
     entries.append(f'<details {"open" if i==0 else ""}><summary><b>{e(row["version"])}</b><time>{e(row["date"])}</time><i class="chev" aria-hidden="true">＋</i></summary><div class="acc"><div class="entry">{duo(row["zh"],row["en"])}<div class="source">{source}</div></div></div></details>')
-downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.quart17_2.7.103_{arch}.deb"><span class="bl">{label} · 2.7.103<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
+downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.quart17_2.7.112_{arch}.deb"><span class="bl">{label} · 2.7.112<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64','Rootless'),('iphoneos-arm64e','RootHide')])
 body=f'''<main>
 <section class="dhero">
 <a class="back" href="../../">← Gushi Repo</a>
-<div class="titleline reveal"><img class="appicon" src="../../assets/quart17.png" width="104" height="104" alt="Quart17 图标"><div><p class="eyebrow">LOCK SCREEN, REIMAGINED</p><h1>Quart17</h1><div class="tags"><span>2.7.103</span><span>Put_Story</span><span>iOS 16–17</span></div></div></div>
+<div class="titleline reveal"><img class="appicon" src="../../assets/quart17.png" width="104" height="104" alt="Quart17 图标"><div><p class="eyebrow">LOCK SCREEN, REIMAGINED</p><h1>Quart17</h1><div class="tags"><span>2.7.112</span><span>Put_Story</span><span>iOS 17</span></div></div></div>
 <div class="lede reveal" style="--d:.08s">{duo(zh,en)}</div>
 <div class="reveal" style="--d:.14s">{buttons(*downloads)}</div>
 <nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#screenshots">实机效果 / Gallery</a><a href="#changelog">更新记录 / Changelog</a></nav>
 </section>
 <section id="features"><div class="seclabel reveal"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{cards}</div></section>
 <section id="screenshots"><div class="seclabel reveal"><b>02</b><span>ON DEVICE · 实机效果</span></div><div class="shots reveal" style="--d:.06s"><figure><img src="../../assets/quart17-lock-1.jpg" width="680" height="1311" alt="Quart17 锁屏播放器实机效果" loading="lazy" decoding="async"><figcaption>锁屏播放器 · <i lang="en">Lock Screen player</i></figcaption></figure></div></section>
-<section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('面向 iOS 16–17 越狱环境；2.7.103 包含 iOS 16 播放器识别兼容调整。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','For jailbroken iOS 16–17 devices. Version 2.7.103 includes an iOS 16 player-detection compatibility adjustment. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
+<section class="note install reveal"><h3>安装说明 <i lang="en">Installation</i></h3>{duo('本版要求 iOS 17。RootHide 经用户真机测试确认；rootless 已构建验包，尚未真机测试。Rootless 与 RootHide 安装包不可混用。安装后进入「设置 → Quart17」配置。','This release requires iOS 17. RootHide testing was confirmed by the user; rootless has been built and inspected but has not been device-tested. Use the package matching Rootless or RootHide, then configure Settings → Quart17.')}<p class="hint">玻璃效果可另装 <a href="https://github.com/Gu3hi/Aura-Releases/releases" target="_blank" rel="noopener">Aura</a>。旧版历史中的玻璃功能不代表当前 Quart17 内置这些功能。<br><span lang="en">Install Aura separately for glass effects. Historical glass features listed below are not bundled with the current Quart17 edition.</span></p></section>
 <section id="changelog"><div class="seclabel reveal"><b>03</b><span>CHANGELOG · 历史更新</span></div>
 <p class="hint reveal" style="--d:.06s">按 GitHub 发布说明、版本提交及本地构建记录整理；日期优先采用发布时间。未记录的改动不作推测。<br><span lang="en">Based on release notes, version commits and local build records; release dates are preferred when available. Undocumented changes are not inferred.</span></p>
 <div class="count reveal" style="--d:.1s"><b>{len(history)}</b><span>条记录 / <i lang="en">entries</i></span><button class="toggleall" type="button" aria-expanded="false">展开全部 · Expand all</button></div>
@@ -89,8 +89,8 @@ detail=SITE/'depictions/quart17';detail.mkdir(parents=True,exist_ok=True)
 (detail/'index.html').write_text(shell('Quart17 · 介绍与历史更新 / Features & Changelog',body,'../../'),encoding='utf-8',newline='\n')
 def markdown(text):return {'class':'DepictionMarkdownView','markdown':text,'useRawFormat':False}
 def tab(name,text):return {'class':'DepictionStackView','tabname':name,'views':[markdown(text)]}
-zh_intro=f'# Quart17 · 2.7.103\n\n{zh}\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in features)+'\n\n### 安装\niOS 16–17 越狱环境。请按环境选择 Rootless / RootHide。安装后前往「设置 → Quart17」。玻璃效果由独立的 Aura 提供。'
-en_intro=f'# Quart17 · 2.7.103\n\n{en}\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in features)+'\n\n### Installation\nFor jailbroken iOS 16–17. Choose Rootless or RootHide for your environment, then configure Settings → Quart17. Glass rendering is provided separately by Aura.'
+zh_intro=f'# Quart17 · 2.7.112\n\n{zh}\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in features)+'\n\n### 安装\n本版要求 iOS 17。RootHide 经用户真机测试确认；rootless 尚未真机测试。请按环境选择 Rootless / RootHide。安装后前往「设置 → Quart17」。玻璃效果由独立的 Aura 提供。'
+en_intro=f'# Quart17 · 2.7.112\n\n{en}\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in features)+'\n\n### Installation\nThis release requires iOS 17. RootHide testing was confirmed by the user; rootless device testing remains pending. Choose Rootless or RootHide for your environment, then configure Settings → Quart17. Glass rendering is provided separately by Aura.'
 log='Historical glass features later moved to Aura. / 历史玻璃功能后续已迁移至 Aura。\n\n'+'\n\n'.join(f'## {r["version"]} · {r["date"]}\n\n{r["zh"]}\n\n{r["en"]}\n\n'+(f'[原始记录 / Source]({r["source"]})' if r['source'] else '本地版本记录 / Local version record') for r in history)
 depiction={'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',zh_intro),tab('English',en_intro),tab('更新 / History',log)]}
 (detail/'sileo.json').write_text(json.dumps(depiction,ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')

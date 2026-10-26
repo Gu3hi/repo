@@ -2,7 +2,7 @@
 
 越狱源地址：**https://gu3hi.github.io/repo/**
 
-当前上架 Quart17 2.7.103：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
+当前上架 Quart17 2.7.112：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
 
 源头像：`docs/CydiaIcon.png`（GitHub 账号头像）；Quart17 图标：`docs/assets/quart17.png`（项目现有图标）。
 网站提供 `sileo://source/https://gu3hi.github.io/repo/` 添加按钮及手动添加地址。
@@ -31,5 +31,7 @@ deb https://gu3hi.github.io/repo/ ./
 索引脚本只读取安装包元数据，不执行包内脚本，也不重新打包或安装插件。
 
 2026-10-24：修复 Release 缺失 Components 导致 Sileo 报 “Could not parse release file” 的问题，并发布 Quart17 两种架构的现有 2.7.103 安装包。
+
+2026-10-26：发布 Quart17 2.7.112 RootHide/rootless 双包，并更新中英文介绍与历史。本版最低系统为 iOS 17；RootHide 经用户真机测试确认，rootless 已构建验包但尚未真机测试。
 
 部署配置参考：[GitHub Pages API](https://docs.github.com/en/rest/pages/pages#create-a-github-pages-site)。

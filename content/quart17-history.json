@@ -1,5 +1,13 @@
 [
   {
+    "version": "2.7.112",
+    "date": "2026-10-26",
+    "kind": "release",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.7.112",
+    "zh": "紧凑播放器迁移到 MediaRemoteUI 通知列表场景，修复媒体宿主识别、原生进度拖动、三种进度样式及播放器开关与圆角的跨进程同步；关闭通知样式后恢复原生通知大小并隐藏计数。RootHide 经用户真机测试确认；rootless 已独立构建验包，尚未真机测试。本版最低系统为 iOS 17。",
+    "en": "Move the compact player into MediaRemoteUI's notification list scene; fix media-host identification, native seeking, three progress styles, and cross-process player switches and corners. Disabling notification styling restores native sizes and hides counts. RootHide testing was confirmed by the user; rootless is independently built and inspected, with device testing pending. This release requires iOS 17."
+  },
+  {
     "version": "2.7.103",
     "date": "2026-10-17",
     "zh": "iOS 16 播放器识别兼容调整：有明确媒体视图时直接识别；仅在 iOS 17 及以上的纯场景宿主路径检查 Now Playing 会话。依据本地 2.7.103 源码差异整理，未找到独立 GitHub 发布说明。",
