@@ -49,6 +49,14 @@ home=f'''<main id="main">
 <section class="collection" id="packages" aria-labelledby="collection-title">
 <div class="section-heading reveal"><div><p class="section-index">01 / THE COLLECTION</p><h2 id="collection-title">各有所长，一起刚好。</h2></div><p lang="en">Small details.<br>A different everyday.</p></div>
 <div class="product-grid">
+<article class="product-card vela-card reveal">
+<div class="product-top"><img src="assets/vela.png" width="64" height="64" alt="Vela 图标" loading="lazy"><span class="version-label">0.4.19 <span>当前版本 / Current</span></span></div>
+<h3>Vela</h3><p class="product-lead">常用控制，一次上滑。</p><p class="product-english" lang="en">Your everyday controls, one swipe away.</p>
+<p class="product-description">连接、音乐、亮度与音量，集中在浮动面板中。横滑进入快捷指令页，自由配置配色、主题和玻璃外观。</p><p class="product-description en" lang="en">Connectivity, music, brightness and volume in one floating panel. Swipe to shortcuts and configure colors, themes and optional glass.</p>
+<ul class="feature-list"><li>快捷指令两列四行 <span lang="en">Two columns, four visible rows</span></li><li>可重放的手势导览 <span lang="en">Replayable gesture tour</span></li><li>配色与主题无需激活 <span lang="en">Colors and themes, no activation</span></li></ul>
+<div class="product-bottom"><span>iOS 16+ · Rootless · RootHide</span><a href="depictions/vela/" class="product-link" aria-label="查看 Vela 功能范围与安装说明">探索 Vela <span aria-hidden="true">↗</span></a></div>
+</article>
+
 <article class="product-card quart-card reveal">
 <div class="product-top"><img src="assets/quart17.png" width="64" height="64" alt="Quart17 图标" loading="lazy"><span class="version-label">2.7.112 <span>当前版本 / Current</span></span></div>
 <h3>Quart17</h3><p class="product-lead">让锁屏，跟着你的节奏。</p><p class="product-english" lang="en">A Lock Screen that feels like you.</p>
@@ -73,11 +81,11 @@ home=f'''<main id="main">
 </section>
 <section class="source-faq" aria-labelledby="faq-title"><div class="section-heading reveal"><div><p class="section-index">03 / GOOD TO KNOW</p><h2 id="faq-title">安装前，了解这些。</h2></div></div>
 <div class="faq-grid">
-<details><summary>支持哪些 iOS 版本？ <span aria-hidden="true">＋</span></summary>{duo('当前 Quart17 2.7.112 要求 iOS 17；Aura 面向 iOS 16–17 越狱环境。请查看各自详情页的兼容性与测试状态。','Quart17 2.7.112 requires iOS 17. Aura targets jailbroken iOS 16–17. Check each detail page for compatibility and testing status.')}</details>
+<details><summary>支持哪些 iOS 版本？ <span aria-hidden="true">＋</span></summary>{duo('Vela 的最低部署版本为 iOS 16；当前 Quart17 2.7.112 要求 iOS 17；Aura 面向 iOS 16–17 越狱环境。请查看各自详情页的兼容性与测试状态。','Vela has a minimum deployment target of iOS 16. Quart17 2.7.112 requires iOS 17. Aura targets jailbroken iOS 16–17. Check each detail page for compatibility and testing status.')}</details>
 <details><summary>Rootless 和 RootHide 怎么选？ <span aria-hidden="true">＋</span></summary>{duo('Rootless 对应 iphoneos-arm64，RootHide 对应 iphoneos-arm64e。请按实际越狱环境选择，不要仅看处理器型号。','Use iphoneos-arm64 for Rootless and iphoneos-arm64e for RootHide. Choose by your jailbreak environment, not the processor.')}</details>
 <details><summary>Quart17 自带玻璃效果吗？ <span aria-hidden="true">＋</span></summary>{duo('当前拆分版由 Aura 提供玻璃效果，Quart17 保留播放器与通知等功能。需要玻璃效果时请另行安装 Aura。','In the current split edition, Aura provides glass rendering. Install it separately alongside Quart17 for glass effects.')}</details>
 <details><summary>Aura 当前是正式版吗？ <span aria-hidden="true">＋</span></summary>{duo('当前上架的 1.2.23 是预发布包，安装后真机验收尚未完成。请先阅读 Aura 详情页中的状态说明。','The listed 1.2.23 build is a prerelease. Post-install device validation is pending. Read the status notes before installing.')}</details>
-<details><summary>在哪里查看完整更新记录？ <span aria-hidden="true">＋</span></summary><p>在 <a href="depictions/quart17/#changelog">Quart17 更新记录</a>与 <a href="depictions/aura/#changelog">Aura 更新记录</a>中查看中英文说明。</p><p class="en" lang="en">Both detail pages include a bilingual changelog.</p></details>
+<details><summary>在哪里查看完整更新记录？ <span aria-hidden="true">＋</span></summary><p>在 <a href="depictions/quart17/#changelog">Quart17 更新记录</a>、<a href="depictions/aura/#changelog">Aura 更新记录</a>与 <a href="depictions/vela/#changelog">Vela 本次更新</a>中查看中英文说明。</p><p class="en" lang="en">Each detail page includes bilingual release information.</p></details>
 <details><summary>点击添加没有打开 Sileo？ <span aria-hidden="true">＋</span></summary>{duo('请在已安装 Sileo 的 iPhone 上打开本页。也可以复制软件源地址，在 Sileo 中手动添加。','Open this page on an iPhone with Sileo installed, or copy the repository URL and add it manually.')}</details>
 </div></section>
 </main>'''
@@ -149,3 +157,23 @@ aura_en_md='# Aura · 1.2.23\n\n'+aura_en+'\n\n'+'\n\n'.join(f'### {b}\n{d}' for
 aura_log='Only verifiable public releases are listed. / 仅收录可核实的公开发布记录。\n\n'+'\n\n'.join(f'## {r["version"]} · {r["date"]}\n\n{r["zh"]}\n\n{r["en"]}\n\n[发布说明 / Release notes]({r["source"]})' for r in aura_history)
 (aura_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',aura_zh_md),tab('English',aura_en_md),tab('更新 / History',aura_log)]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
 print(f'Built Aura bilingual pages and Sileo depiction with {len(aura_history)} public release records')
+
+# Vela publishes only the requested current release.
+vela=json.loads((ROOT/'content/vela.json').read_text(encoding='utf-8'))
+vela_dir=SITE/'depictions/vela';vela_dir.mkdir(parents=True,exist_ok=True)
+vela_cards=''.join(f'<article><em class="fnum">0{i+1}</em><h3>{e(a)}<i lang="en">{e(b)}</i></h3>{duo(c,d)}</article>' for i,(a,b,c,d) in enumerate(vela['features']))
+vela_downloads=''.join(f'<a class="button ghost" href="../../debs/com.gushi.vela_{vela["version"]}_{arch}.deb"><span class="bl">{label} · {vela["version"]}<i lang="en">Download</i></span><span class="arr">↓</span></a>' for arch,label in [('iphoneos-arm64e','RootHide'),('iphoneos-arm64','Rootless')])
+vela_body=f'''<main id="main"><section class="dhero"><a class="back" href="../../">← Gushi Repo</a>
+<div class="titleline"><img class="appicon" src="../../assets/vela.png" width="104" height="104" alt="Vela 图标"><div><p class="eyebrow">EVERYDAY CONTROLS</p><h1>Vela</h1><div class="tags"><span>{e(vela['version'])}</span><span>iOS 16+</span><span>无需激活 / No activation</span></div></div></div>
+<div class="lede">{duo(vela['zh'],vela['en'])}</div>{buttons(*vela_downloads)}
+<nav class="section-nav" aria-label="详情导航"><a href="#features">功能 / Features</a><a href="#scope">功能范围 / Scope</a><a href="#installation">安装 / Installation</a><a href="#changelog">本次更新 / Release</a></nav></section>
+<section id="features"><div class="seclabel"><b>01</b><span>FEATURES · 功能</span></div><div class="grid">{vela_cards}</div></section>
+<section id="scope" class="note install"><h3>功能范围 <i lang="en">Scope</i></h3>{duo(vela['scope_zh'],vela['scope_en'])}</section>
+<section id="installation" class="note install"><h3>安装与验证状态 <i lang="en">Installation and testing</i></h3>{duo(vela['install_zh'],vela['install_en'])}<div class="hint">{duo(vela['status_zh'],vela['status_en'])}</div></section>
+<section id="changelog"><div class="seclabel"><b>02</b><span>RELEASE · 本次更新</span></div><h2>{e(vela['version'])} · {e(vela['date'])}</h2>{duo(vela['release_zh'],vela['release_en'])}</section></main>'''
+(vela_dir/'index.html').write_text(shell('Vela · 浮动控制中心 / Floating Control Center',vela_body,'../../','depictions/vela/'),encoding='utf-8',newline='\n')
+vela_zh='# Vela · '+vela['version']+'\n\n'+vela['zh']+'\n\n'+'\n\n'.join(f'### {a}\n{c}' for a,b,c,d in vela['features'])+'\n\n### 功能范围\n'+vela['scope_zh']+'\n\n### 安装\n'+vela['install_zh']+'\n\n'+vela['status_zh']
+vela_en='# Vela · '+vela['version']+'\n\n'+vela['en']+'\n\n'+'\n\n'.join(f'### {b}\n{d}' for a,b,c,d in vela['features'])+'\n\n### Scope\n'+vela['scope_en']+'\n\n### Installation\n'+vela['install_en']+'\n\n'+vela['status_en']
+vela_log=f"## {vela['version']} · {vela['date']}\n\n{vela['release_zh']}\n\n{vela['release_en']}"
+(vela_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':[tab('中文',vela_zh),tab('English',vela_en),tab('更新 / History',vela_log)]},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
+print('Built Vela 0.4.19 bilingual scope, installation, current release and Sileo depiction')

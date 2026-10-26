@@ -1,0 +1,2 @@
+6f9c740ebc3ba54008d0deaec14449c8bdf46ccd3e1305ce3d88ffb40da45b45  com.gushi.vela_0.4.19_iphoneos-arm64e.deb
+8e02386204929d93f03af2f91c651a1a8ac013c1fd28e106beee3e74a91a8752  com.gushi.vela_0.4.19_iphoneos-arm64.deb

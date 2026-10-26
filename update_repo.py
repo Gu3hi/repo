@@ -45,6 +45,10 @@ def main():
             entry += '\nIcon: https://gu3hi.github.io/repo/assets/aura.png'
             entry += '\nDepiction: https://gu3hi.github.io/repo/depictions/aura/'
             entry += '\nSileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json'
+        if identity[0] == 'com.gushi.vela':
+            entry += '\nIcon: https://gu3hi.github.io/repo/assets/vela.png'
+            entry += '\nDepiction: https://gu3hi.github.io/repo/depictions/vela/'
+            entry += '\nSileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json'
         entry += f'\nFilename: {path.relative_to(ROOT).as_posix()}\nSize: {len(data)}\n'
         for key, algorithm in [('MD5sum', 'md5'), ('SHA256', 'sha256'), ('SHA512', 'sha512')]:
             entry += f'{key}: {hashlib.new(algorithm, data).hexdigest()}\n'

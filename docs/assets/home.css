@@ -160,3 +160,6 @@
   .js .home-page .reveal,.js .home-page .word-reveal{opacity:1;transform:none;filter:none;color:var(--text);transition:none}
   .home-page *{animation:none!important;transition:none!important}
 }
+
+/* Vela leads the existing two-column collection. */
+.vela-card{grid-column:1 / -1}

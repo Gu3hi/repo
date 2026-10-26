@@ -11,6 +11,7 @@ names += ['CydiaIcon.png', 'assets/quart17.png', 'assets/quart17-lock-1.jpg', 'a
 names += ['assets/aura.png']
 names += ['depictions/aura/index.html', 'depictions/aura/sileo.json']
 names += ['assets/home.css', 'assets/Geist.woff2', 'assets/Geist-OFL.txt']
+names += ['assets/vela.png','depictions/vela/index.html','depictions/vela/sileo.json']
 local = {name: (site / name).read_bytes() for name in names}
 data = local
 if len(sys.argv) > 1:
@@ -21,6 +22,7 @@ release = fields(data['Release'].decode())
 # Sileo RepoManager requires Components even for flat repositories.
 assert all(key in release and release[key].strip() for key in ('Origin', 'Label', 'Architectures', 'Components'))
 indexed = set()
+vela_architectures=set()
 for paragraph in data['Packages'].decode().strip().split('\n\n'):
     if not paragraph:
         continue
@@ -47,6 +49,12 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
         assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'
         assert info['SileoDepiction'] == 'https://gu3hi.github.io/repo/depictions/aura/sileo.json'
+    if info['Package'] == 'com.gushi.vela':
+        assert info['Version']=='0.4.19', 'Only the current Vela release is published'
+        vela_architectures.add(info['Architecture'])
+        assert info['Icon']=='https://gu3hi.github.io/repo/assets/vela.png'
+        assert info['Depiction']=='https://gu3hi.github.io/repo/depictions/vela/'
+        assert info['SileoDepiction']=='https://gu3hi.github.io/repo/depictions/vela/sileo.json'
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
 assert gzip.decompress(data['Packages.gz']) == data['Packages']
@@ -75,7 +83,7 @@ class Links(HTMLParser):
         super().__init__(); self.links=[]
     def handle_starttag(self, tag, attrs):
         self.links.extend(v for k,v in attrs if k in ('href','src') and v)
-for name in ('index.html','depictions/quart17/index.html','depictions/aura/index.html'):
+for name in ('index.html','depictions/quart17/index.html','depictions/aura/index.html','depictions/vela/index.html'):
     parser=Links(); parser.feed(data[name].decode())
     assert 'sileo://source/https://gu3hi.github.io/repo/' in parser.links
     for link in parser.links:
@@ -111,3 +119,22 @@ for r in aura_history:
     assert r['en'] in aura['tabs'][2]['views'][0]['markdown']
 print(f'PASS: Aura bilingual introduction, native depiction and {len(aura_history)} public release records')
 print(f'PASS: {len(indexed)} packages; Sileo required fields, package metadata, compressed indexes and checksums verified' + ('; live HTTPS files match' if len(sys.argv)>1 else ''))
+
+assert vela_architectures=={'iphoneos-arm64','iphoneos-arm64e'}
+vela=json.loads(data['depictions/vela/sileo.json'])
+assert vela['class']=='DepictionTabView'
+assert [t['tabname'] for t in vela['tabs']]==['中文','English','更新 / History']
+content=json.loads((site.parent/'content/vela.json').read_text(encoding='utf-8'))
+assert content['version']=='0.4.19' and content['features']
+for i,lang in enumerate(('zh','en')):
+    md=vela['tabs'][i]['views'][0]['markdown']
+    for key in (lang,'scope_'+lang,'install_'+lang,'status_'+lang):
+        assert content[key] in md and content[key] in data['depictions/vela/index.html'].decode()
+assert '### 功能范围' in vela['tabs'][0]['views'][0]['markdown']
+assert 'Vela Studio' in vela['tabs'][0]['views'][0]['markdown']
+assert vela['tabs'][2]['views'][0]['markdown'].count('## ')==1
+assert content['release_zh'] in vela['tabs'][2]['views'][0]['markdown']
+assert content['release_en'] in vela['tabs'][2]['views'][0]['markdown']
+assert 'depictions/vela/' in home and 'assets/vela.png' in home
+assert not any(x in data['depictions/vela/index.html'].decode() for x in ['15 元','Put_Story（添加','VL1'])
+print('PASS: Vela 0.4.19 only; dual packages, bilingual features/scope, current release and Sileo depiction')

@@ -112,3 +112,45 @@ MD5sum: a44d076ec1555ac61c199e74211062ce
 SHA256: 5b4e881fe59173cd439bd440c748fdfec3017e0cb9fa8d4d1a03c2064a969cae
 SHA512: 6d5623a428733b5b4eaf8f5d7873388870815911753a772a1a8dcde38860f40e0bc5219aa596e347d0af1c3ab63c92d77f9365b9eb6cc6ee0ac0b1f318c26a8c
 
+Package: com.gushi.vela
+Name: Vela
+Description: A floating Control Center for iOS 16 and later.
+Maintainer: gushi
+Author: gushi
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate, preferenceloader
+Conflicts: com.gushi.prysm17
+Replaces: com.gushi.prysm17
+Architecture: iphoneos-arm64
+Version: 0.4.19
+Installed-Size: 3616
+Icon: https://gu3hi.github.io/repo/assets/vela.png
+Depiction: https://gu3hi.github.io/repo/depictions/vela/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
+Filename: debs/com.gushi.vela_0.4.19_iphoneos-arm64.deb
+Size: 1165988
+MD5sum: 49331669bee93924c9581daa1960a3ea
+SHA256: 8e02386204929d93f03af2f91c651a1a8ac013c1fd28e106beee3e74a91a8752
+SHA512: 3f3bd850ef4e2b6cb0b795308fdabdc9a34d7f27547a241e7177f1a547e2424ee003996b850a76e10ffdb6900b615b0fbeeef4660123611472a8417fccd3652d
+
+Package: com.gushi.vela
+Name: Vela
+Description: A floating Control Center for iOS 16 and later.
+Maintainer: gushi
+Author: gushi
+Section: Tweaks
+Depends: firmware (>= 16.0), mobilesubstrate, preferenceloader
+Conflicts: com.gushi.prysm17
+Replaces: com.gushi.prysm17
+Architecture: iphoneos-arm64e
+Version: 0.4.19
+Installed-Size: 3616
+Icon: https://gu3hi.github.io/repo/assets/vela.png
+Depiction: https://gu3hi.github.io/repo/depictions/vela/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
+Filename: debs/com.gushi.vela_0.4.19_iphoneos-arm64e.deb
+Size: 1165522
+MD5sum: f7bc3b74d42d0755ea362f48ab4080fa
+SHA256: 6f9c740ebc3ba54008d0deaec14449c8bdf46ccd3e1305ce3d88ffb40da45b45
+SHA512: 6e2d996ebd20bcbf1849671521e65247c4f12b8f712746b4c7492f4ee7cf5a128f0d9912b8d9feff93336f642dc29972ad6a50b5c72308b379e18acedf86cf52
+

@@ -2,7 +2,9 @@
 
 越狱源地址：**https://gu3hi.github.io/repo/**
 
-当前上架 Quart17 2.7.112：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
+当前上架 Vela 0.4.19、Quart17 2.7.112 与 Aura 1.2.23，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.19 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
+
+Quart17 2.7.112：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
 
 源头像：`docs/CydiaIcon.png`（GitHub 账号头像）；Quart17 图标：`docs/assets/quart17.png`（项目现有图标）。
 网站提供 `sileo://source/https://gu3hi.github.io/repo/` 添加按钮及手动添加地址。
@@ -41,3 +43,5 @@ deb https://gu3hi.github.io/repo/ ./
 首页由 `build_site.py` 生成，独立样式位于 `docs/assets/home.css`。实机视图切换使用仓库中现有的两张截图；不改变安装包与原生 Sileo 描述。Geist 字体随站点本地提供，许可证见 `docs/assets/Geist-OFL.txt`。
 
 本地预览：python -m http.server 8766 --bind 127.0.0.1 --directory docs，打开 http://127.0.0.1:8766/。修改后运行 python build_site.py 和 python verify.py。
+
+2026-10-26：新增 Vela 0.4.19 RootHide/rootless 双包。中英文介绍、功能范围、安装方式、验证状态与本次更新由 `content/vela.json` 生成，同步网站首页和原生 Sileo 描述。未追加 Vela 历史版本安装包。
