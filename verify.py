@@ -26,6 +26,7 @@ release = fields(data['Release'].decode())
 assert all(key in release and release[key].strip() for key in ('Origin', 'Label', 'Architectures', 'Components'))
 indexed = set()
 vela_architectures=set()
+aura_current_architectures=set()
 for paragraph in data['Packages'].decode().strip().split('\n\n'):
     if not paragraph:
         continue
@@ -49,7 +50,9 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         for key, target in [('Icon','assets/quart17.png'), ('Depiction','depictions/quart17/'), ('SileoDepiction','depictions/quart17/sileo.json')]:
             assert info[key] == 'https://gu3hi.github.io/repo/' + target
     if info['Package'] == 'com.gushi.aura':
-        assert info['Version'] == '1.2.23'
+        assert info['Version'] in ('1.2.23', '1.2.40')
+        if info['Version'] == '1.2.40':
+            aura_current_architectures.add(info['Architecture'])
         assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
         assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'
         assert info['SileoDepiction'] == 'https://gu3hi.github.io/repo/depictions/aura/sileo.json'
@@ -61,6 +64,7 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         assert info['SileoDepiction']=='https://gu3hi.github.io/repo/depictions/vela/sileo.json'
     assert info['Architecture'] in release['Architectures'].split()
 assert indexed == {p.relative_to(site).as_posix() for p in site.rglob('*.deb')}
+assert aura_current_architectures == {'iphoneos-arm64', 'iphoneos-arm64e'}
 snapshot=json.loads(urlopen(base+'assets/downloads.json',timeout=20).read() if len(sys.argv)>1 else (site/'assets/downloads.json').read_bytes())
 assert datetime.fromisoformat(snapshot['updated_at']).tzinfo is not None
 assert {a['name'] for a in snapshot['assets']}=={Path(p).name for p in indexed}
@@ -131,7 +135,7 @@ for t in aura['tabs']:
     assert t['class']=='DepictionStackView' and t['views'][0]['class']=='DepictionMarkdownView'
     assert t['views'][0]['markdown']
 for r in aura_history:
-    assert r['zh'] and r['en'] and r['source'].startswith('https://github.com/Gu3hi/Aura-Releases/releases/tag/')
+    assert r['zh'] and r['en'] and (r['source'].startswith('https://github.com/Gu3hi/Aura-Releases/releases/tag/') or r['source'] == 'https://github.com/Gu3hi/repo/releases/tag/packages')
     assert r['zh'] in data['depictions/aura/index.html'].decode()
     assert r['en'] in aura['tabs'][2]['views'][0]['markdown']
 print(f'PASS: Aura bilingual introduction, native depiction and {len(aura_history)} public release records')

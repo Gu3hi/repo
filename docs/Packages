@@ -36,6 +36,44 @@ MD5sum: 040da7aaafc0a6414478749849b2617c
 SHA256: be7cb24eb19ca73488cd38d82518bca61065fbe5c19d6f292f97e88dd8a385c4
 SHA512: 6fdb248cd33bc956db0bc46bed67f9f07f41ded22d1be83cccaf2a550a1a2abb13723e10a0ddb16034331dc2ddae6f90085c86a681e144ee5b57c6d516283fc5
 
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 1.2.40
+Installed-Size: 3212
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.40_iphoneos-arm64.deb
+Size: 717442
+MD5sum: df6ff2ef99f4e09368d78746e5700f9c
+SHA256: 949e5395ea0ea868ee86371f7b93762e8605b0b4a9be48080b7cf3846996e290
+SHA512: 5faf1e6c6e1f83f24f43aea4f24ba230de8180fa555a86e049775f878b0883a91e9102664636ffac67decd3803ecceae9eb4a72a019e9420de148dbd1b67a95f
+
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 1.2.40
+Installed-Size: 3196
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.40_iphoneos-arm64e.deb
+Size: 718306
+MD5sum: 01d17378b2311445f8ae1d5d9e3b9afa
+SHA256: fd9ca3c9adbfcf97867bf20f98c9e3087ef54c604e4afd31dec7061c3ce08886
+SHA512: 3025025a10ee4ed602bfdf4245d4af345268c62305054b23e363cb0720570b7d151182f151f5f541f6eaff8661153f10d1e14a56c2ab335c7e78542a141b038e
+
 Package: com.gushi.quart17
 Name: Quart17
 Description: Quart-inspired notifications for jailbroken iOS 17

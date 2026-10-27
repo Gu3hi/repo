@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.2.40",
+    "date": "2026-10-27",
+    "zh": "新增 Tab 玻璃拖动与触摸反馈、深色适配；新增锁屏快捷按钮和桌面小文件夹玻璃效果；新增设置开关与滑块玻璃样式。",
+    "en": "Adds glass dragging and touch feedback for tab bars with dark-mode adaptation, glass for Lock Screen shortcuts and small Home Screen folders, and glass-style settings switches and sliders.",
+    "source": "https://github.com/Gu3hi/repo/releases/tag/packages"
+  },
+  {
     "version": "1.2.23",
     "date": "2026-10-11",
     "zh": "同版本修订：两个安装包已替换为弹窗入场时机修正版。桌面“移除 App／删除 App”等确认框在入场前准备玻璃，避免动画结束后才切换背景。改善相册标签与应用组件在布局变化、视图复用及关闭效果后的还原，减少标准按钮玻璃的重复查找与更新。发布包不包含 Tab 触摸诊断模块。已安装此前 1.2.23 的用户需重新下载并重新安装对应包。仍为预发布版，安装后真机验收尚未完成，Rootless 未实机测试。",

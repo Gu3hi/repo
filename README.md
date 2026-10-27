@@ -2,7 +2,7 @@
 
 越狱源地址：**https://gu3hi.github.io/repo/**
 
-当前上架 Vela 0.4.19、Quart17 2.7.112 与 Aura 1.2.23，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.19 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
+当前上架 Vela 0.4.19、Quart17 2.7.112 与 Aura 1.2.40，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.19 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
 
 Quart17 2.7.112：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
 
