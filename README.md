@@ -2,9 +2,9 @@
 
 越狱源地址：**https://gu3hi.github.io/repo/**
 
-当前上架 Vela 0.4.20、Quart17 2.7.112 与 Aura 1.2.40，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.20 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
+当前上架 Vela 0.4.20、Quart17 2.8 与 Aura 1.2.40，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.20 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
 
-Quart17 2.7.112：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
+Quart17 2.8：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）。不包含插件源码。
 
 源头像：`docs/CydiaIcon.png`（GitHub 账号头像）；Quart17 图标：`docs/assets/quart17.png`（项目现有图标）。
 网站提供 `sileo://source/https://gu3hi.github.io/repo/` 添加按钮及手动添加地址。
@@ -62,3 +62,5 @@ deb https://gu3hi.github.io/repo/ ./
 资源：`docs/assets/vela-promo.mp4` 与 `docs/assets/vela-promo-poster.jpg`。Sileo 使用原生 `DepictionVideoView`，显示播放控件且不自动播放；网页另外提供单独播放链接。生成和校验命令与上文一致。
 
 2026-10-28：发布 Vela 0.4.20 RootHide / Rootless 双包，补全中英文界面文本；真机验收尚待完成。
+
+2026-10-28：发布 Quart17 2.8 RootHide / rootless 双包，调整播放器布局和媒体背景识别；真机验证尚待完成。

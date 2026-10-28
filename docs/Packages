@@ -150,6 +150,44 @@ MD5sum: a44d076ec1555ac61c199e74211062ce
 SHA256: 5b4e881fe59173cd439bd440c748fdfec3017e0cb9fa8d4d1a03c2064a969cae
 SHA512: 6d5623a428733b5b4eaf8f5d7873388870815911753a772a1a8dcde38860f40e0bc5219aa596e347d0af1c3ab63c92d77f9365b9eb6cc6ee0ac0b1f318c26a8c
 
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 2.8
+Installed-Size: 2416
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8_iphoneos-arm64.deb
+Size: 975794
+MD5sum: e8d11168d5809b909cde6f577c724635
+SHA256: 392f33eba8b8ffcb3dac10132dbff59037f4e00212ece6375f9f40b7e50dab8c
+SHA512: 6c27e6914f4b4a6618f86051a0b97c86e3bd72348fedc201a49f4bcdd87500a5593a41ff91904ee54ef1e122f7d110bea78dc15a9098011a4a1bd5469304f26f
+
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 2.8
+Installed-Size: 2416
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8_iphoneos-arm64e.deb
+Size: 975630
+MD5sum: 88cfdf95ea9a6a9a1f110ffdaa3ef4a2
+SHA256: d7b653a8f7ff8bbb678df6f058de848cd54145732384708f529176464a8ab9c0
+SHA512: 29ec844d4dc8cc1ad42e7dfb30849950ed0c28a72f542bf63ee7b587a3c5c8ccdd40eb54a140e6a0ff93b47fa1118768512c394e74da4b62b6a43712ee902c0e
+
 Package: com.gushi.vela
 Name: Vela
 Description: A floating Control Center for iOS 16 and later.

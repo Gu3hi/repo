@@ -1,5 +1,13 @@
 [
   {
+    "version": "2.8",
+    "date": "2026-10-28",
+    "kind": "commit",
+    "source": "https://github.com/Gu3hi/Quart17/commit/7dc2074",
+    "zh": "调整锁屏紧凑播放器的居中布局，并移除媒体宿主背景识别中的固定尺寸限制。RootHide 与 Rootless 均尚待真机验证。",
+    "en": "Center the compact lock-screen player and remove fixed size limits from media host background detection. Device validation remains pending for RootHide and Rootless."
+  },
+  {
     "version": "2.7.112",
     "date": "2026-10-26",
     "kind": "release",
