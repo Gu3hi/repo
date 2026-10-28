@@ -1,6 +1,6 @@
 {
-  "version": "0.4.19",
-  "date": "2026-10-26",
+  "version": "0.4.20",
+  "date": "2026-10-28",
   "ios": "iOS 16+",
   "zh": "Vela 将连接开关、亮度与音量、音乐和快捷控制集中在浮动面板中，支持独立配色、图标主题与玻璃外观。",
   "en": "Vela brings connectivity, brightness, volume, music and quick controls together in a floating panel, with custom colors, icon themes and glass appearance.",
@@ -46,8 +46,8 @@
   "scope_en": "This is a floating Control Center tweak. It does not replace the Lock Screen notification player or provide glass throughout other apps. Shortcut execution depends on iOS and each shortcut; interactive shortcuts may show system prompts or open the Shortcuts app. Vela Studio is a separate companion app and is not included in these packages.",
   "install_zh": "最低部署版本为 iOS 16。按实际越狱环境选择一个包：RootHide 为 iphoneos-arm64e，Rootless 为 iphoneos-arm64，不可混装。安装后前往「设置 → Vela」配置；已有用户保存的呼出设置继续生效。",
   "install_en": "The minimum deployment target is iOS 16. Install one package matching your jailbreak: iphoneos-arm64e for RootHide, or iphoneos-arm64 for Rootless. Configure Settings → Vela after installation. Existing saved activation gestures are preserved.",
-  "status_zh": "两种环境的安装包均包含 arm64 与 arm64e 二进制切片，并独立构建、验包。0.4.19 的面板与功能导览通过 2228 项模拟器 UIKit 检查；本次安装包尚未完成手机安装验收，Rootless 尚未真机测试。模拟器和编译结果不代表所有 iOS 版本均已实机兼容。",
-  "status_en": "Both package variants contain arm64 and arm64e binary slices and are built and inspected independently. The 0.4.19 panel and tour passed 2,228 simulator UIKit checks. These release packages have not completed on-device installation acceptance; Rootless has not been tested on a physical device. Simulator and build checks do not establish compatibility on every iOS release.",
-  "release_zh": "本次发布 0.4.19：快捷指令页改为紧凑两列、最多四行，图标与文字整体居中；默认从两侧底部上滑呼出；加入可跳过和重放的三步功能导览。配色与主题直接使用，无需激活。",
-  "release_en": "This 0.4.19 release adds a compact two-column quick page with up to four visible rows and centered shortcut content, bottom-corner activation by default, and a skippable, replayable three-gesture tour. Colors and themes work without activation."
+  "status_zh": "RootHide 与 Rootless 双包均包含 arm64 和 arm64e 切片，并分别构建验包。中英文界面与安装效果尚待真机验收；编译和验包不能证明所有 iOS 版本的兼容性。",
+  "status_en": "The RootHide and Rootless packages each contain arm64 and arm64e slices and are built and inspected separately. On-device installation and bilingual UI validation remain pending; build and package checks do not establish compatibility on every iOS version.",
+  "release_zh": "0.4.20 补全控制面板、模块配置、快捷指令、配色、主题说明与错误提示的中英文文本，跟随系统语言显示。",
+  "release_en": "Version 0.4.20 completes Chinese and English text for the panel, module layout, shortcuts, colors, theme guidance and error messages, following the system language."
 }

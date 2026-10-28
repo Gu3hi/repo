@@ -160,16 +160,16 @@ Depends: firmware (>= 16.0), mobilesubstrate, preferenceloader
 Conflicts: com.gushi.prysm17
 Replaces: com.gushi.prysm17
 Architecture: iphoneos-arm64
-Version: 0.4.19
-Installed-Size: 3616
+Version: 0.4.20
+Installed-Size: 3704
 Icon: https://gu3hi.github.io/repo/assets/vela.png
 Depiction: https://gu3hi.github.io/repo/depictions/vela/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
-Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.19_iphoneos-arm64.deb
-Size: 1165988
-MD5sum: 49331669bee93924c9581daa1960a3ea
-SHA256: 8e02386204929d93f03af2f91c651a1a8ac013c1fd28e106beee3e74a91a8752
-SHA512: 3f3bd850ef4e2b6cb0b795308fdabdc9a34d7f27547a241e7177f1a547e2424ee003996b850a76e10ffdb6900b615b0fbeeef4660123611472a8417fccd3652d
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.20_iphoneos-arm64.deb
+Size: 1201988
+MD5sum: 6b813db3599aea378ee3e88d0eb7ae96
+SHA256: 21d2c57e7df4fceb578245ab11fb52b22af8c06cc9c74a3eb6e4358a405674ba
+SHA512: f56d3371e78e16a4b7e001e1af1e3dd5e5f44dd3da4aa6eb6165935238cc4a0bf39e70a6fdf6dec0efa3bc26605f39b87d167e77daf1248ba94b736c1507753c
 
 Package: com.gushi.vela
 Name: Vela
@@ -181,14 +181,14 @@ Depends: firmware (>= 16.0), mobilesubstrate, preferenceloader
 Conflicts: com.gushi.prysm17
 Replaces: com.gushi.prysm17
 Architecture: iphoneos-arm64e
-Version: 0.4.19
-Installed-Size: 3616
+Version: 0.4.20
+Installed-Size: 3704
 Icon: https://gu3hi.github.io/repo/assets/vela.png
 Depiction: https://gu3hi.github.io/repo/depictions/vela/
 SileoDepiction: https://gu3hi.github.io/repo/depictions/vela/sileo.json
-Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.19_iphoneos-arm64e.deb
-Size: 1165522
-MD5sum: f7bc3b74d42d0755ea362f48ab4080fa
-SHA256: 6f9c740ebc3ba54008d0deaec14449c8bdf46ccd3e1305ce3d88ffb40da45b45
-SHA512: 6e2d996ebd20bcbf1849671521e65247c4f12b8f712746b4c7492f4ee7cf5a128f0d9912b8d9feff93336f642dc29972ad6a50b5c72308b379e18acedf86cf52
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.vela_0.4.20_iphoneos-arm64e.deb
+Size: 1201308
+MD5sum: 73826b682d51517c698432e6de6f6a4c
+SHA256: 828b484a6254c745d8a27a2fa9b1d081a84bbc3ef70c90d48a88458a399e2717
+SHA512: d4043d65bb84a322917581b0b74db3e241d5efb417a6e766f5be0ff71c8d41de2791e35ece34a414c92aa5e263c9240f69e1e6441af234bed47e71219776441c
 

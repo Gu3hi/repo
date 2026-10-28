@@ -57,7 +57,7 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'
         assert info['SileoDepiction'] == 'https://gu3hi.github.io/repo/depictions/aura/sileo.json'
     if info['Package'] == 'com.gushi.vela':
-        assert info['Version']=='0.4.19', 'Only the current Vela release is published'
+        assert info['Version']=='0.4.20', 'Only the current Vela release is published'
         vela_architectures.add(info['Architecture'])
         assert info['Icon']=='https://gu3hi.github.io/repo/assets/vela.png'
         assert info['Depiction']=='https://gu3hi.github.io/repo/depictions/vela/'
@@ -146,7 +146,7 @@ vela=json.loads(data['depictions/vela/sileo.json'])
 assert vela['class']=='DepictionTabView'
 assert [t['tabname'] for t in vela['tabs']]==['中文','English','更新 / History']
 content=json.loads((site.parent/'content/vela.json').read_text(encoding='utf-8'))
-assert content['version']=='0.4.19' and content['features']
+assert content['version']=='0.4.20' and content['features']
 for i,lang in enumerate(('zh','en')):
     video=vela['tabs'][i]['views'][0]
     assert video['class']=='DepictionVideoView' and video['URL']=='https://gu3hi.github.io/repo/assets/vela-promo.mp4'
@@ -161,7 +161,7 @@ assert content['release_zh'] in vela['tabs'][2]['views'][0]['markdown']
 assert content['release_en'] in vela['tabs'][2]['views'][0]['markdown']
 assert 'depictions/vela/' in home and 'assets/vela.png' in home
 assert not any(x in data['depictions/vela/index.html'].decode() for x in ['15 元','Put_Story（添加','VL1'])
-print('PASS: Vela 0.4.19 only; dual packages, bilingual features/scope, current release and Sileo depiction')
+print('PASS: Vela 0.4.20 only; dual packages, bilingual features/scope, current release and Sileo depiction')
 assert hashlib.sha256(data['assets/vela-promo.mp4']).hexdigest()=='338b662caaf6ed48e8cbb4b43dc4722d82541812e44477bc98bc7813a978315e'
 for page in ('index.html','depictions/vela/index.html'):
     html=data[page].decode()

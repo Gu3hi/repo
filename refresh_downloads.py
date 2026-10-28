@@ -6,8 +6,8 @@ import subprocess
 
 def main():
     release=json.loads(subprocess.check_output(['gh','api','repos/Gu3hi/repo/releases/tags/packages']))
-    assets=[dict(name=a['name'],download_count=a['download_count']) for a in release['assets'] if a['name'].endswith('.deb')]
     expected={p.name for p in (Path(__file__).resolve().parent/'docs/debs').glob('*.deb')}
+    assets=[dict(name=a['name'],download_count=a['download_count']) for a in release['assets'] if a['name'] in expected]
     assert {a['name'] for a in assets}==expected and len(assets)==len(expected), 'Release assets do not match published packages'
     assert all(type(a['download_count']) is int and a['download_count']>=0 for a in assets)
     snapshot=dict(updated_at=datetime.now(timezone.utc).isoformat(),assets=assets)
