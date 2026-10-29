@@ -163,3 +163,41 @@
 
 /* Vela leads the existing two-column collection. */
 .vela-card{grid-column:1 / -1}
+
+/* ── 2026-10-30 refinements ─────────────── */
+/* Sticky glass navigation */
+.home-page .top{position:sticky;top:16px;z-index:50}
+.home-page .bar{background:rgba(24,24,24,.72);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);box-shadow:0 12px 32px -16px rgba(0,0,0,.8)}
+/* Hero: larger headline, warm light behind the device */
+@media(min-width:1101px){.home-page .source-hero h1{font-size:68px;letter-spacing:-.05em}.source-hero{min-height:min(820px,calc(100svh - 96px))}}
+.device-view::before{content:'';position:absolute;inset:-18% -40%;z-index:-1;background:radial-gradient(50% 42% at 50% 50%,rgba(239,188,120,.2),transparent 70%);filter:blur(12px);pointer-events:none}
+.device-view img{filter:drop-shadow(0 40px 48px rgba(0,0,0,.7))}
+.source-button{box-shadow:0 12px 32px -14px rgba(239,188,120,.6)}
+.source-copy .copy-label{padding:4px 8px;border:1px solid var(--line2);border-radius:6px;transition:border-color .3s var(--ease),color .3s var(--ease)}
+.source-copy:hover .copy-label{border-color:var(--accent);color:var(--accent)}
+/* Cards: subtle depth and hover */
+.product-card{position:relative;overflow:hidden;background:linear-gradient(180deg,#1c1c1c,#151515);transition:border-color .4s var(--ease),transform .6s var(--ease),box-shadow .6s var(--ease)}
+.quart-card{background:linear-gradient(180deg,#17150c,#11100a)}
+.product-card::before{content:'';position:absolute;inset:0 0 auto;height:1px;background:linear-gradient(90deg,transparent,rgba(239,188,120,.55),transparent);opacity:0;transition:opacity .5s var(--ease)}
+.product-card:hover{border-color:var(--line2);transform:translateY(-4px);box-shadow:0 32px 64px -36px rgba(0,0,0,.9)}
+.product-card:hover::before{opacity:1}
+.product-top img{box-shadow:0 12px 28px -12px rgba(0,0,0,.8),0 0 0 1px rgba(255,255,255,.06)}
+.download-summary strong{color:var(--accent)}
+.promo-video video{box-shadow:0 0 0 1px var(--line)}
+/* Vela: copy beside the film on wide screens */
+@media(min-width:1101px){
+  .vela-card{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);grid-template-rows:repeat(7,auto) 1fr auto;column-gap:48px}
+  .vela-card>*{grid-column:1}
+  .vela-card .promo-video{grid-column:2;grid-row:1 / span 8;align-self:center;margin:0}
+  .vela-card .product-bottom{grid-column:1 / -1}
+  .vela-card .feature-list{margin-bottom:0}
+}
+.feature-list li{padding-bottom:12px;border-bottom:1px solid var(--line)}
+.feature-list li:last-child{padding-bottom:0;border-bottom:0}
+/* Installation and FAQ polish */
+.installation{background:linear-gradient(180deg,#1c1c1c,#151515)}
+.install-steps>article{padding-top:24px;border-top:1px solid var(--line2)}
+.step-number{font-size:32px;line-height:1;font-weight:600;letter-spacing:-.04em;font-variant-numeric:tabular-nums}
+.faq-grid summary:hover{color:var(--accent)}
+@media(max-width:760px){.home-page .top{top:12px}.install-steps>article{padding-top:16px}.step-number{font-size:24px}}
+@media(prefers-reduced-motion:reduce){.product-card:hover{transform:none}}
