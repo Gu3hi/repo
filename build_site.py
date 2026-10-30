@@ -69,7 +69,7 @@ home=f'''<main id="main">
 <div class="section-heading reveal"><div><p class="section-index">01 / THE COLLECTION</p><h2 id="collection-title">各有所长，一起刚好。</h2></div><p lang="en">Small details.<br>A different everyday.</p></div>
 <div class="product-grid">
 <article class="product-card vela-card reveal">
-<div class="product-top"><img src="assets/vela.png" width="64" height="64" alt="Vela 图标" loading="lazy"><span class="version-label">0.4.20 <span>当前版本 / Current</span></span></div>
+<div class="product-top"><img src="assets/vela.png" width="64" height="64" alt="Vela 图标" loading="lazy"><span class="version-label">0.4.32 <span>当前版本 / Current</span></span></div>
 <h3>Vela</h3><p class="product-lead">常用控制，一次上滑。</p><p class="product-english" lang="en">Your everyday controls, one swipe away.</p>
 {download_summary('com.gushi.vela')}
 <p class="product-description">连接、音乐、亮度与音量，集中在浮动面板中。横滑进入快捷指令页，自由配置配色、主题和玻璃外观。</p><p class="product-description en" lang="en">Connectivity, music, brightness and volume in one floating panel. Swipe to shortcuts and configure colors, themes and optional glass.</p>
@@ -203,4 +203,4 @@ vela_tabs=[tab('中文',vela_zh),tab('English',vela_en),tab('更新 / History',v
 for intro in vela_tabs[:2]:
     intro['views'].insert(0,{'class':'DepictionVideoView','URL':BASE+'assets/vela-promo.mp4','width':352,'height':220,'alignment':1,'cornerRadius':16,'autoplay':False,'showPlaybackControls':True,'loop':False})
 (vela_dir/'sileo.json').write_text(json.dumps({'class':'DepictionTabView','minVersion':'0.3','tintColor':'#2859D8','tabs':vela_tabs},ensure_ascii=False,indent=2)+'\n',encoding='utf-8',newline='\n')
-print('Built Vela 0.4.20 bilingual scope, installation, current release and Sileo depiction')
+print('Built Vela 0.4.32 bilingual scope, installation, current release and Sileo depiction')

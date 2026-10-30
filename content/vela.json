@@ -1,6 +1,6 @@
 {
-  "version": "0.4.20",
-  "date": "2026-10-28",
+  "version": "0.4.32",
+  "date": "2026-10-31",
   "ios": "iOS 16+",
   "zh": "Vela 将连接开关、亮度与音量、音乐和快捷控制集中在浮动面板中，支持独立配色、图标主题与玻璃外观。",
   "en": "Vela brings connectivity, brightness, volume, music and quick controls together in a floating panel, with custom colors, icon themes and glass appearance.",
@@ -8,14 +8,20 @@
     [
       "连接与电源",
       "Connectivity and power",
-      "在连接模块内右滑切换到电源控制；长按支持的模块打开二级页面。",
-      "Swipe right inside Connectivity to reveal power controls. Hold supported modules to open their detailed controls."
+      "在连接模块内右滑切换到电源控制；长按支持的模块打开二级页面。可选用个人热点替换隔空投送按钮。",
+      "Swipe right inside Connectivity to reveal power controls. Hold supported modules to open their detailed controls. Personal Hotspot can optionally replace the AirDrop button."
     ],
     [
       "亮度、音量与音乐",
       "Brightness, volume and music",
       "调整亮度与音量，查看音乐信息与控制播放；可使用当前封面作为音乐模块背景。",
       "Adjust brightness and volume, view music information and control playback. Optionally use current artwork as the music module background."
+    ],
+    [
+      "电池、日历、提醒事项与天气",
+      "Battery, calendar, reminders and weather",
+      "四个信息卡片显示设备电量、近期日程、待办提醒和当前天气，轻点打开详情浮窗。日历与提醒事项只读取已授权的数据，锁屏时隐藏内容。",
+      "Four info cards show device battery levels, upcoming events, reminders and current weather. Tap one for a detail popover. Calendar and Reminders read only data you have authorized and hide their contents on the Lock Screen."
     ],
     [
       "快捷指令第二页",
@@ -32,8 +38,8 @@
     [
       "配色、主题与玻璃",
       "Colors, themes and glass",
-      "配色预设、明暗外观、自定义背景、系统图标与静态／动态图标主题均可配置。玻璃效果默认关闭，可独立启用；这些功能无需激活码。",
-      "Configure color presets, light and dark appearance, custom backgrounds, system icons and static or animated icon themes. Glass is optional and disabled by default. These features do not require an activation code."
+      "配色预设、明暗外观、自定义背景、系统图标与静态／动态图标主题均可配置。面板、模块、信息卡片、滑块与封面圆角可分别调节，默认使用连续圆角，内层圆角随外框同心计算。玻璃效果默认关闭，可独立启用；这些功能无需激活码。",
+      "Configure color presets, light and dark appearance, custom backgrounds, system icons and static or animated icon themes. Panel, module, info card, slider and artwork corner radii are adjustable separately, with continuous corners by default and inner corners kept concentric with their container. Glass is optional and disabled by default. These features do not require an activation code."
     ],
     [
       "首次展开与功能导览",
@@ -46,8 +52,8 @@
   "scope_en": "This is a floating Control Center tweak. It does not replace the Lock Screen notification player or provide glass throughout other apps. Shortcut execution depends on iOS and each shortcut; interactive shortcuts may show system prompts or open the Shortcuts app. Vela Studio is a separate companion app and is not included in these packages.",
   "install_zh": "最低部署版本为 iOS 16。按实际越狱环境选择一个包：RootHide 为 iphoneos-arm64e，Rootless 为 iphoneos-arm64，不可混装。安装后前往「设置 → Vela」配置；已有用户保存的呼出设置继续生效。",
   "install_en": "The minimum deployment target is iOS 16. Install one package matching your jailbreak: iphoneos-arm64e for RootHide, or iphoneos-arm64 for Rootless. Configure Settings → Vela after installation. Existing saved activation gestures are preserved.",
-  "status_zh": "RootHide 与 Rootless 双包均包含 arm64 和 arm64e 切片，并分别构建验包。中英文界面与安装效果尚待真机验收；编译和验包不能证明所有 iOS 版本的兼容性。",
-  "status_en": "The RootHide and Rootless packages each contain arm64 and arm64e slices and are built and inspected separately. On-device installation and bilingual UI validation remain pending; build and package checks do not establish compatibility on every iOS version.",
-  "release_zh": "0.4.20 补全控制面板、模块配置、快捷指令、配色、主题说明与错误提示的中英文文本，跟随系统语言显示。",
-  "release_en": "Version 0.4.20 completes Chinese and English text for the panel, module layout, shortcuts, colors, theme guidance and error messages, following the system language."
+  "status_zh": "RootHide 与 Rootless 双包均包含 arm64 和 arm64e 切片，并分别构建验包。RootHide 包已在 iOS 17 真机上查看圆角效果；Rootless 与 iOS 16 尚未真机测试。编译和验包不能证明所有 iOS 版本的兼容性。",
+  "status_en": "The RootHide and Rootless packages each contain arm64 and arm64e slices and are built and inspected separately. The RootHide package has been checked on an iOS 17 device for the corner changes; Rootless and iOS 16 have not been tested on device. Build and package checks do not establish compatibility on every iOS version.",
+  "release_zh": "0.4.32 汇总 0.4.21 以来的更新：新增电池、日历、提醒事项与天气信息卡片及详情浮窗，天气在系统数据过期时直连 Open-Meteo 获取；连接模块可用个人热点替换隔空投送；圆角统一为连续圆角并按内外同心计算，「模块圆角」同时控制卡片、按钮及其上色层、滑块与音乐进度，信息卡片圆角单独设置；修正设置页分组圆角与分隔线。",
+  "release_en": "Version 0.4.32 collects the changes since 0.4.21: battery, calendar, reminders and weather info cards with detail popovers, with weather fetched from Open-Meteo when system data is stale; Personal Hotspot can replace AirDrop in Connectivity; corners are continuous and concentric, Module Corner Radius now drives cards, buttons and their tint layers, sliders and music progress, and info cards have their own radius setting; Settings group corners and separators are fixed."
 }

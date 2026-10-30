@@ -2,7 +2,7 @@
 
 越狱源地址：**https://gu3hi.github.io/repo/**
 
-当前上架 Vela 0.4.20、Quart17 2.8.2 与 Aura 1.2.45，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.20 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
+当前上架 Vela 0.4.32、Quart17 2.8.2 与 Aura 1.2.45，均提供 Rootless / RootHide 安装包。Vela 仅发布本次 0.4.32 双包，配色、主题与基础面板直接使用，无需激活；完整功能范围见 `content/vela.json`。
 
 Quart17 2.8.2：Rootless（iphoneos-arm64）和 RootHide（iphoneos-arm64e）；已发布的 2.8 与 2.8.1 安装包保留在源中。不包含插件源码。
 
@@ -68,3 +68,5 @@ deb https://gu3hi.github.io/repo/ ./
 2026-10-31：发布 Quart17 2.8.1 RootHide/rootless 双包（2.8 保持原样），并更新中英文介绍与历史。本版支持 iOS 16–17；iOS 17 RootHide 经用户真机测试确认，rootless 与 iOS 16 已构建验包但尚未真机测试。
 
 2026-10-31：发布 Quart17 2.8.2 与 Aura 1.2.45 RootHide/rootless 双包（旧版保持原样）：播放器描边、连续圆角、播放器圆角移回 Quart17、播放按钮跟随 Vela 主题图标。iOS 17 RootHide 经用户真机测试确认；rootless 与 iOS 16 尚未真机测试。
+
+2026-10-31：发布 Vela 0.4.32 RootHide / Rootless 双包（替换 0.4.20），新增四个信息卡片，统一连续圆角与模块圆角控制。RootHide 经用户 iOS 17 真机查看；Rootless 与 iOS 16 尚未真机测试。
