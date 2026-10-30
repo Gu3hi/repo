@@ -1,5 +1,13 @@
 [
   {
+    "version": "2.8.2",
+    "date": "2026-10-31",
+    "kind": "release",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.8.2",
+    "zh": "新增播放器描边（可调粗细，颜色取自封面文字色，开启 Aura 播放器玻璃时不显示）。播放器面板与封面改用苹果连续圆角，「播放器圆角」移回 Quart17 设置（需配合 Aura 1.2.45）。播放按钮复用 Vela 的媒体图标，支持静态与动态主题并随 Vela 换主题自动更新，按钮高度统一为 18pt；新增「自定义播放控制图标」开关。点开大封面时播放器回到底部。修复注销后描边与图标设置丢失。iOS 17 RootHide 经用户真机测试确认；rootless 与 iOS 16 已构建验包，尚未真机测试。",
+    "en": "Add a player border (adjustable width, coloured from the artwork text colour, hidden while Aura's player glass is on). The player panel and artwork use Apple continuous corners, and \"Player corners\" moves back into Quart17's settings (use with Aura 1.2.45). Playback buttons reuse Vela's media icons, static and animated themes alike, update when you change themes in Vela, and are 18pt tall; a new \"Custom playback icons\" switch uses your own static icons. Expanding the large artwork returns the player to the bottom. Fix the border and icon settings being lost after a respring. iOS 17 RootHide was confirmed on device by the user; rootless and iOS 16 are built and inspected, with device testing pending."
+  },
+  {
     "version": "2.8.1",
     "date": "2026-10-31",
     "kind": "release",

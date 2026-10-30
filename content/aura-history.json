@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.2.45",
+    "date": "2026-10-31",
+    "zh": "通知玻璃与 Quart17 播放器玻璃改用苹果连续圆角，圆角拉满时保持正圆与胶囊形。播放器圆角设置移至 Quart17（需配合 Quart17 2.8.2，原有数值自动沿用）。包含 1.2.41–1.2.44 的桌面液态玻璃、锁屏时钟与静音胶囊改进。仍为预发布版，RootHide 已在 iOS 17 真机安装运行，完整验收尚未完成，Rootless 未实机测试。",
+    "en": "Notification glass and the Quart17 player glass use Apple continuous corners, keeping true circles and capsules at full roundness. The player corner setting moves to Quart17 (use with Quart17 2.8.2; the existing value carries over). Includes the 1.2.41–1.2.44 desktop liquid glass, Lock Screen clock and ringer pill improvements. Still a prerelease: RootHide is installed and running on an iOS 17 device, full validation is pending, and Rootless has not been tested on a physical device.",
+    "source": "https://github.com/Gu3hi/repo/releases/tag/packages"
+  },
+  {
     "version": "1.2.40",
     "date": "2026-10-27",
     "zh": "新增 Tab 玻璃拖动与触摸反馈、深色适配；新增锁屏快捷按钮和桌面小文件夹玻璃效果；新增设置开关与滑块玻璃样式。",

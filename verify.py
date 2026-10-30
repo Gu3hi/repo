@@ -50,8 +50,8 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         for key, target in [('Icon','assets/quart17.png'), ('Depiction','depictions/quart17/'), ('SileoDepiction','depictions/quart17/sileo.json')]:
             assert info[key] == 'https://gu3hi.github.io/repo/' + target
     if info['Package'] == 'com.gushi.aura':
-        assert info['Version'] in ('1.2.23', '1.2.40')
-        if info['Version'] == '1.2.40':
+        assert info['Version'] in ('1.2.23', '1.2.40', '1.2.45')
+        if info['Version'] == '1.2.45':
             aura_current_architectures.add(info['Architecture'])
         assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
         assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'

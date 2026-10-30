@@ -1,61 +1,77 @@
 {
-  "updated_at": "2026-10-30T16:31:03.312614+00:00",
+  "updated_at": "2026-10-30T18:29:55.244708+00:00",
   "assets": [
     {
       "name": "com.gushi.aura_1.2.23_iphoneos-arm64.deb",
-      "download_count": 8
-    },
-    {
-      "name": "com.gushi.aura_1.2.23_iphoneos-arm64e.deb",
-      "download_count": 16
-    },
-    {
-      "name": "com.gushi.aura_1.2.40_iphoneos-arm64.deb",
-      "download_count": 8
-    },
-    {
-      "name": "com.gushi.aura_1.2.40_iphoneos-arm64e.deb",
       "download_count": 9
     },
     {
-      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64.deb",
-      "download_count": 5
+      "name": "com.gushi.aura_1.2.23_iphoneos-arm64e.deb",
+      "download_count": 17
     },
     {
-      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64e.deb",
-      "download_count": 5
+      "name": "com.gushi.aura_1.2.40_iphoneos-arm64.deb",
+      "download_count": 9
     },
     {
-      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64.deb",
-      "download_count": 14
+      "name": "com.gushi.aura_1.2.40_iphoneos-arm64e.deb",
+      "download_count": 10
     },
     {
-      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64e.deb",
-      "download_count": 21
-    },
-    {
-      "name": "com.gushi.quart17_2.8.1_iphoneos-arm64.deb",
+      "name": "com.gushi.aura_1.2.45_iphoneos-arm64.deb",
       "download_count": 0
     },
     {
+      "name": "com.gushi.aura_1.2.45_iphoneos-arm64e.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64.deb",
+      "download_count": 6
+    },
+    {
+      "name": "com.gushi.quart17_2.7.103_iphoneos-arm64e.deb",
+      "download_count": 6
+    },
+    {
+      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64.deb",
+      "download_count": 15
+    },
+    {
+      "name": "com.gushi.quart17_2.7.112_iphoneos-arm64e.deb",
+      "download_count": 22
+    },
+    {
+      "name": "com.gushi.quart17_2.8.1_iphoneos-arm64.deb",
+      "download_count": 1
+    },
+    {
       "name": "com.gushi.quart17_2.8.1_iphoneos-arm64e.deb",
+      "download_count": 3
+    },
+    {
+      "name": "com.gushi.quart17_2.8.2_iphoneos-arm64.deb",
+      "download_count": 0
+    },
+    {
+      "name": "com.gushi.quart17_2.8.2_iphoneos-arm64e.deb",
       "download_count": 0
     },
     {
       "name": "com.gushi.quart17_2.8_iphoneos-arm64.deb",
-      "download_count": 0
-    },
-    {
-      "name": "com.gushi.quart17_2.8_iphoneos-arm64e.deb",
       "download_count": 1
     },
     {
+      "name": "com.gushi.quart17_2.8_iphoneos-arm64e.deb",
+      "download_count": 2
+    },
+    {
       "name": "com.gushi.vela_0.4.20_iphoneos-arm64.deb",
-      "download_count": 9
+      "download_count": 10
     },
     {
       "name": "com.gushi.vela_0.4.20_iphoneos-arm64e.deb",
-      "download_count": 11
+      "download_count": 12
     }
   ]
 }

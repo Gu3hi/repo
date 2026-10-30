@@ -74,6 +74,44 @@ MD5sum: 01d17378b2311445f8ae1d5d9e3b9afa
 SHA256: fd9ca3c9adbfcf97867bf20f98c9e3087ef54c604e4afd31dec7061c3ce08886
 SHA512: 3025025a10ee4ed602bfdf4245d4af345268c62305054b23e363cb0720570b7d151182f151f5f541f6eaff8661153f10d1e14a56c2ab335c7e78542a141b038e
 
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 1.2.45
+Installed-Size: 3256
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.45_iphoneos-arm64.deb
+Size: 734712
+MD5sum: 4e24abb3e8233c8aec2a7fd21914fcfd
+SHA256: f6a129a557a8d8b9091400f8126ed2a6a625649658373959c9c7149fe0ce79e2
+SHA512: 1fa1a1e8a4b82ed7c442fe37d198da7f46af206c9a6352587e2c5343bd6a9538b74898e387467a6125a1f29e3012dedad6cc281c1992930a55058232e6cbce70
+
+Package: com.gushi.aura
+Name: Aura
+Description: Glass effects for iOS 17 - control center, dock, folders, app components and more
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 1.2.45
+Installed-Size: 3240
+Icon: https://gu3hi.github.io/repo/assets/aura.png
+Depiction: https://gu3hi.github.io/repo/depictions/aura/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/aura/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.aura_1.2.45_iphoneos-arm64e.deb
+Size: 734492
+MD5sum: 804bd5d6134a7277a42ea117ca2ef574
+SHA256: 33de112b73a10358c7e1d5d52b07924f012f7ae8ab8a1ddfb24eb1efeb051bbd
+SHA512: 33f2ca43145df6431f7f748e54974de8719361144a9033ecd30189972eac19cbc891e0054a01efc8c3dfa699c0195e08f96e382ae6e383224d1c121b6febdb59
+
 Package: com.gushi.quart17
 Name: Quart17
 Description: Quart-inspired notifications for jailbroken iOS 17
@@ -187,6 +225,44 @@ Size: 977380
 MD5sum: 98a5e3907e5bb229f08d36566dbbb671
 SHA256: 862812be0afab08ce84706a64fe51a7e35fa51f99d3a3eb4ae844ab21dbde0f5
 SHA512: ca31644e8119270f5f70746da6414ac7613cbb3af1ec28a6a2541ea7be0081fa2a1e1eafd6c578b4592e202ecf680c71a11dbb78c06f2c43238787da56251019
+
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 16-17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 2.8.2
+Installed-Size: 2520
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8.2_iphoneos-arm64.deb
+Size: 1001590
+MD5sum: 806b17ddb8ff4e37c10b0097ad392c2a
+SHA256: a7a4bf2968e18b54d2a1cf7ffc77b140f08187ff09e19bd671e1ef4e3d62d311
+SHA512: 8d0bd33ecc43e7f4f1f93531a7d5a97b5fb3405cb4dc8a70311d7e601de63fbdf62ce9f9596b9272bbfc07693cda7de6ded019777c3a011ca60b4a4c0382192c
+
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 16-17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 2.8.2
+Installed-Size: 2520
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8.2_iphoneos-arm64e.deb
+Size: 1001598
+MD5sum: e4725a7189b6de3aa05b3f26e776a5f5
+SHA256: badde1b2845da4eaf652c65b431480b02a6a1423729429ec653947861bbbfa4a
+SHA512: 7dbeedd9099042c2f96d5d8ac6671528de9e7fd256b5a8118703357219954df47d824dcf10f720e564b11e1369f9298d70a56d7067f8f4f15e215b5d3e850e19
 
 Package: com.gushi.quart17
 Name: Quart17
