@@ -152,6 +152,44 @@ SHA512: 6d5623a428733b5b4eaf8f5d7873388870815911753a772a1a8dcde38860f40e0bc5219a
 
 Package: com.gushi.quart17
 Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 16-17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64
+Version: 2.8.1
+Installed-Size: 2448
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8.1_iphoneos-arm64.deb
+Size: 977284
+MD5sum: 67a70e39f43ce0ec86c152bc5fb455e3
+SHA256: b333993cb9c0d826d2f2ff8cb4afbb66c37ac983b41799b7532c9ecb470659b6
+SHA512: 32f66d32d069f3ff7cde204349bd6b33a558d71c58a522f7dfeac9507449596e2fdefa13971bd5389fdc8240f4854dbef7f4c7ea2e4eba3ae0dbb94145acb971
+
+Package: com.gushi.quart17
+Name: Quart17
+Description: Quart-inspired notifications for jailbroken iOS 16-17
+Maintainer: Put_Story
+Author: Put_Story
+Section: Tweaks
+Depends: mobilesubstrate, preferenceloader
+Architecture: iphoneos-arm64e
+Version: 2.8.1
+Installed-Size: 2448
+Icon: https://gu3hi.github.io/repo/assets/quart17.png
+Depiction: https://gu3hi.github.io/repo/depictions/quart17/
+SileoDepiction: https://gu3hi.github.io/repo/depictions/quart17/sileo.json
+Filename: https://github.com/Gu3hi/repo/releases/download/packages/com.gushi.quart17_2.8.1_iphoneos-arm64e.deb
+Size: 977380
+MD5sum: 98a5e3907e5bb229f08d36566dbbb671
+SHA256: 862812be0afab08ce84706a64fe51a7e35fa51f99d3a3eb4ae844ab21dbde0f5
+SHA512: ca31644e8119270f5f70746da6414ac7613cbb3af1ec28a6a2541ea7be0081fa2a1e1eafd6c578b4592e202ecf680c71a11dbb78c06f2c43238787da56251019
+
+Package: com.gushi.quart17
+Name: Quart17
 Description: Quart-inspired notifications for jailbroken iOS 17
 Maintainer: Put_Story
 Author: Put_Story

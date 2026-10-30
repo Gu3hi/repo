@@ -1,5 +1,13 @@
 [
   {
+    "version": "2.8.1",
+    "date": "2026-10-31",
+    "kind": "release",
+    "source": "https://github.com/Gu3hi/Quart17/releases/tag/v2.8.1",
+    "zh": "新增「通知从顶部开始」：展开的通知列表与音乐播放器从时间和小组件下方开始，上滑时时间与小组件随列表平滑推走，叠放与下滑收起保持系统原生方式。恢复 iOS 16 支持（iOS 16 上播放器由 SpringBoard 绘制）。修复原生播放器背景偶尔透出及全天候显示屏下的背景、小时间滚动后小组件偏低、设置跨进程同步时序与通知计数不更新。iOS 17 RootHide 经用户真机测试确认；rootless 与 iOS 16 已构建验包，尚未真机测试。",
+    "en": "Add \"Start notifications at top\": the expanded list and the music player start below the clock and widgets, scrolling pushes the clock and widgets away smoothly, and the folded stack and swipe-to-hide stay native. Restore iOS 16 support (SpringBoard draws the player there). Fix the native player background showing through (including on the Always-On Display), the small clock leaving widgets too low after scrolling, a cross-process settings race and a stale notification count. iOS 17 RootHide was confirmed on device by the user; rootless and iOS 16 are built and inspected, with device testing pending."
+  },
+  {
     "version": "2.8",
     "date": "2026-10-28",
     "kind": "commit",
