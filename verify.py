@@ -50,8 +50,8 @@ for paragraph in data['Packages'].decode().strip().split('\n\n'):
         for key, target in [('Icon','assets/quart17.png'), ('Depiction','depictions/quart17/'), ('SileoDepiction','depictions/quart17/sileo.json')]:
             assert info[key] == 'https://gu3hi.github.io/repo/' + target
     if info['Package'] == 'com.gushi.aura':
-        assert info['Version'] in ('1.2.23', '1.2.40', '1.2.45')
-        if info['Version'] == '1.2.45':
+        assert info['Version'] in ('1.2.23', '1.2.40', '1.2.45', '1.2.47')
+        if info['Version'] == '1.2.47':
             aura_current_architectures.add(info['Architecture'])
         assert info['Icon'] == 'https://gu3hi.github.io/repo/assets/aura.png'
         assert info['Depiction'] == 'https://gu3hi.github.io/repo/depictions/aura/'
@@ -90,7 +90,7 @@ home = data['index.html'].decode()
 assert 'assets/home.css' in home and 'class="home-page"' in home
 assert home.count('data-preview=') == 2 and home.count('aria-pressed="true"') == 1
 assert all(f'id="{anchor}"' in home for anchor in ('main', 'packages', 'install', 'device-preview'))
-assert '预发布 / Prerelease' in home and 'Post-install device validation is pending.' in home
+assert '预发布 / Prerelease' in home and 'verified on an iOS 17 RootHide device for the Settings fix' in home
 class Links(HTMLParser):
     def __init__(self):
         super().__init__(); self.links=[]; self.counters=[]
